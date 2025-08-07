@@ -52,7 +52,17 @@ interface IApiInstance {
 export default defineNuxtPlugin({
   async setup() {
     const config = useRuntimeConfig();
-    const { getToken } = useAuth();
+    console.log("authActivate = ", config.public.authActivate);
+    const { getToken } =
+      config.public.authActivate == "false"
+        ? {
+            getToken: {
+              value() {
+                return "demo";
+              },
+            },
+          }
+        : useAuth();
 
     const apiFetcher = createFetch({
       defaults: {

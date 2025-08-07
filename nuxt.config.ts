@@ -37,6 +37,7 @@ export default defineNuxtConfig({
         process.env.IROCO_CUSTOMER_REQUEST_ENDPOINT ??
         "NO_IROCO_CUSTOMER_REQUEST_ENDPOINT_IN_ENV",
       urlDocs: process.env.URL_DOCS,
+      authActivate: process.env.AUTH_ACTIVATE,
     },
   },
 

@@ -18,7 +18,8 @@
 import { useAuth } from "vue-clerk";
 
 export default defineNuxtRouteMiddleware(async (to, _) => {
-  if (import.meta.server) return;
+  if (import.meta.server || useRuntimeConfig().public.authActivate == "false")
+    return;
   const auth = useAuth();
 
   if (!auth.userId.value) {
