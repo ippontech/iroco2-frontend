@@ -26,7 +26,9 @@
         <Icon name="ph:article" />
         Docs
       </NuxtLink>
-      <DropdownMenu>
+
+      <div v-if="useRuntimeConfig().public.authActivate == 'false'">Demo</div>
+      <DropdownMenu v-else>
         <DropdownMenuTrigger class="flex items-center gap-2 group">
           <span class="font-medium group-hover:underline underline-offset-4">
             {{ user?.username }}

@@ -42,40 +42,50 @@
         </UDropdown>
       </div>
 
-      <SignedOut>
-        <SignInButton>
-          <NuxtLink
-            to="/login"
-            class="text-white transition-all hover:outline rounded-full px-4 py-2"
-          >
-            Connexion
-          </NuxtLink>
-        </SignInButton>
-      </SignedOut>
+      <div
+        v-if="useRuntimeConfig().public.authActivate == 'false'"
+        class="flex items-center justify-end"
+      >
+        <NuxtLink to="/calculatrice">
+          <Button variant="link" class="text-white">Dashboard Demo</Button>
+        </NuxtLink>
+      </div>
+      <div v-else>
+        <SignedOut>
+          <SignInButton>
+            <NuxtLink
+              to="/login"
+              class="text-white transition-all hover:outline rounded-full px-4 py-2"
+            >
+              Connexion
+            </NuxtLink>
+          </SignInButton>
+        </SignedOut>
 
-      <SignedIn>
-        <div class="flex items-center justify-end">
-          <NuxtLink to="/calculatrice">
-            <Button variant="link" class="text-white">Dashboard</Button>
-          </NuxtLink>
+        <SignedIn>
+          <div class="flex items-center justify-end">
+            <NuxtLink to="/calculatrice">
+              <Button variant="link" class="text-white">Dashboard</Button>
+            </NuxtLink>
 
-          <DropdownMenu>
-            <DropdownMenuTrigger>
-              <div
-                class="rounded-full w-10 h-10 bg-iroco-greenish-white text-black flex items-center justify-center font-bold p-0"
-              >
-                <Icon name="ph:user-fill" />
-              </div>
-            </DropdownMenuTrigger>
-            <DropdownMenuContent align="end">
-              <DropdownMenuItem class="gap-2" @click="logout">
-                <Icon name="ph:sign-out-bold" />
-                Déconnexion
-              </DropdownMenuItem>
-            </DropdownMenuContent>
-          </DropdownMenu>
-        </div>
-      </SignedIn>
+            <DropdownMenu>
+              <DropdownMenuTrigger>
+                <div
+                  class="rounded-full w-10 h-10 bg-iroco-greenish-white text-black flex items-center justify-center font-bold p-0"
+                >
+                  <Icon name="ph:user-fill" />
+                </div>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent align="end">
+                <DropdownMenuItem class="gap-2" @click="logout">
+                  <Icon name="ph:sign-out-bold" />
+                  Déconnexion
+                </DropdownMenuItem>
+              </DropdownMenuContent>
+            </DropdownMenu>
+          </div>
+        </SignedIn>
+      </div>
     </div>
   </nav>
 </template>
