@@ -94,6 +94,30 @@ bun run preview
 - `tailwind.config.js` — Tailwind CSS configuration
 - `package.json` — Project dependencies and scripts
 
+## 🚀 Deployment
+
+The frontend is deployed on AWS Cloudfront. The cloudfront distribution is configured in the [terraform repository](https://github.com/ippontech/iroco2-terraform-modules).
+
+To deploy the frontend, provide the following variables through `.env` file :
+
+- CLERK_PUBLISHABLE_KEY : See official [Clerk documentation](https://clerk.com/docs/deployments/clerk-environment-variables#clerk-publishable-and-secret-keys)
+- IROCALC_API_URL : FQDN of the IroCO2 backend API
+
+Run `yarn generate` to generate the static files.
+
+Connect to your AWS environnement and run the following commands : 
+
+```bash
+export S3_BUCKET_ID=`aws ssm get-parameter --name /IROCO2/PARAMETERS/FRONTEND/CLOUDFRONT_BUCKET_ID --query 'Parameter.Value' --output text --region eu-west-3 --with-decryption`
+
+export CLOUDFRONT_DISTRIBUTION_ID=`aws ssm get-parameter --name /IROCO2/PARAMETERS/FRONTEND/CLOUDFRONT_DISTRIBUTION_ID --query 'Parameter.Value' --output text --region eu-west-3 --with-decryption`
+
+aws s3 sync ${BUILD_FOLDER} s3://${S3_BUCKET_ID}/
+
+aws cloudfront create-invalidation --distribution-id ${CLOUDFRONT_DISTRIBUTION_ID} --paths '/*'   
+```
+
+
 ## 📝 License
 
 Distributed under the Apache 2.0 License. See [LICENSE](./LICENSE) for more information.
