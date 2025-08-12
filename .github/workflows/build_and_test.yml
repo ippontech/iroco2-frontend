@@ -52,19 +52,16 @@ jobs:
       - name: Run Prettier Check
         id: prettier-check
         uses: borales/actions-yarn@v4
-        continue-on-error: true
         with:
           cmd: prettier:check
-      
-      - name: Report warning status if Prettier fails
-        if: steps.prettier-check.outcome == 'failure'
         continue-on-error: true
-        run: | 
-          echo "::warning title=Code formatting issues detected::Please run 'yarn prettier:fix' to fix formatting issues."
-          exit 78
 
-      - uses: mainmatter/continue-on-error-comment@v1 # Use this action to allow failure of prettier check since github does not have these feature
+      - name: Comment on PR if Prettier Fails
+        if: steps.prettier-check.outcome == 'failure'
+        uses: peter-evans/create-or-update-comment@v4
         with:
-          repo-token: ${{ secrets.GITHUB_TOKEN }}
-          outcome: ${{ steps.prettier-check.outcome }}
-          test-id: Prettier Check
+          token: ${{ secrets.GITHUB_TOKEN }}
+          issue-number: ${{ github.event.pull_request.number }}
+          body: |
+            > [!WARNING]
+            > Code formatting issues were detected. Please run `yarn prettier:fix` to fix them.
