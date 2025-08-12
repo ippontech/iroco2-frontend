@@ -29,7 +29,6 @@ jobs:
   prettier:
     name: Prettier Check
     runs-on: ubuntu-latest
-    continue-on-error: true
     steps:
       - uses: actions/checkout@v3
 
@@ -46,6 +45,7 @@ jobs:
       - name: Run Prettier Check
         id: prettier-check
         uses: borales/actions-yarn@v4
+        continue-on-error: true
         with:
           cmd: prettier:check
       
