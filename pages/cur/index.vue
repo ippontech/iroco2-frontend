@@ -19,10 +19,10 @@
 
 <template>
   <div class="container flex flex-col gap-8">
-    <CardCustomCard>
+    <CardCustom>
       <ChartReportHistoryBar class="pb-10" :reports="analysesForChart" />
-    </CardCustomCard>
-    <CardCustomCard>
+    </CardCustom>
+    <CardCustom>
       <div class="flex justify-between pb-8">
         <h1 class="text-2xl font-bold">Vos analyses :</h1>
         <div class="flex gap-4">
@@ -72,7 +72,7 @@
           </TableRow>
         </TableBody>
       </Table>
-    </CardCustomCard>
+    </CardCustom>
     <AlertAddAnalysis
       v-model="addAnalysisModalOpened"
       @update:analyses="refresh"

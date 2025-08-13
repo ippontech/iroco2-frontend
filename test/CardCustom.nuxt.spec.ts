@@ -15,15 +15,15 @@
  *
  * SPDX-License-Identifier: Apache-2.0
  */
-import CustomCard from "~/components/card/CustomCard.vue";
+import { CardCustom } from "#components";
 import { it, expect, describe } from "vitest";
 import { mountSuspended } from "@nuxt/test-utils/runtime";
 
-describe("<CustomCard>", async () => {
+describe("<CardCustom>", async () => {
   const childrenBody = "Composant enfant";
 
   it("shoud render children", async () => {
-    const component = await mountSuspended(CustomCard, {
+    const component = await mountSuspended(CardCustom, {
       slots: { default: () => childrenBody },
     });
 

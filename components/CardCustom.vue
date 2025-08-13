@@ -1,3 +1,4 @@
+<!-- prettier-ignore -->
 /*
  * Copyright 2025 Ippon Technologies
  *
@@ -16,7 +17,6 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-<!-- CustomCard.vue -->
 <template>
   <Card class="bg-slate-50 shadow-md p-4">
     <slot />

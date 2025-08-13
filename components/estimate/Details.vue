@@ -1,3 +1,4 @@
+<!-- prettier-ignore -->
 /*
  * Copyright 2025 Ippon Technologies
  *
@@ -17,14 +18,14 @@
  */
 
 <template>
-  <CardCustomCard class="flex justify-center gap-2">
+  <CardCustom class="flex justify-center gap-2">
     <TopConsumptionTable
       :relative-carbon-footprint-list="relativeCarbonFootprintList"
     />
     <ChartTopConsumptionPie
       :relative-carbon-footprint-list="relativeCarbonFootprintList"
     />
-  </CardCustomCard>
+  </CardCustom>
 </template>
 
 <script setup lang="ts">

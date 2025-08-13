@@ -1,3 +1,4 @@
+<!-- prettier-ignore -->
 /*
  * Copyright 2025 Ippon Technologies
  *
@@ -17,7 +18,7 @@
  */
 
 <template>
-  <CardCustomCard class="flex justify-around items-center">
+  <CardCustom class="flex justify-around items-center">
     <div class="max-md:">
       L'impact carbone <strong>mensuel</strong> <br />
       de votre infrastructure est :
@@ -42,7 +43,7 @@
         </NuxtLink>
       </span>
     </div>
-  </CardCustomCard>
+  </CardCustom>
 </template>
 
 <script setup lang="ts">
