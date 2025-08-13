@@ -16,7 +16,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 import { mockNuxtImport } from "@nuxt/test-utils/runtime";
-import AddAnalysisAlert from "./AddAnalysisAlert.vue";
+import AddAnalysisAlert from "../components/alert/AddAnalysisAlert.vue";
 import { AlertDialogContent } from "radix-vue";
 import type { VueWrapper } from "@vue/test-utils";
 import { mount } from "@vue/test-utils";
