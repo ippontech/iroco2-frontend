@@ -16,7 +16,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 import { mockNuxtImport } from "@nuxt/test-utils/runtime";
-import AddAnalysisAlert from "../components/alert/AddAnalysisAlert.vue";
+import { AlertAddAnalysis } from "#components";
 import { AlertDialogContent } from "radix-vue";
 import type { VueWrapper } from "@vue/test-utils";
 import { mount } from "@vue/test-utils";
@@ -118,10 +118,10 @@ describe("AddAnalysisAlert component", () => {
 function wrap() {
   return mount(
     defineComponent({
-      components: { AddAnalysisAlert },
+      components: { AlertAddAnalysis },
       template: `
         <Suspense>
-          <AddAnalysisAlert :modelValue="true" />
+          <AlertAddAnalysis :modelValue="true" />
         </Suspense>
       `,
     }),
