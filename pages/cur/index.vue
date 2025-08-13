@@ -1,3 +1,4 @@
+<!-- prettier-ignore -->
 /*
  * Copyright 2025 Ippon Technologies
  *
@@ -72,7 +73,7 @@
         </TableBody>
       </Table>
     </CardCustomCard>
-    <AddAnalysisAlert
+    <AlertAddAnalysis
       v-model="addAnalysisModalOpened"
       @update:analyses="refresh"
     />
@@ -106,7 +107,6 @@
 
 <script setup lang="ts">
 import { isoToHuman } from "~/lib/dateParser";
-import AddAnalysisAlert from "~/components/alert/AddAnalysisAlert.vue";
 import { buttonVariants } from "~/components/ui/button";
 
 definePageMeta({
