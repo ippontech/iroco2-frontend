@@ -1,3 +1,4 @@
+<!-- prettier-ignore -->
 /*
  * Copyright 2025 Ippon Technologies
  *
@@ -45,7 +46,6 @@
 </template>
 
 <script setup lang="ts">
-import ComparativeCardByRegion from "./ComparativeCardByRegion.vue";
 import type { RegionCarbonFootprint } from "~/type/RegionCarbonFootprint";
 import {
   Carousel,

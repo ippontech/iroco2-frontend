@@ -40,7 +40,6 @@
 
 <script setup lang="ts">
 import type { Infrastructure } from "~/type/infrastructure/Infrastructure";
-import ComparativeByRegion from "~/components/comparative/ComparativeByRegion.vue";
 const { $api } = useNuxtApp();
 const route = useRoute();
 const infrastructure: Ref<Infrastructure | undefined> = ref();
