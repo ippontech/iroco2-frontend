@@ -1,3 +1,4 @@
+<!-- prettier-ignore -->
 /*
  * Copyright 2025 Ippon Technologies
  *
@@ -26,9 +27,8 @@ import {
   LinearScale,
   Title,
   Tooltip,
-  type ChartOptions,
-  type ChartData,
 } from "chart.js";
+import type { ChartOptions, ChartData } from "chart.js";
 import { isoToHumanDayOnly } from "~/lib/dateParser";
 ChartJS.register(
   CategoryScale,
