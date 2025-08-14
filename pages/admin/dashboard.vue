@@ -1,3 +1,4 @@
+<!-- prettier-ignore -->
 /*
  * Copyright 2025 Ippon Technologies
  *
@@ -20,7 +21,7 @@
 import NuxtColors from "~/type/NuxtColors";
 
 definePageMeta({
-  middleware: ["auth"],
+  middleware: ["auth", "admin"],
 });
 
 const notificationHandler = useToast();
