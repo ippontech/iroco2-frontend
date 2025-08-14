@@ -1,3 +1,4 @@
+<!-- prettier-ignore -->
 /*
  * Copyright 2025 Ippon Technologies
  *
@@ -27,6 +28,3 @@
     </div>
   </footer>
 </template>
-<script setup lang="ts">
-import NavBar from "~/components/navbar/NavBar.vue";
-</script>
