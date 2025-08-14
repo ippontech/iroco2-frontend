@@ -1,3 +1,4 @@
+<!-- prettier-ignore -->
 /*
  * Copyright 2025 Ippon Technologies
  *
@@ -17,29 +18,14 @@
  */
 
 <script setup lang="ts">
-import { multiplyToString } from "./mappers";
+import { Input } from "~/components/ui/input";
 
-const SECONDS_IN_HOUR = 3600000;
-
-const seconds = defineModel<string>({ required: true });
-
-const hours = ref(multiplyToString(seconds.value, 1 / SECONDS_IN_HOUR));
-
-const handleValueChange = (newValue: number) => {
-  seconds.value = multiplyToString(newValue, SECONDS_IN_HOUR);
-};
+const model = defineModel<string>({ required: true });
 </script>
 
 <template>
-  <div class="w-full">
-    <SliderNumber
-      label="Temps de fonctionnement journalier"
-      :default-value="Number(hours)"
-      :step="1"
-      unit="heures"
-      :min="0"
-      :step-values="Array.from({ length: 25 }, (_, i) => i)"
-      @update:selected-value="handleValueChange"
-    />
+  <div class="flex flex-col gap-2">
+    <span>Durée moyenne d'une exécution :</span>
+    <Input v-model="model" unit="ms" />
   </div>
 </template>

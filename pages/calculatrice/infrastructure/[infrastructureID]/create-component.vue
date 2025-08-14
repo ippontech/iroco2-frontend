@@ -1,3 +1,4 @@
+<!-- prettier-ignore -->
 /*
  * Copyright 2025 Ippon Technologies
  *
@@ -41,7 +42,7 @@
                 :key="index"
                 class="pt-2"
               >
-                <ConfigurationSetting
+                <ConfigurationSettingsConfigurationSetting
                   v-model="configuredValues[index]"
                   :setting="setting"
                 />
@@ -89,7 +90,6 @@
 import type { ServiceConfigurationSetting } from "~/type/infrastructure/ServiceConfigurationSetting";
 import EditableLine from "~/components/form/EditableLine.vue";
 import { ref } from "vue";
-import ConfigurationSetting from "~/components/configurationSettings/ConfigurationSetting.vue";
 import RegionSelector from "~/components/recap/RegionSelector.vue";
 import type { Region } from "~/type/Region";
 import type { ConfiguredValue } from "~/type/infrastructure/ConfiguredValue";
