@@ -30,7 +30,6 @@ import type {
   AlertDialogContentEmits,
   AlertDialogContentProps,
 } from "radix-vue";
-import { cn } from "@/lib/utils";
 
 const props = defineProps<
   AlertDialogContentProps & { class?: HTMLAttributes["class"] }

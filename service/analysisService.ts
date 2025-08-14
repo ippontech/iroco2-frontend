@@ -15,10 +15,7 @@
  *
  * SPDX-License-Identifier: Apache-2.0
  */
-import {
-  aggregateCarbonFootPrint,
-  convertEstimateToBestMassUnit,
-} from "~/lib/utils";
+
 import HttpFactory from "./factory/httpFactory";
 import type { ReportStatus } from "~/type/ReportStatus";
 import type { Payload } from "~/type/Payload";

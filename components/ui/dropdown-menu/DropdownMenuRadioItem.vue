@@ -30,7 +30,6 @@ import type {
   DropdownMenuRadioItemProps,
 } from "radix-vue";
 import { Circle } from "lucide-vue-next";
-import { cn } from "@/lib/utils";
 
 const props = defineProps<
   DropdownMenuRadioItemProps & { class?: HTMLAttributes["class"] }

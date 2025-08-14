@@ -16,12 +16,6 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 import { DateTime, Settings } from "luxon";
-import {
-  isoToHuman,
-  isoToHumanDayOnly,
-  durationBetween,
-  getTodayDate,
-} from "./dateParser";
 
 describe("isoToHuman", () => {
   beforeAll(() => {

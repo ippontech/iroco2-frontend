@@ -22,7 +22,6 @@ import { computed } from "vue";
 import type { HTMLAttributes } from "vue";
 import { Separator } from "radix-vue";
 import type { SeparatorProps } from "radix-vue";
-import { cn } from "@/lib/utils";
 
 const props = defineProps<
   SeparatorProps & { class?: HTMLAttributes["class"] }

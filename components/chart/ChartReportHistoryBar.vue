@@ -29,7 +29,6 @@ import {
   Tooltip,
 } from "chart.js";
 import type { ChartOptions, ChartData } from "chart.js";
-import { isoToHumanDayOnly } from "~/lib/dateParser";
 ChartJS.register(
   CategoryScale,
   LinearScale,

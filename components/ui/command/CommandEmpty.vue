@@ -22,7 +22,6 @@ import { computed } from "vue";
 import type { HTMLAttributes } from "vue";
 import type { ComboboxEmptyProps } from "radix-vue";
 import { ComboboxEmpty } from "radix-vue";
-import { cn } from "@/lib/utils";
 
 const props = defineProps<
   ComboboxEmptyProps & { class?: HTMLAttributes["class"] }
