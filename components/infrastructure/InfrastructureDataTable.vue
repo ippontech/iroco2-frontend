@@ -1,3 +1,4 @@
+<!-- prettier-ignore -->
 /*
  * Copyright 2025 Ippon Technologies
  *
@@ -32,10 +33,9 @@ import {
   TableHead,
   TableRow,
 } from "@/components/ui/table";
-import { ref, type Ref } from "vue";
-import { columns } from "~/components/infrastructures/columns";
-import TableDropDown from "~/components/infrastructures/TableDropDown.vue";
-import DeleteAlert from "~/components/infrastructures/DeleteAlert.vue";
+import { ref } from "vue";
+import type { Ref } from "vue";
+import { columns } from "./columns";
 import type { Infrastructure } from "~/type/infrastructure/Infrastructure";
 
 const expanded = ref<ExpandedState>({});
@@ -117,7 +117,7 @@ const navigateToInfra = (infra: Infrastructure) => {
                 />
               </TableCell>
               <TableCell class="w-16" @click.stop>
-                <TableDropDown
+                <InfrastructureTableDropDown
                   :infrastructure="row.original"
                   @delete-infrastructure="deleteInfrastructure"
                 />
@@ -140,7 +140,7 @@ const navigateToInfra = (infra: Infrastructure) => {
       </TableBody>
     </Table>
 
-    <DeleteAlert
+    <InfrastructureDeleteAlert
       v-model:open="infrastructureDeletionModalOpened"
       :infrastructure="infrastructureToDelete"
       @confirm-infrastructure-deletion="confirmInfrastructureDeletion"

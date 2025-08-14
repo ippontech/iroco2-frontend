@@ -1,3 +1,4 @@
+<!-- prettier-ignore -->
 /*
  * Copyright 2025 Ippon Technologies
  *
@@ -22,13 +23,13 @@
       <section class="grid gap-4">
         <div class="flex items-center justify-between">
           <h2 class="font-title font-bold text-3xl">Mes infrastructures :</h2>
-          <CreateInfrastructure
+          <InfrastructureCreate
             class="ml-auto"
             @infra-created="handleInfraCreated"
           />
         </div>
         <div class="flex flex-col items-end p-8 rounded border bg-white gap-4">
-          <InfrastructuresDataTable :key="tableKey" class="w-full" />
+          <InfrastructureDataTable :key="tableKey" class="w-full" />
         </div>
       </section>
     </div>
@@ -36,8 +37,6 @@
 </template>
 
 <script setup lang="ts">
-import CreateInfrastructure from "~/components/infrastructure/CreateInfrastructure.vue";
-
 definePageMeta({
   middleware: ["auth"],
 });
