@@ -1,3 +1,4 @@
+<!-- prettier-ignore -->
 /*
  * Copyright 2025 Ippon Technologies
  *
@@ -18,7 +19,6 @@
 
 <script setup lang="ts">
 import { Availability } from "~/type/Availability";
-import PackManBackground from "~/components/packman-background/PackManBackground.vue";
 
 definePageMeta({
   layout: "public",
