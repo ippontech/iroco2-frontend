@@ -43,7 +43,7 @@
               <FormMessage />
             </FormItem>
           </FormField>
-          <TokenInput class="mt-5" :token="generatedToken" />
+          <FormTokenInput class="mt-5" :token="generatedToken" />
         </AlertDialogDescription>
         <AlertDialogFooter class="mt-5">
           <Button variant="outline" type="button" @click="closeModal"
@@ -65,7 +65,6 @@ import {
   AlertDialogTitle,
 } from "~/components/ui/alert-dialog";
 import { durationBetween, getTodayDate } from "~/lib/dateParser";
-import TokenInput from "../form/TokenInput.vue";
 import { useForm } from "vee-validate";
 import { toTypedSchema } from "@vee-validate/zod";
 import * as z from "zod";
