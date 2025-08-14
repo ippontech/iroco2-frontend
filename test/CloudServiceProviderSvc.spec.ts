@@ -18,7 +18,7 @@
 import type { $Fetch } from "ofetch";
 import { mockNuxtImport } from "@nuxt/test-utils/runtime";
 import type { Mock } from "vitest";
-import CloudServiceProviderSvc from "./CloudServiceProviderSvc";
+import CloudServiceProviderSvc from "~/service/CloudServiceProviderSvc";
 import type { CloudServiceProvider } from "~/type/infrastructure/CloudServiceProvider";
 import type { CloudServiceProviderService } from "~/type/infrastructure/CloudServiceProviderService";
 

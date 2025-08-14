@@ -17,7 +17,7 @@
  */
 import type { $Fetch } from "ofetch";
 import type { Mock } from "vitest";
-import CatalogService from "./catalogService";
+import CatalogService from "~/service/catalogService";
 import type { ServiceCatalog } from "~/type/ServiceCatalog";
 import { Availability } from "~/type/Availability";
 import type { ServiceDescription } from "~/type/ServiceDescription";
