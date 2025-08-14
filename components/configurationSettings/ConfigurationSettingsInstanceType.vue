@@ -18,7 +18,6 @@
  */
 
 <script setup lang="ts">
-import InstanceSelector from "~/components/select/InstanceSelector.vue";
 import { ref } from "vue";
 import type { Ref } from "vue";
 
