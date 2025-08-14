@@ -1,3 +1,4 @@
+<!-- prettier-ignore -->
 /*
  * Copyright 2025 Ippon Technologies
  *
@@ -17,16 +18,16 @@
  */
 
 <script setup lang="ts">
-import { type HTMLAttributes, computed } from "vue";
+import { computed } from "vue";
+import type { HTMLAttributes } from "vue";
 import {
   DialogClose,
   DialogContent,
-  type DialogContentEmits,
-  type DialogContentProps,
   DialogOverlay,
   DialogPortal,
   useForwardPropsEmits,
 } from "radix-vue";
+import type { DialogContentEmits, DialogContentProps } from "radix-vue";
 import { X } from "lucide-vue-next";
 import { cn } from "@/lib/utils";
 

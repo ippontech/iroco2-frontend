@@ -1,3 +1,4 @@
+<!-- prettier-ignore -->
 /*
  * Copyright 2025 Ippon Technologies
  *
@@ -18,7 +19,8 @@
 
 <script setup lang="ts">
 import type { HTMLAttributes } from "vue";
-import { type BadgeVariants, badgeVariants } from ".";
+import { badgeVariants } from ".";
+import type { BadgeVariants } from ".";
 import { cn } from "@/lib/utils";
 
 const props = defineProps<{

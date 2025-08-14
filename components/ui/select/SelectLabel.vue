@@ -1,3 +1,4 @@
+<!-- prettier-ignore -->
 /*
  * Copyright 2025 Ippon Technologies
  *
@@ -18,7 +19,8 @@
 
 <script setup lang="ts">
 import type { HTMLAttributes } from "vue";
-import { SelectLabel, type SelectLabelProps } from "radix-vue";
+import { SelectLabel } from "radix-vue";
+import type { SelectLabelProps } from "radix-vue";
 import { cn } from "@/lib/utils";
 
 const props = defineProps<

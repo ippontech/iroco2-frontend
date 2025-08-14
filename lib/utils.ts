@@ -15,15 +15,13 @@
  *
  * SPDX-License-Identifier: Apache-2.0
  */
-import { type ClassValue, clsx } from "clsx";
+import { clsx } from "clsx";
+import type { ClassValue } from "clsx";
 import { twMerge } from "tailwind-merge";
 import type { UnitValue } from "~/type/UnitValue";
 
-import {
-  MassUnit,
-  massUnitDetailsMap,
-  type MassUnitDetails,
-} from "~/type/MassUnit";
+import { MassUnit, massUnitDetailsMap } from "~/type/MassUnit";
+import type { MassUnitDetails } from "~/type/MassUnit";
 
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));

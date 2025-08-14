@@ -1,3 +1,4 @@
+<!-- prettier-ignore -->
 /*
  * Copyright 2025 Ippon Technologies
  *
@@ -17,7 +18,8 @@
  */
 
 <script setup lang="ts">
-import { DialogClose, type DialogCloseProps } from "radix-vue";
+import { DialogClose } from "radix-vue";
+import type { DialogCloseProps } from "radix-vue";
 
 const props = defineProps<DialogCloseProps>();
 </script>

@@ -1,3 +1,4 @@
+<!-- prettier-ignore -->
 /*
  * Copyright 2025 Ippon Technologies
  *
@@ -17,15 +18,15 @@
  */
 
 <script setup lang="ts">
-import { type HTMLAttributes, computed } from "vue";
+import { computed } from "vue";
+import type { HTMLAttributes } from "vue";
 import {
   SelectContent,
-  type SelectContentEmits,
-  type SelectContentProps,
   SelectPortal,
   SelectViewport,
   useForwardPropsEmits,
 } from "radix-vue";
+import type { SelectContentEmits, SelectContentProps } from "radix-vue";
 import { SelectScrollDownButton, SelectScrollUpButton } from ".";
 import { cn } from "@/lib/utils";
 

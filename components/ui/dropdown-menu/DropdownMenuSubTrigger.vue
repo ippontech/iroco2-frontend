@@ -1,3 +1,4 @@
+<!-- prettier-ignore -->
 /*
  * Copyright 2025 Ippon Technologies
  *
@@ -17,12 +18,10 @@
  */
 
 <script setup lang="ts">
-import { type HTMLAttributes, computed } from "vue";
-import {
-  DropdownMenuSubTrigger,
-  type DropdownMenuSubTriggerProps,
-  useForwardProps,
-} from "radix-vue";
+import { computed } from "vue";
+import type { HTMLAttributes } from "vue";
+import { DropdownMenuSubTrigger, useForwardProps } from "radix-vue";
+import type { DropdownMenuSubTriggerProps } from "radix-vue";
 import { ChevronRight } from "lucide-vue-next";
 import { cn } from "@/lib/utils";
 
