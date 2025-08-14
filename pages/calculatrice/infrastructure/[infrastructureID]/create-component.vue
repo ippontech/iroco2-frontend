@@ -58,7 +58,7 @@
                   </div>
                 </label>
               </div>
-              <RegionSelector
+              <RecapRegionSelector
                 :class="!isOtherRegion ? 'opacity-25 pointer-events-none' : ''"
                 :default-selected-region="currentRegion"
                 @update:region="handleRegionChange"
@@ -89,7 +89,6 @@
 <script setup lang="ts">
 import type { ServiceConfigurationSetting } from "~/type/infrastructure/ServiceConfigurationSetting";
 import { ref } from "vue";
-import RegionSelector from "~/components/recap/RegionSelector.vue";
 import type { Region } from "~/type/Region";
 import type { ConfiguredValue } from "~/type/infrastructure/ConfiguredValue";
 import type { LocationQuery } from "#vue-router";

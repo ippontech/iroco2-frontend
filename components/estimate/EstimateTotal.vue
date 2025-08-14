@@ -30,7 +30,10 @@
 
     <div>Ou encore :</div>
     <div class="flex flex-col gap-8">
-      <ScoreBar :carbon-foot-print="total.noUnitValue" :unit="total.unit" />
+      <RecapScoreBar
+        :carbon-foot-print="total.noUnitValue"
+        :unit="total.unit"
+      />
 
       <span class="flex justify-end font-light italic text-sm">
         * équivalent obtenus grâce aux données du&nbsp;
@@ -48,7 +51,6 @@
 
 <script setup lang="ts">
 import type { UnitValue } from "~/type/UnitValue";
-import ScoreBar from "~/components/recap/ScoreBar.vue";
 
 const { total } = defineProps<{ total: UnitValue }>();
 </script>

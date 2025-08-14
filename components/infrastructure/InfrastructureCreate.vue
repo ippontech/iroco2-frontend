@@ -57,7 +57,7 @@
           <FormItem>
             <FormLabel>Région par défaut de l'infrastructure</FormLabel>
             <FormControl>
-              <RegionSelector
+              <RecapRegionSelector
                 @update:region="(newRegion: Region) => setValue(newRegion)"
               />
             </FormControl>
@@ -85,7 +85,6 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "~/components/ui/dialog";
-import RegionSelector from "~/components/recap/RegionSelector.vue";
 import type { Button } from "~/components/ui/button";
 import { RegionSchema } from "~/type/Region";
 import type { Region } from "~/type/Region";
