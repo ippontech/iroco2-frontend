@@ -17,7 +17,7 @@
  */
 
 <template>
-  <Selector
+  <RecapSelector
     placeholder="instance"
     :values="props.instanceTypes"
     :default-selected-value="selectedInstance"
@@ -26,8 +26,6 @@
 </template>
 
 <script setup lang="ts">
-import Selector from "~/components/recap/Selector.vue";
-
 const emits = defineEmits(["update:instance"]);
 
 const props = defineProps<{

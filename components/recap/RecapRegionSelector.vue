@@ -1,3 +1,4 @@
+<!-- prettier-ignore -->
 /*
  * Copyright 2025 Ippon Technologies
  *
@@ -17,7 +18,7 @@
  */
 
 <template>
-  <Selector
+  <RecapSelector
     placeholder="region"
     :values="regions.map((region) => region.name)"
     :default-selected-value="(selectedRegion as Region)?.name"
@@ -26,9 +27,9 @@
 </template>
 
 <script setup lang="ts">
-import { type Ref, ref } from "vue";
+import { ref } from "vue";
+import type { Ref } from "vue";
 import type { Region } from "~/type/Region";
-import Selector from "~/components/recap/Selector.vue";
 
 const { $api } = useNuxtApp();
 
