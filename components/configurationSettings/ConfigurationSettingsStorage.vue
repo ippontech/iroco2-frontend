@@ -1,3 +1,4 @@
+<!-- prettier-ignore -->
 /*
  * Copyright 2025 Ippon Technologies
  *
@@ -17,35 +18,27 @@
  */
 
 <script setup lang="ts">
-import { CpuArchitectureTypeEnum } from "~/enum/CpuArchitectureType";
+import { Input } from "~/components/ui/input";
+import { multiplyToString } from "./mappers";
 
-const cpuArchitectureType = Object.values(CpuArchitectureTypeEnum).map(
-  (value) => ({
-    label: value,
-  }),
-);
+const GB_IN_MB = 1024;
 
-const model = defineModel<string>();
+const model = defineModel<string>({ required: true });
+
+const storage = ref(multiplyToString(model.value, 1 / GB_IN_MB));
+
+const handleValueChange = () => {
+  model.value = multiplyToString(storage.value, GB_IN_MB);
+};
 </script>
 
 <template>
   <div class="flex flex-col gap-2">
-    <div class="">Architecture processeur :</div>
-    <Select v-model="model">
-      <SelectTrigger>
-        <SelectValue :placeholder="model" />
-      </SelectTrigger>
-      <SelectContent>
-        <SelectGroup>
-          <SelectItem
-            v-for="archi in cpuArchitectureType"
-            :key="archi.label"
-            :value="archi.label"
-          >
-            {{ archi.label }}
-          </SelectItem>
-        </SelectGroup>
-      </SelectContent>
-    </Select>
+    <span>Stockage :</span>
+    <Input
+      v-model="storage"
+      unit="Go"
+      @update:model-value="handleValueChange"
+    />
   </div>
 </template>

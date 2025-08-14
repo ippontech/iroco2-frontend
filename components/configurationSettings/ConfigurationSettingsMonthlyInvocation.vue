@@ -1,3 +1,4 @@
+<!-- prettier-ignore -->
 /*
  * Copyright 2025 Ippon Technologies
  *
@@ -24,7 +25,7 @@ const model = defineModel<string>({ required: true });
 
 <template>
   <div class="flex flex-col gap-2">
-    <span>Mémoire allouée :</span>
-    <Input v-model="model" unit="Mo" />
+    <span>Nombre d'exécutions par mois :</span>
+    <Input v-model="model" />
   </div>
 </template>

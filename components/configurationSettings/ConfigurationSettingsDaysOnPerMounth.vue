@@ -1,3 +1,4 @@
+<!-- prettier-ignore -->
 /*
  * Copyright 2025 Ippon Technologies
  *
@@ -17,31 +18,22 @@
  */
 
 <script setup lang="ts">
-import InstanceSelector from "~/components/select/InstanceSelector.vue";
-import { ref, type Ref } from "vue";
-
-const { $api } = useNuxtApp();
-
-const instanceTypes: Ref<string[]> = ref([]);
-const isInstanceEmpty = ref(false);
-
-$api.instanceType.getAllInstanceByType("EC2").then((responses) => {
-  instanceTypes.value = responses.map((response) => response.name);
-});
-
 const model = defineModel<string>({ required: true });
+
+const updateValue = (newValue: number) => {
+  model.value = newValue.toString();
+};
 </script>
 
 <template>
-  <div class="flex flex-col gap-2">
-    <div class="">Type d'instance :</div>
-    <span v-if="isInstanceEmpty" class="text-red-500 text-sm font-bold"
-      >Veuillez sélectionner une instance</span
-    >
-    <InstanceSelector
-      v-model="model"
-      :instance-types="instanceTypes"
-      :class="{ 'border border-red-500': isInstanceEmpty }"
-    />
-  </div>
+  <SliderNumber
+    label="Nombre de jours par mois"
+    class="w-full"
+    :default-value="Number(model)"
+    :step="1"
+    unit="jours"
+    :min="0"
+    :step-values="Array.from({ length: 32 }, (_, i) => i)"
+    @update:selected-value="updateValue"
+  />
 </template>
