@@ -1,3 +1,4 @@
+<!-- prettier-ignore -->
 /*
  * Copyright 2025 Ippon Technologies
  *
@@ -17,7 +18,8 @@
  */
 
 <script setup lang="ts">
-import { type HTMLAttributes, computed } from "vue";
+import { computed } from "vue";
+import type { HTMLAttributes } from "vue";
 import type { ComboboxGroupProps } from "radix-vue";
 import { ComboboxGroup, ComboboxLabel } from "radix-vue";
 import { cn } from "@/lib/utils";

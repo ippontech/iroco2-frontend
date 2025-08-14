@@ -1,3 +1,4 @@
+<!-- prettier-ignore -->
 /*
  * Copyright 2025 Ippon Technologies
  *
@@ -17,7 +18,8 @@
  */
 
 <script setup lang="ts">
-import { DropdownMenuGroup, type DropdownMenuGroupProps } from "radix-vue";
+import { DropdownMenuGroup } from "radix-vue";
+import type { DropdownMenuGroupProps } from "radix-vue";
 
 const props = defineProps<DropdownMenuGroupProps>();
 </script>

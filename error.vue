@@ -1,3 +1,4 @@
+<!-- prettier-ignore -->
 /*
  * Copyright 2025 Ippon Technologies
  *
@@ -19,7 +20,7 @@
 <script setup lang="ts">
 import type { NuxtError } from "#app";
 
-const props = defineProps({
+const { error = null } = defineProps({
   error: Object as () => NuxtError,
 });
 const { $router } = useNuxtApp();
@@ -37,11 +38,11 @@ definePageMeta({
       <img src="~/assets/static/error-logo-1.png" alt="Logo" />
       <p class="mt-4 text-3xl sm:text-4xl md:text-5xl font-bold">Ooops !</p>
       <p class="mt-4 text-xs sm:text-sm md:text-base">
-        <span v-if="!props.error?.data" class="font-bold">{{
-          props.error?.statusCode
+        <span v-if="!error?.data" class="font-bold">{{
+          error?.statusCode
         }}</span>
-        <span v-if="!props.error?.data"> - </span>
-        {{ props.error?.message }}
+        <span v-if="!error?.data"> - </span>
+        {{ error?.message }}
       </p>
       <Button variant="black" class="mt-12" @click="redirectToRoot()"
         >Retourner sur Iroco<sub class="text-xs">2</sub></Button

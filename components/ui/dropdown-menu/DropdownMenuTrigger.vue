@@ -1,3 +1,4 @@
+<!-- prettier-ignore -->
 /*
  * Copyright 2025 Ippon Technologies
  *
@@ -17,11 +18,8 @@
  */
 
 <script setup lang="ts">
-import {
-  DropdownMenuTrigger,
-  type DropdownMenuTriggerProps,
-  useForwardProps,
-} from "radix-vue";
+import { DropdownMenuTrigger, useForwardProps } from "radix-vue";
+import type { DropdownMenuTriggerProps } from "radix-vue";
 
 const props = defineProps<DropdownMenuTriggerProps>();
 

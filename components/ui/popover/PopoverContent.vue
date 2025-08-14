@@ -1,3 +1,4 @@
+<!-- prettier-ignore -->
 /*
  * Copyright 2025 Ippon Technologies
  *
@@ -17,14 +18,10 @@
  */
 
 <script setup lang="ts">
-import { type HTMLAttributes, computed } from "vue";
-import {
-  PopoverContent,
-  type PopoverContentEmits,
-  type PopoverContentProps,
-  PopoverPortal,
-  useForwardPropsEmits,
-} from "radix-vue";
+import { computed } from "vue";
+import type { HTMLAttributes } from "vue";
+import { PopoverContent, PopoverPortal, useForwardPropsEmits } from "radix-vue";
+import type { PopoverContentEmits, PopoverContentProps } from "radix-vue";
 import { cn } from "@/lib/utils";
 
 defineOptions({

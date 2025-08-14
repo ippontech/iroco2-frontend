@@ -1,3 +1,4 @@
+<!-- prettier-ignore -->
 /*
  * Copyright 2025 Ippon Technologies
  *
@@ -19,7 +20,8 @@
 <script lang="ts" setup>
 import type { DrawerTitleProps } from "vaul-vue";
 import { DrawerTitle } from "vaul-vue";
-import { type HtmlHTMLAttributes, computed } from "vue";
+import { computed } from "vue";
+import type { HtmlHTMLAttributes } from "vue";
 import { cn } from "@/lib/utils";
 
 const props = defineProps<

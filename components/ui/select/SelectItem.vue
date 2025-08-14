@@ -1,3 +1,4 @@
+<!-- prettier-ignore -->
 /*
  * Copyright 2025 Ippon Technologies
  *
@@ -17,14 +18,15 @@
  */
 
 <script setup lang="ts">
-import { type HTMLAttributes, computed } from "vue";
+import { computed } from "vue";
+import type { HTMLAttributes } from "vue";
 import {
   SelectItem,
   SelectItemIndicator,
-  type SelectItemProps,
   SelectItemText,
   useForwardProps,
 } from "radix-vue";
+import type { SelectItemProps } from "radix-vue";
 import { Check } from "lucide-vue-next";
 import { cn } from "@/lib/utils";
 
