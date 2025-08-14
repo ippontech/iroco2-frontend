@@ -17,7 +17,7 @@
  */
 import type { $Fetch } from "ofetch";
 import type { Mock } from "vitest";
-import IrocalcCarbonService from "./carbonService";
+import IrocalcCarbonService from "~/service/carbonService";
 
 describe("CarbonService", () => {
   let carbonService: IrocalcCarbonService;

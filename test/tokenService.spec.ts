@@ -16,7 +16,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 import type { Mock } from "vitest";
-import TokenService from "./tokenService";
+import TokenService from "~/service/tokenService";
 import type { $Fetch } from "ofetch";
 import type { GetTokenRequest } from "~/type/GetTokenRequest";
 

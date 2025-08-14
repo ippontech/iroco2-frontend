@@ -17,7 +17,7 @@
  */
 import type { $Fetch } from "ofetch";
 import type { Mock } from "vitest";
-import AWSInstanceService from "./awsInstanceService";
+import AWSInstanceService from "~/service/awsInstanceService";
 import type { EC2InstanceType } from "~/type/ec2InstanceType";
 
 describe("AWSInstanceService", () => {

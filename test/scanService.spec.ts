@@ -16,7 +16,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 import type { Mock } from "vitest";
-import ScanService from "./scanService";
+import ScanService from "~/service/scanService";
 import type { $Fetch } from "ofetch";
 import type { ReportStatus } from "~/type/ReportStatus";
 
