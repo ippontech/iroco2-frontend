@@ -28,7 +28,6 @@ import {
 } from "radix-vue";
 import type { SelectContentEmits, SelectContentProps } from "radix-vue";
 import { SelectScrollDownButton, SelectScrollUpButton } from ".";
-import { cn } from "@/lib/utils";
 
 defineOptions({
   inheritAttrs: false,

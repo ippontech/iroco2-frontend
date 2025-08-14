@@ -17,10 +17,6 @@
  */
 import HttpFactory from "~/service/factory/httpFactory";
 import type { CarbonFootprintEstimateComponent } from "~/type/CarbonFootprintEstimateComponent";
-import {
-  aggregateCarbonFootPrint,
-  convertEstimateToBestMassUnit,
-} from "~/lib/utils";
 import type { RegionCarbonFootprint } from "~/type/RegionCarbonFootprint";
 
 class IrocalcCarbonService extends HttpFactory {

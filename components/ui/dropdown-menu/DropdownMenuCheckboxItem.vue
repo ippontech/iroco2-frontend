@@ -30,7 +30,6 @@ import type {
   DropdownMenuCheckboxItemProps,
 } from "radix-vue";
 import { Check } from "lucide-vue-next";
-import { cn } from "@/lib/utils";
 
 const props = defineProps<
   DropdownMenuCheckboxItemProps & { class?: HTMLAttributes["class"] }

@@ -29,7 +29,6 @@
 import { Doughnut } from "vue-chartjs";
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
 import type { ChartOptions, ChartData } from "chart.js";
-import type { RelativeCarbonFootprint } from "~/lib/utils";
 
 ChartJS.register(ArcElement, Tooltip, Legend);
 const colorsPalette = [

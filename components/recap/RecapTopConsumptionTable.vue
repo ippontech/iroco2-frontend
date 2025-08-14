@@ -43,8 +43,6 @@
 </template>
 
 <script setup lang="ts">
-import type { RelativeCarbonFootprint } from "~/lib/utils";
-
 type Props = {
   relativeCarbonFootprintList: Array<RelativeCarbonFootprint>;
 };

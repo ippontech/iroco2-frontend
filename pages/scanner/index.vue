@@ -64,7 +64,6 @@
 </template>
 
 <script setup lang="ts">
-import { isoToHuman } from "~/lib/dateParser";
 definePageMeta({
   middleware: ["auth"],
 });

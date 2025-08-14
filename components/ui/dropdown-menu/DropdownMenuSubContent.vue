@@ -25,7 +25,6 @@ import type {
   DropdownMenuSubContentEmits,
   DropdownMenuSubContentProps,
 } from "radix-vue";
-import { cn } from "@/lib/utils";
 
 const props = defineProps<
   DropdownMenuSubContentProps & { class?: HTMLAttributes["class"] }

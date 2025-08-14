@@ -21,7 +21,6 @@
 import type { HTMLAttributes } from "vue";
 import { badgeVariants } from ".";
 import type { BadgeVariants } from ".";
-import { cn } from "@/lib/utils";
 
 const props = defineProps<{
   variant?: BadgeVariants["variant"];

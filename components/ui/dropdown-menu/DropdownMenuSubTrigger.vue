@@ -23,7 +23,6 @@ import type { HTMLAttributes } from "vue";
 import { DropdownMenuSubTrigger, useForwardProps } from "radix-vue";
 import type { DropdownMenuSubTriggerProps } from "radix-vue";
 import { ChevronRight } from "lucide-vue-next";
-import { cn } from "@/lib/utils";
 
 const props = defineProps<
   DropdownMenuSubTriggerProps & { class?: HTMLAttributes["class"] }

@@ -23,7 +23,6 @@ import { Primitive } from "radix-vue";
 import type { PrimitiveProps } from "radix-vue";
 import { buttonVariants } from ".";
 import type { ButtonVariants } from ".";
-import { cn } from "@/lib/utils";
 
 interface Props extends PrimitiveProps {
   variant?: ButtonVariants["variant"];

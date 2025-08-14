@@ -15,11 +15,6 @@
  *
  * SPDX-License-Identifier: Apache-2.0
  */
-import {
-  aggregateCarbonFootPrint,
-  cn,
-  convertEstimateToBestMassUnit,
-} from "./utils";
 
 describe("cn", () => {
   it.each([

@@ -29,7 +29,6 @@
 </template>
 
 <script setup lang="ts">
-import type { RelativeCarbonFootprint } from "~/lib/utils";
 const { relativeCarbonFootprintList } = defineProps<{
   relativeCarbonFootprintList: RelativeCarbonFootprint[];
 }>();

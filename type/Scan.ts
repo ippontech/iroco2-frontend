@@ -15,7 +15,7 @@
  *
  * SPDX-License-Identifier: Apache-2.0
  */
-import type { RelativeCarbonFootprint } from "~/lib/utils";
+
 import type { ReportStatus } from "./ReportStatus";
 import type { UnitValue } from "./UnitValue";
 import type { Payload } from "./Payload";

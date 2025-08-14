@@ -22,7 +22,6 @@ import type { DrawerTitleProps } from "vaul-vue";
 import { DrawerTitle } from "vaul-vue";
 import { computed } from "vue";
 import type { HtmlHTMLAttributes } from "vue";
-import { cn } from "@/lib/utils";
 
 const props = defineProps<
   DrawerTitleProps & { class?: HtmlHTMLAttributes["class"] }

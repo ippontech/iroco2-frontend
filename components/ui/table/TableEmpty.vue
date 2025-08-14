@@ -22,7 +22,6 @@ import { computed } from "vue";
 import type { HTMLAttributes } from "vue";
 import TableRow from "./TableRow.vue";
 import TableCell from "./TableCell.vue";
-import { cn } from "@/lib/utils";
 
 const props = withDefaults(
   defineProps<{

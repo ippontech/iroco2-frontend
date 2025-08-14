@@ -106,7 +106,6 @@
 </template>
 
 <script setup lang="ts">
-import { isoToHuman } from "~/lib/dateParser";
 import { buttonVariants } from "~/components/ui/button";
 
 definePageMeta({
