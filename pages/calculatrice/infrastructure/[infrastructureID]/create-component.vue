@@ -28,7 +28,7 @@
                 name="i-heroicons-pencil"
                 class="opacity-50 group-hover:opacity-100 size-5 self-end"
               />
-              <EditableLine
+              <FormEditableLine
                 class="font-bold text-lg"
                 :title="componentName"
                 @update:title="handleComponentNameChange"
@@ -88,7 +88,6 @@
 
 <script setup lang="ts">
 import type { ServiceConfigurationSetting } from "~/type/infrastructure/ServiceConfigurationSetting";
-import EditableLine from "~/components/form/EditableLine.vue";
 import { ref } from "vue";
 import RegionSelector from "~/components/recap/RegionSelector.vue";
 import type { Region } from "~/type/Region";
