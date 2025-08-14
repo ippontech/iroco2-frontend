@@ -1,3 +1,4 @@
+<!-- prettier-ignore -->
 /*
  * Copyright 2025 Ippon Technologies
  *
@@ -20,7 +21,7 @@
   <main class="flex">
     <SidebarMenu class="w-72">
       <template v-if="isInfrastructureRoute">
-        <InfrastructuresSidebarMenu />
+        <InfrastructureSidebarMenu />
       </template>
     </SidebarMenu>
 

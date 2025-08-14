@@ -1,3 +1,4 @@
+<!-- prettier-ignore -->
 /*
  * Copyright 2025 Ippon Technologies
  *
@@ -86,7 +87,8 @@ import {
 } from "~/components/ui/dialog";
 import RegionSelector from "~/components/recap/RegionSelector.vue";
 import type { Button } from "~/components/ui/button";
-import { type Region, RegionSchema } from "~/type/Region";
+import { RegionSchema } from "~/type/Region";
+import type { Region } from "~/type/Region";
 import { Input } from "~/components/ui/input";
 import { toTypedSchema } from "@vee-validate/zod";
 import * as z from "zod";
