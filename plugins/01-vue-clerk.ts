@@ -18,7 +18,7 @@
 import { clerkPlugin } from "vue-clerk";
 
 export default defineNuxtPlugin(async (nuxtApp) => {
-  const { publishableKey } = useRuntimeConfig().public;
+  const publishableKey = useRuntimeConfig().public.publishableKey;
 
   const options = {
     publishableKey,
