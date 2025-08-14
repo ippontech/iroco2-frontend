@@ -18,8 +18,6 @@
  */
 
 <script setup lang="ts">
-import { CpuArchitectureTypeEnum } from "~/enum/CpuArchitectureType";
-
 const cpuArchitectureType = Object.values(CpuArchitectureTypeEnum).map(
   (value) => ({
     label: value,
