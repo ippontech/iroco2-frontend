@@ -18,7 +18,7 @@
 import type { $Fetch } from "ofetch";
 import ComponentService from "./componentService";
 import HttpFactory from "./factory/httpFactory";
-import { type Region } from "~/type/Region";
+import type { Region } from "~/type/Region";
 import InfrastructureService from "~/service/infrastructureService";
 
 class AWSDataCenterService extends HttpFactory {

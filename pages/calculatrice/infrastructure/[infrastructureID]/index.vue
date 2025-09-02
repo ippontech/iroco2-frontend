@@ -1,3 +1,4 @@
+<!-- prettier-ignore -->
 /*
  * Copyright 2025 Ippon Technologies
  *
@@ -98,7 +99,6 @@
 </template>
 
 <script setup lang="ts">
-import { isoToHuman } from "~/lib/dateParser";
 import { buttonVariants } from "~/components/ui/button";
 import type { Component } from "~/type/infrastructure/Component";
 

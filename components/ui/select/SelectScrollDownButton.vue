@@ -1,3 +1,4 @@
+<!-- prettier-ignore -->
 /*
  * Copyright 2025 Ippon Technologies
  *
@@ -17,14 +18,11 @@
  */
 
 <script setup lang="ts">
-import { type HTMLAttributes, computed } from "vue";
-import {
-  SelectScrollDownButton,
-  type SelectScrollDownButtonProps,
-  useForwardProps,
-} from "radix-vue";
+import { computed } from "vue";
+import type { HTMLAttributes } from "vue";
+import { SelectScrollDownButton, useForwardProps } from "radix-vue";
+import type { SelectScrollDownButtonProps } from "radix-vue";
 import { ChevronDown } from "lucide-vue-next";
-import { cn } from "@/lib/utils";
 
 const props = defineProps<
   SelectScrollDownButtonProps & { class?: HTMLAttributes["class"] }

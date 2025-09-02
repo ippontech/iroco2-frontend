@@ -1,3 +1,4 @@
+<!-- prettier-ignore -->
 /*
  * Copyright 2025 Ippon Technologies
  *
@@ -19,8 +20,8 @@
 <script lang="ts" setup>
 import { DrawerOverlay } from "vaul-vue";
 import type { DialogOverlayProps } from "radix-vue";
-import { type HtmlHTMLAttributes, computed } from "vue";
-import { cn } from "@/lib/utils";
+import { computed } from "vue";
+import type { HtmlHTMLAttributes } from "vue";
 
 const props = defineProps<
   DialogOverlayProps & { class?: HtmlHTMLAttributes["class"] }

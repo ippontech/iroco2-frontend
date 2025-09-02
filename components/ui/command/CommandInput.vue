@@ -1,3 +1,4 @@
+<!-- prettier-ignore -->
 /*
  * Copyright 2025 Ippon Technologies
  *
@@ -17,14 +18,11 @@
  */
 
 <script setup lang="ts">
-import { type HTMLAttributes, computed } from "vue";
+import { computed } from "vue";
+import type { HTMLAttributes } from "vue";
 import { Search } from "lucide-vue-next";
-import {
-  ComboboxInput,
-  type ComboboxInputProps,
-  useForwardProps,
-} from "radix-vue";
-import { cn } from "@/lib/utils";
+import { ComboboxInput, useForwardProps } from "radix-vue";
+import type { ComboboxInputProps } from "radix-vue";
 
 defineOptions({
   inheritAttrs: false,

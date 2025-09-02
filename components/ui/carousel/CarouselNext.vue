@@ -1,3 +1,4 @@
+<!-- prettier-ignore -->
 /*
  * Copyright 2025 Ippon Technologies
  *
@@ -20,7 +21,6 @@
 import { ArrowRight } from "lucide-vue-next";
 import { useCarousel } from "./useCarousel";
 import type { WithClassAsProps } from "./interface";
-import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 
 const props = defineProps<WithClassAsProps>();

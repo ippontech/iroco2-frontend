@@ -1,3 +1,4 @@
+<!-- prettier-ignore -->
 /*
  * Copyright 2025 Ippon Technologies
  *
@@ -17,9 +18,10 @@
  */
 
 <script setup lang="ts">
-import { type HTMLAttributes, computed } from "vue";
-import { AlertDialogCancel, type AlertDialogCancelProps } from "radix-vue";
-import { cn } from "@/lib/utils";
+import { computed } from "vue";
+import type { HTMLAttributes } from "vue";
+import { AlertDialogCancel } from "radix-vue";
+import type { AlertDialogCancelProps } from "radix-vue";
 import { buttonVariants } from "@/components/ui/button";
 
 const props = defineProps<

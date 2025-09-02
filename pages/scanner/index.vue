@@ -1,3 +1,4 @@
+<!-- prettier-ignore -->
 /*
  * Copyright 2025 Ippon Technologies
  *
@@ -18,10 +19,10 @@
 
 <template>
   <div class="container flex flex-col gap-8">
-    <CardCustomCard>
+    <CardCustom>
       <ChartReportHistoryBar class="pb-10" :reports="scansForChart" />
-    </CardCustomCard>
-    <CardCustomCard>
+    </CardCustom>
+    <CardCustom>
       <div class="flex justify-between pb-8">
         <h1 class="text-2xl font-bold">Vos scans :</h1>
         <Button
@@ -58,12 +59,11 @@
           </TableRow>
         </TableBody>
       </Table>
-    </CardCustomCard>
+    </CardCustom>
   </div>
 </template>
 
 <script setup lang="ts">
-import { isoToHuman } from "~/lib/dateParser";
 definePageMeta({
   middleware: ["auth"],
 });

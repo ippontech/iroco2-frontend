@@ -1,3 +1,4 @@
+<!-- prettier-ignore -->
 /*
  * Copyright 2025 Ippon Technologies
  *
@@ -17,13 +18,10 @@
  */
 
 <script setup lang="ts">
-import { type HTMLAttributes, computed } from "vue";
-import {
-  DropdownMenuItem,
-  type DropdownMenuItemProps,
-  useForwardProps,
-} from "radix-vue";
-import { cn } from "@/lib/utils";
+import { computed } from "vue";
+import type { HTMLAttributes } from "vue";
+import { DropdownMenuItem, useForwardProps } from "radix-vue";
+import type { DropdownMenuItemProps } from "radix-vue";
 
 const props = defineProps<
   DropdownMenuItemProps & { class?: HTMLAttributes["class"]; inset?: boolean }

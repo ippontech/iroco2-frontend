@@ -17,10 +17,6 @@
  */
 import HttpFactory from "./factory/httpFactory";
 import type { EstimatedScan, Scan, ScanDetails } from "~/type/Scan";
-import {
-  aggregateCarbonFootPrint,
-  convertEstimateToBestMassUnit,
-} from "~/lib/utils";
 
 class ScanService extends HttpFactory {
   private RESOURCE = "/api/scanner";

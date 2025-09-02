@@ -1,3 +1,4 @@
+<!-- prettier-ignore -->
 /*
  * Copyright 2025 Ippon Technologies
  *
@@ -17,7 +18,8 @@
  */
 
 <script setup lang="ts">
-import { DialogTrigger, type DialogTriggerProps } from "radix-vue";
+import { DialogTrigger } from "radix-vue";
+import type { DialogTriggerProps } from "radix-vue";
 
 const props = defineProps<DialogTriggerProps>();
 </script>

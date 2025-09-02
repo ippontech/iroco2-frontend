@@ -1,3 +1,4 @@
+<!-- prettier-ignore -->
 /*
  * Copyright 2025 Ippon Technologies
  *
@@ -23,7 +24,6 @@ import type {
   CarouselProps,
   WithClassAsProps,
 } from "./interface";
-import { cn } from "@/lib/utils";
 
 const props = withDefaults(defineProps<CarouselProps & WithClassAsProps>(), {
   orientation: "horizontal",

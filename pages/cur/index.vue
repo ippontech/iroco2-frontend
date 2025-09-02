@@ -1,3 +1,4 @@
+<!-- prettier-ignore -->
 /*
  * Copyright 2025 Ippon Technologies
  *
@@ -18,10 +19,10 @@
 
 <template>
   <div class="container flex flex-col gap-8">
-    <CardCustomCard>
+    <CardCustom>
       <ChartReportHistoryBar class="pb-10" :reports="analysesForChart" />
-    </CardCustomCard>
-    <CardCustomCard>
+    </CardCustom>
+    <CardCustom>
       <div class="flex justify-between pb-8">
         <h1 class="text-2xl font-bold">Vos analyses :</h1>
         <div class="flex gap-4">
@@ -71,8 +72,8 @@
           </TableRow>
         </TableBody>
       </Table>
-    </CardCustomCard>
-    <AddAnalysisAlert
+    </CardCustom>
+    <AlertAddAnalysis
       v-model="addAnalysisModalOpened"
       @update:analyses="refresh"
     />
@@ -105,8 +106,6 @@
 </template>
 
 <script setup lang="ts">
-import { isoToHuman } from "~/lib/dateParser";
-import AddAnalysisAlert from "~/components/alert/AddAnalysisAlert.vue";
 import { buttonVariants } from "~/components/ui/button";
 
 definePageMeta({

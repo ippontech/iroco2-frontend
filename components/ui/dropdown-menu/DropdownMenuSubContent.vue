@@ -1,3 +1,4 @@
+<!-- prettier-ignore -->
 /*
  * Copyright 2025 Ippon Technologies
  *
@@ -17,14 +18,13 @@
  */
 
 <script setup lang="ts">
-import { type HTMLAttributes, computed } from "vue";
-import {
-  DropdownMenuSubContent,
-  type DropdownMenuSubContentEmits,
-  type DropdownMenuSubContentProps,
-  useForwardPropsEmits,
+import { computed } from "vue";
+import type { HTMLAttributes } from "vue";
+import { DropdownMenuSubContent, useForwardPropsEmits } from "radix-vue";
+import type {
+  DropdownMenuSubContentEmits,
+  DropdownMenuSubContentProps,
 } from "radix-vue";
-import { cn } from "@/lib/utils";
 
 const props = defineProps<
   DropdownMenuSubContentProps & { class?: HTMLAttributes["class"] }

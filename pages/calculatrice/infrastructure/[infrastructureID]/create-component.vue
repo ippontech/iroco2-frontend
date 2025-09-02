@@ -1,3 +1,4 @@
+<!-- prettier-ignore -->
 /*
  * Copyright 2025 Ippon Technologies
  *
@@ -27,7 +28,7 @@
                 name="i-heroicons-pencil"
                 class="opacity-50 group-hover:opacity-100 size-5 self-end"
               />
-              <EditableLine
+              <FormEditableLine
                 class="font-bold text-lg"
                 :title="componentName"
                 @update:title="handleComponentNameChange"
@@ -41,7 +42,7 @@
                 :key="index"
                 class="pt-2"
               >
-                <ConfigurationSetting
+                <ConfigurationSettingsConfigurationSetting
                   v-model="configuredValues[index]"
                   :setting="setting"
                 />
@@ -57,7 +58,7 @@
                   </div>
                 </label>
               </div>
-              <RegionSelector
+              <RecapRegionSelector
                 :class="!isOtherRegion ? 'opacity-25 pointer-events-none' : ''"
                 :default-selected-region="currentRegion"
                 @update:region="handleRegionChange"
@@ -87,10 +88,7 @@
 
 <script setup lang="ts">
 import type { ServiceConfigurationSetting } from "~/type/infrastructure/ServiceConfigurationSetting";
-import EditableLine from "~/components/form/EditableLine.vue";
 import { ref } from "vue";
-import ConfigurationSetting from "~/components/configurationSettings/ConfigurationSetting.vue";
-import RegionSelector from "~/components/recap/RegionSelector.vue";
 import type { Region } from "~/type/Region";
 import type { ConfiguredValue } from "~/type/infrastructure/ConfiguredValue";
 import type { LocationQuery } from "#vue-router";

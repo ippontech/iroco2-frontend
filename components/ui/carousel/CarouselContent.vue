@@ -1,3 +1,4 @@
+<!-- prettier-ignore -->
 /*
  * Copyright 2025 Ippon Technologies
  *
@@ -19,7 +20,6 @@
 <script setup lang="ts">
 import { useCarousel } from "./useCarousel";
 import type { WithClassAsProps } from "./interface";
-import { cn } from "@/lib/utils";
 
 defineOptions({
   inheritAttrs: false,

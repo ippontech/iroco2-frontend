@@ -1,3 +1,4 @@
+<!-- prettier-ignore -->
 /*
  * Copyright 2025 Ippon Technologies
  *
@@ -26,22 +27,19 @@
       :relative-carbon-footprint-list="results.relativeCarbonFootprintList"
     />
 
-    <CustomCard>
+    <CardCustom>
       <div class="font-bold mt-5 ml-5">Quelques axes d'amélioration :</div>
       <ComparativeByRegion
         ref="comparativeComponentRef"
         :infrastructure-id="infrastructureId"
         :total-c-o2-gr="results.totalCO2Gr"
       />
-    </CustomCard>
+    </CardCustom>
   </div>
 </template>
 
 <script setup lang="ts">
 import type { Infrastructure } from "~/type/infrastructure/Infrastructure";
-
-import CustomCard from "~/components/card/CustomCard.vue";
-import ComparativeByRegion from "~/components/comparative/ComparativeByRegion.vue";
 const { $api } = useNuxtApp();
 const route = useRoute();
 const infrastructure: Ref<Infrastructure | undefined> = ref();
