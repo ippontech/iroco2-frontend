@@ -38,5 +38,4 @@ const curId = params.curId as string;
 
 const { $api } = useNuxtApp();
 const analysis = ref(await $api.analysisService.getAnalysisById(curId));
-console.log(analysis.value);
 </script>

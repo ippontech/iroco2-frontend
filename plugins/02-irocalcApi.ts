@@ -52,7 +52,6 @@ interface IApiInstance {
 export default defineNuxtPlugin({
   async setup() {
     const config = useRuntimeConfig();
-    console.log("authActivate = ", config.public.authActivate);
     const { getToken } =
       config.public.authActivate == "false"
         ? {
