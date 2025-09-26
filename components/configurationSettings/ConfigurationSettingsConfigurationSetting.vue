@@ -33,34 +33,42 @@ const model = defineModel<ConfiguredValue>({ required: true });
   <div v-if="setting.configurationSetting.name === 'INSTANCE_NUMBER'">
     <ConfigurationSettingsInstanceNumber v-model="model.value" />
   </div>
-  <div v-if="setting.configurationSetting.name === 'INSTANCE_TYPE'">
+  <div v-else-if="setting.configurationSetting.name === 'INSTANCE_TYPE'">
     <ConfigurationSettingsInstanceType v-model="model.value" />
   </div>
-  <div v-if="setting.configurationSetting.name === 'STORAGE_IN_MEGA_BYTE'">
+  <div v-else-if="setting.configurationSetting.name === 'STORAGE_IN_MEGA_BYTE'">
     <ConfigurationSettingsStorage v-model="model.value" />
   </div>
-  <div v-if="setting.configurationSetting.name === 'DAILY_RUNNING_TIME_IN_MS'">
+  <div
+    v-else-if="setting.configurationSetting.name === 'DAILY_RUNNING_TIME_IN_MS'"
+  >
     <ConfigurationSettingsDailyRunningTime v-model="model.value" />
   </div>
-  <div v-if="setting.configurationSetting.name === 'DAILY_USAGE_COUNT'">
+  <div v-else-if="setting.configurationSetting.name === 'DAILY_USAGE_COUNT'">
     <ConfigurationSettingsDailyUsage v-model="model.value" />
   </div>
-  <div v-if="setting.configurationSetting.name === 'DAYS_ON_PER_MONTH'">
+  <div v-else-if="setting.configurationSetting.name === 'DAYS_ON_PER_MONTH'">
     <ConfigurationSettingsDaysOnPerMounth v-model="model.value" />
   </div>
-  <div v-if="setting.configurationSetting.name === 'MONTHLY_INVOCATION_COUNT'">
+  <div
+    v-else-if="setting.configurationSetting.name === 'MONTHLY_INVOCATION_COUNT'"
+  >
     <ConfigurationSettingsMonthlyInvocation v-model="model.value" />
   </div>
-  <div v-if="setting.configurationSetting.name === 'AVERAGE_EXEC_TIME_IN_MS'">
+  <div
+    v-else-if="setting.configurationSetting.name === 'AVERAGE_EXEC_TIME_IN_MS'"
+  >
     <ConfigurationSettingsAverageExecTime v-model="model.value" />
   </div>
-  <div v-if="setting.configurationSetting.name === 'PROCESSOR_ARCHITECTURE'">
+  <div
+    v-else-if="setting.configurationSetting.name === 'PROCESSOR_ARCHITECTURE'"
+  >
     <ConfigurationSettingsProcessorArchitecture v-model="model.value" />
   </div>
-  <div v-if="setting.configurationSetting.name === 'MEMORY_IN_MEGA_BYTE'">
+  <div v-else-if="setting.configurationSetting.name === 'MEMORY_IN_MEGA_BYTE'">
     <ConfigurationSettingsMemory v-model="model.value" />
   </div>
-  <div v-if="setting.configurationSetting.name === 'VOLUME_NUMBER'">
+  <div v-else-if="setting.configurationSetting.name === 'VOLUME_NUMBER'">
     <ConfigurationSettingsVolumeNumber v-model="model.value" />
   </div>
 </template>
