@@ -34,67 +34,60 @@ import { mount } from "@vue/test-utils";
 import type { ServiceConfigurationSetting } from "~/type/infrastructure/ServiceConfigurationSetting";
 
 describe("ConfigurationSettingsConfigurationSetting component", () => {
-  it("only instance number parameter should be visible when configurationSetting set to INSTANCE_NUMBER", async () => {
-    const setting: ServiceConfigurationSetting = {
-      id: "id001",
-      defaultValue: "",
-      configurationSetting: {
-        id: "idConfigurationSetting",
-        name: "INSTANCE_NUMBER",
-      },
-    };
+  const configurationSettingsComponentTable = [
+    ConfigurationSettingsInstanceNumber,
+    ConfigurationSettingsStorage,
+    ConfigurationSettingsDailyRunningTime,
+    ConfigurationSettingsDailyUsage,
+    ConfigurationSettingsDaysOnPerMounth,
+    ConfigurationSettingsMonthlyInvocation,
+    ConfigurationSettingsAverageExecTime,
+    ConfigurationSettingsProcessorArchitecture,
+    ConfigurationSettingsMemory,
+    ConfigurationSettingsVolumeNumber,
+  ];
 
-    const wrapper = wrap(setting);
+  it.each`
+    parameterName               | configurationSettingName      | configurationSettingComponent
+    ${"instance number"}        | ${"INSTANCE_NUMBER"}          | ${ConfigurationSettingsInstanceNumber}
+    ${"storage"}                | ${"STORAGE_IN_MEGA_BYTE"}     | ${ConfigurationSettingsStorage}
+    ${"daily running time"}     | ${"DAILY_RUNNING_TIME_IN_MS"} | ${ConfigurationSettingsDailyRunningTime}
+    ${"daily usage count"}      | ${"DAILY_USAGE_COUNT"}        | ${ConfigurationSettingsDailyUsage}
+    ${"days on"}                | ${"DAYS_ON_PER_MONTH"}        | ${ConfigurationSettingsDaysOnPerMounth}
+    ${"monthly invocation"}     | ${"MONTHLY_INVOCATION_COUNT"} | ${ConfigurationSettingsMonthlyInvocation}
+    ${"average execution"}      | ${"AVERAGE_EXEC_TIME_IN_MS"}  | ${ConfigurationSettingsAverageExecTime}
+    ${"processor architecture"} | ${"PROCESSOR_ARCHITECTURE"}   | ${ConfigurationSettingsProcessorArchitecture}
+    ${"memory"}                 | ${"MEMORY_IN_MEGA_BYTE"}      | ${ConfigurationSettingsMemory}
+    ${"volume number"}          | ${"VOLUME_NUMBER"}            | ${ConfigurationSettingsVolumeNumber}
+  `(
+    "only $parameterName parameter should be visible when configurationSetting is set to $configurationSettingName",
+    async ({ configurationSettingName, configurationSettingComponent }) => {
+      const setting: ServiceConfigurationSetting = {
+        id: "id",
+        defaultValue: "",
+        configurationSetting: {
+          id: "idConfigurationSetting",
+          name: configurationSettingName,
+        },
+      };
 
-    const instanceNumber = wrapper.findComponent(
-      ConfigurationSettingsInstanceNumber,
-    );
-    expect(instanceNumber.exists()).toBe(true);
+      const wrapper = wrap(setting);
 
-    const instanceType = wrapper.findComponent(
-      ConfigurationSettingsInstanceType,
-    );
-    expect(instanceType.exists()).toBe(false);
+      const component = wrapper.findComponent(configurationSettingComponent);
+      expect(component.exists()).toBe(true);
 
-    const storage = wrapper.findComponent(ConfigurationSettingsStorage);
-    expect(storage.exists()).toBe(false);
+      for (const anyConfigurationSettingComponent of configurationSettingsComponentTable) {
+        if (anyConfigurationSettingComponent != configurationSettingComponent) {
+          const differentComponent = wrapper.findComponent(
+            anyConfigurationSettingComponent,
+          );
+          expect(differentComponent.exists()).toBe(false);
+        }
+      }
+    },
+  );
 
-    const runningTime = wrapper.findComponent(
-      ConfigurationSettingsDailyRunningTime,
-    );
-    expect(runningTime.exists()).toBe(false);
-
-    const usage = wrapper.findComponent(ConfigurationSettingsDailyUsage);
-    expect(usage.exists()).toBe(false);
-
-    const daysOn = wrapper.findComponent(ConfigurationSettingsDaysOnPerMounth);
-    expect(daysOn.exists()).toBe(false);
-
-    const monthlyInvocation = wrapper.findComponent(
-      ConfigurationSettingsMonthlyInvocation,
-    );
-    expect(monthlyInvocation.exists()).toBe(false);
-
-    const averageExecutionTime = wrapper.findComponent(
-      ConfigurationSettingsAverageExecTime,
-    );
-    expect(averageExecutionTime.exists()).toBe(false);
-
-    const processorArchitecture = wrapper.findComponent(
-      ConfigurationSettingsProcessorArchitecture,
-    );
-    expect(processorArchitecture.exists()).toBe(false);
-
-    const memory = wrapper.findComponent(ConfigurationSettingsMemory);
-    expect(memory.exists()).toBe(false);
-
-    const volumeNumber = wrapper.findComponent(
-      ConfigurationSettingsVolumeNumber,
-    );
-    expect(volumeNumber.exists()).toBe(false);
-  });
-
-  it("only instance type parameter should be visible when configurationSetting is set to INSTANCE_TYPE", async () => {
+  it("only 'instance type' parameter should be visible when configurationSetting is set to 'INSTANCE_TYPE'", async () => {
     mockNuxtImport("useNuxtApp", () => {
       return () => ({
         $api: {
@@ -114,7 +107,7 @@ describe("ConfigurationSettingsConfigurationSetting component", () => {
     }));
 
     const setting: ServiceConfigurationSetting = {
-      id: "id002",
+      id: "id",
       defaultValue: "",
       configurationSetting: {
         id: "idConfigurationSetting",
@@ -124,592 +117,21 @@ describe("ConfigurationSettingsConfigurationSetting component", () => {
 
     const wrapper = wrap(setting);
 
-    const instanceNumber = wrapper.findComponent(
-      ConfigurationSettingsInstanceNumber,
-    );
-    expect(instanceNumber.exists()).toBe(false);
-
     const instanceType = wrapper.findComponent(
       ConfigurationSettingsInstanceType,
     );
     expect(instanceType.exists()).toBe(true);
 
-    const storage = wrapper.findComponent(ConfigurationSettingsStorage);
-    expect(storage.exists()).toBe(false);
-
-    const runningTime = wrapper.findComponent(
-      ConfigurationSettingsDailyRunningTime,
-    );
-    expect(runningTime.exists()).toBe(false);
-
-    const usage = wrapper.findComponent(ConfigurationSettingsDailyUsage);
-    expect(usage.exists()).toBe(false);
-
-    const daysOn = wrapper.findComponent(ConfigurationSettingsDaysOnPerMounth);
-    expect(daysOn.exists()).toBe(false);
-
-    const monthlyInvocation = wrapper.findComponent(
-      ConfigurationSettingsMonthlyInvocation,
-    );
-    expect(monthlyInvocation.exists()).toBe(false);
-
-    const averageExecutionTime = wrapper.findComponent(
-      ConfigurationSettingsAverageExecTime,
-    );
-    expect(averageExecutionTime.exists()).toBe(false);
-
-    const processorArchitecture = wrapper.findComponent(
-      ConfigurationSettingsProcessorArchitecture,
-    );
-    expect(processorArchitecture.exists()).toBe(false);
-
-    const memory = wrapper.findComponent(ConfigurationSettingsMemory);
-    expect(memory.exists()).toBe(false);
-
-    const volumeNumber = wrapper.findComponent(
-      ConfigurationSettingsVolumeNumber,
-    );
-    expect(volumeNumber.exists()).toBe(false);
-  });
-
-  it("only storage parameter should be visible when configurationSetting is set to STORAGE_IN_MEGA_BYTE", async () => {
-    const setting: ServiceConfigurationSetting = {
-      id: "id003",
-      defaultValue: "",
-      configurationSetting: {
-        id: "idConfigurationSetting",
-        name: "STORAGE_IN_MEGA_BYTE",
-      },
-    };
-
-    const wrapper = wrap(setting);
-
-    const instanceNumber = wrapper.findComponent(
-      ConfigurationSettingsInstanceNumber,
-    );
-    expect(instanceNumber.exists()).toBe(false);
-
-    const instanceType = wrapper.findComponent(
-      ConfigurationSettingsInstanceType,
-    );
-    expect(instanceType.exists()).toBe(false);
-
-    const storage = wrapper.findComponent(ConfigurationSettingsStorage);
-    expect(storage.exists()).toBe(true);
-
-    const runningTime = wrapper.findComponent(
-      ConfigurationSettingsDailyRunningTime,
-    );
-    expect(runningTime.exists()).toBe(false);
-
-    const usage = wrapper.findComponent(ConfigurationSettingsDailyUsage);
-    expect(usage.exists()).toBe(false);
-
-    const daysOn = wrapper.findComponent(ConfigurationSettingsDaysOnPerMounth);
-    expect(daysOn.exists()).toBe(false);
-
-    const monthlyInvocation = wrapper.findComponent(
-      ConfigurationSettingsMonthlyInvocation,
-    );
-    expect(monthlyInvocation.exists()).toBe(false);
-
-    const averageExecutionTime = wrapper.findComponent(
-      ConfigurationSettingsAverageExecTime,
-    );
-    expect(averageExecutionTime.exists()).toBe(false);
-
-    const processorArchitecture = wrapper.findComponent(
-      ConfigurationSettingsProcessorArchitecture,
-    );
-    expect(processorArchitecture.exists()).toBe(false);
-
-    const memory = wrapper.findComponent(ConfigurationSettingsMemory);
-    expect(memory.exists()).toBe(false);
-
-    const volumeNumber = wrapper.findComponent(
-      ConfigurationSettingsVolumeNumber,
-    );
-    expect(volumeNumber.exists()).toBe(false);
-  });
-
-  it("only daily running time parameter should be visible when configurationSetting is set to DAILY_RUNNING_TIME_IN_MS", async () => {
-    const setting: ServiceConfigurationSetting = {
-      id: "id004",
-      defaultValue: "",
-      configurationSetting: {
-        id: "idConfigurationSetting",
-        name: "DAILY_RUNNING_TIME_IN_MS",
-      },
-    };
-
-    const wrapper = wrap(setting);
-
-    const instanceNumber = wrapper.findComponent(
-      ConfigurationSettingsInstanceNumber,
-    );
-    expect(instanceNumber.exists()).toBe(false);
-
-    const instanceType = wrapper.findComponent(
-      ConfigurationSettingsInstanceType,
-    );
-    expect(instanceType.exists()).toBe(false);
-
-    const storage = wrapper.findComponent(ConfigurationSettingsStorage);
-    expect(storage.exists()).toBe(false);
-
-    const runningTime = wrapper.findComponent(
-      ConfigurationSettingsDailyRunningTime,
-    );
-    expect(runningTime.exists()).toBe(true);
-
-    const usage = wrapper.findComponent(ConfigurationSettingsDailyUsage);
-    expect(usage.exists()).toBe(false);
-
-    const daysOn = wrapper.findComponent(ConfigurationSettingsDaysOnPerMounth);
-    expect(daysOn.exists()).toBe(false);
-
-    const monthlyInvocation = wrapper.findComponent(
-      ConfigurationSettingsMonthlyInvocation,
-    );
-    expect(monthlyInvocation.exists()).toBe(false);
-
-    const averageExecutionTime = wrapper.findComponent(
-      ConfigurationSettingsAverageExecTime,
-    );
-    expect(averageExecutionTime.exists()).toBe(false);
-
-    const processorArchitecture = wrapper.findComponent(
-      ConfigurationSettingsProcessorArchitecture,
-    );
-    expect(processorArchitecture.exists()).toBe(false);
-
-    const memory = wrapper.findComponent(ConfigurationSettingsMemory);
-    expect(memory.exists()).toBe(false);
-
-    const volumeNumber = wrapper.findComponent(
-      ConfigurationSettingsVolumeNumber,
-    );
-    expect(volumeNumber.exists()).toBe(false);
-  });
-
-  it("only daily usage time parameter should be visible when configurationSetting is set to DAILY_USAGE_COUNT", async () => {
-    const setting: ServiceConfigurationSetting = {
-      id: "id005",
-      defaultValue: "",
-      configurationSetting: {
-        id: "idConfigurationSetting",
-        name: "DAILY_USAGE_COUNT",
-      },
-    };
-
-    const wrapper = wrap(setting);
-
-    const instanceNumber = wrapper.findComponent(
-      ConfigurationSettingsInstanceNumber,
-    );
-    expect(instanceNumber.exists()).toBe(false);
-
-    const instanceType = wrapper.findComponent(
-      ConfigurationSettingsInstanceType,
-    );
-    expect(instanceType.exists()).toBe(false);
-
-    const storage = wrapper.findComponent(ConfigurationSettingsStorage);
-    expect(storage.exists()).toBe(false);
-
-    const runningTime = wrapper.findComponent(
-      ConfigurationSettingsDailyRunningTime,
-    );
-    expect(runningTime.exists()).toBe(false);
-
-    const usage = wrapper.findComponent(ConfigurationSettingsDailyUsage);
-    expect(usage.exists()).toBe(true);
-
-    const daysOn = wrapper.findComponent(ConfigurationSettingsDaysOnPerMounth);
-    expect(daysOn.exists()).toBe(false);
-
-    const monthlyInvocation = wrapper.findComponent(
-      ConfigurationSettingsMonthlyInvocation,
-    );
-    expect(monthlyInvocation.exists()).toBe(false);
-
-    const averageExecutionTime = wrapper.findComponent(
-      ConfigurationSettingsAverageExecTime,
-    );
-    expect(averageExecutionTime.exists()).toBe(false);
-
-    const processorArchitecture = wrapper.findComponent(
-      ConfigurationSettingsProcessorArchitecture,
-    );
-    expect(processorArchitecture.exists()).toBe(false);
-
-    const memory = wrapper.findComponent(ConfigurationSettingsMemory);
-    expect(memory.exists()).toBe(false);
-
-    const volumeNumber = wrapper.findComponent(
-      ConfigurationSettingsVolumeNumber,
-    );
-    expect(volumeNumber.exists()).toBe(false);
-  });
-
-  it("only days on parameter should be visible when configurationSetting is set to DAYS_ON_PER_MONTH", async () => {
-    const setting: ServiceConfigurationSetting = {
-      id: "id006",
-      defaultValue: "",
-      configurationSetting: {
-        id: "idConfigurationSetting",
-        name: "DAYS_ON_PER_MONTH",
-      },
-    };
-
-    const wrapper = wrap(setting);
-
-    const instanceNumber = wrapper.findComponent(
-      ConfigurationSettingsInstanceNumber,
-    );
-    expect(instanceNumber.exists()).toBe(false);
-
-    const instanceType = wrapper.findComponent(
-      ConfigurationSettingsInstanceType,
-    );
-    expect(instanceType.exists()).toBe(false);
-
-    const storage = wrapper.findComponent(ConfigurationSettingsStorage);
-    expect(storage.exists()).toBe(false);
-
-    const runningTime = wrapper.findComponent(
-      ConfigurationSettingsDailyRunningTime,
-    );
-    expect(runningTime.exists()).toBe(false);
-
-    const usage = wrapper.findComponent(ConfigurationSettingsDailyUsage);
-    expect(usage.exists()).toBe(false);
-
-    const daysOn = wrapper.findComponent(ConfigurationSettingsDaysOnPerMounth);
-    expect(daysOn.exists()).toBe(true);
-
-    const monthlyInvocation = wrapper.findComponent(
-      ConfigurationSettingsMonthlyInvocation,
-    );
-    expect(monthlyInvocation.exists()).toBe(false);
-
-    const averageExecutionTime = wrapper.findComponent(
-      ConfigurationSettingsAverageExecTime,
-    );
-    expect(averageExecutionTime.exists()).toBe(false);
-
-    const processorArchitecture = wrapper.findComponent(
-      ConfigurationSettingsProcessorArchitecture,
-    );
-    expect(processorArchitecture.exists()).toBe(false);
-
-    const memory = wrapper.findComponent(ConfigurationSettingsMemory);
-    expect(memory.exists()).toBe(false);
-
-    const volumeNumber = wrapper.findComponent(
-      ConfigurationSettingsVolumeNumber,
-    );
-    expect(volumeNumber.exists()).toBe(false);
-  });
-
-  it("only monthly invocation parameter should be visible when configurationSetting is set to MONTHLY_INVOCATION_COUNT", async () => {
-    const setting: ServiceConfigurationSetting = {
-      id: "id007",
-      defaultValue: "",
-      configurationSetting: {
-        id: "idConfigurationSetting",
-        name: "MONTHLY_INVOCATION_COUNT",
-      },
-    };
-
-    const wrapper = wrap(setting);
-
-    const instanceNumber = wrapper.findComponent(
-      ConfigurationSettingsInstanceNumber,
-    );
-    expect(instanceNumber.exists()).toBe(false);
-
-    const instanceType = wrapper.findComponent(
-      ConfigurationSettingsInstanceType,
-    );
-    expect(instanceType.exists()).toBe(false);
-
-    const storage = wrapper.findComponent(ConfigurationSettingsStorage);
-    expect(storage.exists()).toBe(false);
-
-    const runningTime = wrapper.findComponent(
-      ConfigurationSettingsDailyRunningTime,
-    );
-    expect(runningTime.exists()).toBe(false);
-
-    const usage = wrapper.findComponent(ConfigurationSettingsDailyUsage);
-    expect(usage.exists()).toBe(false);
-
-    const daysOn = wrapper.findComponent(ConfigurationSettingsDaysOnPerMounth);
-    expect(daysOn.exists()).toBe(false);
-
-    const monthlyInvocation = wrapper.findComponent(
-      ConfigurationSettingsMonthlyInvocation,
-    );
-    expect(monthlyInvocation.exists()).toBe(true);
-
-    const averageExecutionTime = wrapper.findComponent(
-      ConfigurationSettingsAverageExecTime,
-    );
-    expect(averageExecutionTime.exists()).toBe(false);
-
-    const processorArchitecture = wrapper.findComponent(
-      ConfigurationSettingsProcessorArchitecture,
-    );
-    expect(processorArchitecture.exists()).toBe(false);
-
-    const memory = wrapper.findComponent(ConfigurationSettingsMemory);
-    expect(memory.exists()).toBe(false);
-
-    const volumeNumber = wrapper.findComponent(
-      ConfigurationSettingsVolumeNumber,
-    );
-    expect(volumeNumber.exists()).toBe(false);
-  });
-
-  it("only average execution parameter should be visible when configurationSetting is set to AVERAGE_EXEC_TIME_IN_MS", async () => {
-    const setting: ServiceConfigurationSetting = {
-      id: "id008",
-      defaultValue: "",
-      configurationSetting: {
-        id: "idConfigurationSetting",
-        name: "AVERAGE_EXEC_TIME_IN_MS",
-      },
-    };
-
-    const wrapper = wrap(setting);
-
-    const instanceNumber = wrapper.findComponent(
-      ConfigurationSettingsInstanceNumber,
-    );
-    expect(instanceNumber.exists()).toBe(false);
-
-    const instanceType = wrapper.findComponent(
-      ConfigurationSettingsInstanceType,
-    );
-    expect(instanceType.exists()).toBe(false);
-
-    const storage = wrapper.findComponent(ConfigurationSettingsStorage);
-    expect(storage.exists()).toBe(false);
-
-    const runningTime = wrapper.findComponent(
-      ConfigurationSettingsDailyRunningTime,
-    );
-    expect(runningTime.exists()).toBe(false);
-
-    const usage = wrapper.findComponent(ConfigurationSettingsDailyUsage);
-    expect(usage.exists()).toBe(false);
-
-    const daysOn = wrapper.findComponent(ConfigurationSettingsDaysOnPerMounth);
-    expect(daysOn.exists()).toBe(false);
-
-    const monthlyInvocation = wrapper.findComponent(
-      ConfigurationSettingsMonthlyInvocation,
-    );
-    expect(monthlyInvocation.exists()).toBe(false);
-
-    const averageExecutionTime = wrapper.findComponent(
-      ConfigurationSettingsAverageExecTime,
-    );
-    expect(averageExecutionTime.exists()).toBe(true);
-
-    const processorArchitecture = wrapper.findComponent(
-      ConfigurationSettingsProcessorArchitecture,
-    );
-    expect(processorArchitecture.exists()).toBe(false);
-
-    const memory = wrapper.findComponent(ConfigurationSettingsMemory);
-    expect(memory.exists()).toBe(false);
-
-    const volumeNumber = wrapper.findComponent(
-      ConfigurationSettingsVolumeNumber,
-    );
-    expect(volumeNumber.exists()).toBe(false);
-  });
-
-  it("only processor architecture parameter should be visible when configurationSetting is set to PROCESSOR_ARCHITECTURE", async () => {
-    const setting: ServiceConfigurationSetting = {
-      id: "id009",
-      defaultValue: "",
-      configurationSetting: {
-        id: "idConfigurationSetting",
-        name: "PROCESSOR_ARCHITECTURE",
-      },
-    };
-
-    const wrapper = wrap(setting);
-
-    const instanceNumber = wrapper.findComponent(
-      ConfigurationSettingsInstanceNumber,
-    );
-    expect(instanceNumber.exists()).toBe(false);
-
-    const instanceType = wrapper.findComponent(
-      ConfigurationSettingsInstanceType,
-    );
-    expect(instanceType.exists()).toBe(false);
-
-    const storage = wrapper.findComponent(ConfigurationSettingsStorage);
-    expect(storage.exists()).toBe(false);
-
-    const runningTime = wrapper.findComponent(
-      ConfigurationSettingsDailyRunningTime,
-    );
-    expect(runningTime.exists()).toBe(false);
-
-    const usage = wrapper.findComponent(ConfigurationSettingsDailyUsage);
-    expect(usage.exists()).toBe(false);
-
-    const daysOn = wrapper.findComponent(ConfigurationSettingsDaysOnPerMounth);
-    expect(daysOn.exists()).toBe(false);
-
-    const monthlyInvocation = wrapper.findComponent(
-      ConfigurationSettingsMonthlyInvocation,
-    );
-    expect(monthlyInvocation.exists()).toBe(false);
-
-    const averageExecutionTime = wrapper.findComponent(
-      ConfigurationSettingsAverageExecTime,
-    );
-    expect(averageExecutionTime.exists()).toBe(false);
-
-    const processorArchitecture = wrapper.findComponent(
-      ConfigurationSettingsProcessorArchitecture,
-    );
-    expect(processorArchitecture.exists()).toBe(true);
-
-    const memory = wrapper.findComponent(ConfigurationSettingsMemory);
-    expect(memory.exists()).toBe(false);
-
-    const volumeNumber = wrapper.findComponent(
-      ConfigurationSettingsVolumeNumber,
-    );
-    expect(volumeNumber.exists()).toBe(false);
-  });
-
-  it("only memory parameter should be visible when configurationSetting is set to MEMORY_IN_MEGA_BYTE", async () => {
-    const setting: ServiceConfigurationSetting = {
-      id: "id010",
-      defaultValue: "",
-      configurationSetting: {
-        id: "idConfigurationSetting",
-        name: "MEMORY_IN_MEGA_BYTE",
-      },
-    };
-
-    const wrapper = wrap(setting);
-
-    const instanceNumber = wrapper.findComponent(
-      ConfigurationSettingsInstanceNumber,
-    );
-    expect(instanceNumber.exists()).toBe(false);
-
-    const instanceType = wrapper.findComponent(
-      ConfigurationSettingsInstanceType,
-    );
-    expect(instanceType.exists()).toBe(false);
-
-    const storage = wrapper.findComponent(ConfigurationSettingsStorage);
-    expect(storage.exists()).toBe(false);
-
-    const runningTime = wrapper.findComponent(
-      ConfigurationSettingsDailyRunningTime,
-    );
-    expect(runningTime.exists()).toBe(false);
-
-    const usage = wrapper.findComponent(ConfigurationSettingsDailyUsage);
-    expect(usage.exists()).toBe(false);
-
-    const daysOn = wrapper.findComponent(ConfigurationSettingsDaysOnPerMounth);
-    expect(daysOn.exists()).toBe(false);
-
-    const monthlyInvocation = wrapper.findComponent(
-      ConfigurationSettingsMonthlyInvocation,
-    );
-    expect(monthlyInvocation.exists()).toBe(false);
-
-    const averageExecutionTime = wrapper.findComponent(
-      ConfigurationSettingsAverageExecTime,
-    );
-    expect(averageExecutionTime.exists()).toBe(false);
-
-    const processorArchitecture = wrapper.findComponent(
-      ConfigurationSettingsProcessorArchitecture,
-    );
-    expect(processorArchitecture.exists()).toBe(false);
-
-    const memory = wrapper.findComponent(ConfigurationSettingsMemory);
-    expect(memory.exists()).toBe(true);
-
-    const volumeNumber = wrapper.findComponent(
-      ConfigurationSettingsVolumeNumber,
-    );
-    expect(volumeNumber.exists()).toBe(false);
-  });
-
-  it("only volume number parameter should be visible when configurationSetting is set to VOLUME_NUMBER", async () => {
-    const setting: ServiceConfigurationSetting = {
-      id: "id011",
-      defaultValue: "",
-      configurationSetting: {
-        id: "idConfigurationSetting",
-        name: "VOLUME_NUMBER",
-      },
-    };
-
-    const wrapper = wrap(setting);
-
-    const instanceNumber = wrapper.findComponent(
-      ConfigurationSettingsInstanceNumber,
-    );
-    expect(instanceNumber.exists()).toBe(false);
-
-    const instanceType = wrapper.findComponent(
-      ConfigurationSettingsInstanceType,
-    );
-    expect(instanceType.exists()).toBe(false);
-
-    const storage = wrapper.findComponent(ConfigurationSettingsStorage);
-    expect(storage.exists()).toBe(false);
-
-    const runningTime = wrapper.findComponent(
-      ConfigurationSettingsDailyRunningTime,
-    );
-    expect(runningTime.exists()).toBe(false);
-
-    const usage = wrapper.findComponent(ConfigurationSettingsDailyUsage);
-    expect(usage.exists()).toBe(false);
-
-    const daysOn = wrapper.findComponent(ConfigurationSettingsDaysOnPerMounth);
-    expect(daysOn.exists()).toBe(false);
-
-    const monthlyInvocation = wrapper.findComponent(
-      ConfigurationSettingsMonthlyInvocation,
-    );
-    expect(monthlyInvocation.exists()).toBe(false);
-
-    const averageExecutionTime = wrapper.findComponent(
-      ConfigurationSettingsAverageExecTime,
-    );
-    expect(averageExecutionTime.exists()).toBe(false);
-
-    const processorArchitecture = wrapper.findComponent(
-      ConfigurationSettingsProcessorArchitecture,
-    );
-    expect(processorArchitecture.exists()).toBe(false);
-
-    const memory = wrapper.findComponent(ConfigurationSettingsMemory);
-    expect(memory.exists()).toBe(false);
-
-    const volumeNumber = wrapper.findComponent(
-      ConfigurationSettingsVolumeNumber,
-    );
-    expect(volumeNumber.exists()).toBe(true);
+    for (const anyConfigurationSettingComponent of configurationSettingsComponentTable) {
+      if (
+        anyConfigurationSettingComponent != ConfigurationSettingsInstanceType
+      ) {
+        const differentComponent = wrapper.findComponent(
+          anyConfigurationSettingComponent,
+        );
+        expect(differentComponent.exists()).toBe(false);
+      }
+    }
   });
 });
 
