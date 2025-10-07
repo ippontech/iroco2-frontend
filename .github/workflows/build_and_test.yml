@@ -31,6 +31,32 @@ jobs:
         uses: borales/actions-yarn@v4
         with:
           cmd: test
+      - name: Run coverage
+        uses: borales/actions-yarn@v4
+        with:
+          cmd: coverage
+
+      - name: Upload coverage artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: coverage-report
+          path: coverage/**
+          if-no-files-found: warn
+
+      - name: Job summary with coverage link
+        run: |
+          echo "## Test Coverage" >> $GITHUB_STEP_SUMMARY
+          echo "- Coverage artifacts: attached as 'coverage-report'" >> $GITHUB_STEP_SUMMARY
+          echo "- SonarCloud project: https://sonarcloud.io/project/overview?id=ippontech_iroco2-frontend" >> $GITHUB_STEP_SUMMARY
+
+      - name: SonarQube Scan
+        uses: SonarSource/sonarqube-scan-action@v6
+        env:
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          args: >
+            -Dsonar.qualitygate.wait=false
 
   prettier:
     name: Prettier Check
