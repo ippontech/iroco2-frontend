@@ -4,6 +4,8 @@
 .vscode/
 *.log/
 
+coverage/
+
 # Node.js
 node_modules
 yarn-error.log
