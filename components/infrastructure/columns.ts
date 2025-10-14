@@ -30,9 +30,9 @@ export const columns = [
   columnHelper.accessor("cloudServiceProvider", {
     header: "Type",
     cell: ({ row }) => {
-      const cloudServiceProvider = row.getValue(
+      const cloudServiceProvider: CloudServiceProvider = row.getValue(
         "cloudServiceProvider",
-      ) as CloudServiceProvider;
+      );
       return h("p", cloudServiceProvider.name);
     },
   }),

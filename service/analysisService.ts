@@ -32,7 +32,7 @@ type AnalysisDetails = Analysis & {
 };
 
 class AnalysisService extends HttpFactory {
-  private RESOURCE = "/api/analysis";
+  private readonly RESOURCE = "/api/analysis";
 
   async getAllAnalyses() {
     const analyses = await this.getCall<Analysis[]>(this.RESOURCE);

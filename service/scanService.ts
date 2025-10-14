@@ -19,7 +19,7 @@ import HttpFactory from "./factory/httpFactory";
 import type { EstimatedScan, Scan, ScanDetails } from "~/type/Scan";
 
 class ScanService extends HttpFactory {
-  private RESOURCE = "/api/scanner";
+  private readonly RESOURCE = "/api/scanner";
   async getAllScans(): Promise<Scan[]> {
     const scans = await this.getCall<Scan[]>(this.RESOURCE);
     const scansWithCO2Converted = scans.map((scan) => ({

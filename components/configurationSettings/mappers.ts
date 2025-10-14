@@ -23,7 +23,7 @@ function mapNumber(
   let dataNumber: number;
   if (typeof data === "string") {
     dataNumber = Number(data);
-    if (isNaN(dataNumber)) throw new Error("not a number");
+    if (Number.isNaN(dataNumber)) throw new Error("not a number");
   } else {
     dataNumber = data;
   }

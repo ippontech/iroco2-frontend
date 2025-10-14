@@ -23,7 +23,7 @@ export default {
       useRuntimeConfig().public.irocoCustomerRequestEndpoint;
 
     if (typeof irocoCustomerRequestEndpoint !== "string") {
-      throw new Error("irocoCustomerRequestEndpoint must be a string");
+      throw new TypeError("irocoCustomerRequestEndpoint must be a string");
     }
 
     await ofetch(irocoCustomerRequestEndpoint, {

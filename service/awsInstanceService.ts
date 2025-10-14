@@ -19,7 +19,7 @@ import HttpFactory from "./factory/httpFactory";
 import type { EC2InstanceType } from "~/type/ec2InstanceType";
 
 class AWSInstanceService extends HttpFactory {
-  private RESOURCE = "/api/awsInstanceType";
+  private readonly RESOURCE = "/api/awsInstanceType";
 
   async getAllInstanceByType(
     serviceShortName: string,

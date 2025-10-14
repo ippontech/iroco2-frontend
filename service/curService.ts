@@ -23,7 +23,7 @@ type ServerResponse = {
 };
 
 export default class CurService extends HttpFactory {
-  private PRESIGNED_URL = "/api/analysis/presigned-url";
+  private readonly PRESIGNED_URL = "/api/analysis/presigned-url";
 
   async uploadFile(file: File) {
     const extension = this.getFileExtension(file);

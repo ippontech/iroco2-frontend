@@ -71,7 +71,7 @@ export function aggregateCarbonFootPrint(components: CarbonFootPrint[]) {
   }));
 
   const relativeCarbonFootprintList: RelativeCarbonFootprint[] =
-    addPercent.sort((a, b) => b.percentage - a.percentage);
+    addPercent.toSorted((a, b) => b.percentage - a.percentage);
 
   return { relativeCarbonFootprintList, totalCO2Gr };
 }

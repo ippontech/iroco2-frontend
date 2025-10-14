@@ -18,7 +18,7 @@
 import type { ofetch } from "ofetch";
 
 class HttpFactory {
-  private $fetch: typeof ofetch;
+  private readonly $fetch: typeof ofetch;
 
   constructor(fetcher: typeof ofetch) {
     this.$fetch = fetcher;

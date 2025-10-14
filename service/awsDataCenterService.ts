@@ -22,9 +22,9 @@ import type { Region } from "~/type/Region";
 import InfrastructureService from "~/service/infrastructureService";
 
 class AWSDataCenterService extends HttpFactory {
-  private RESOURCE = "/api/cloud-service-providers";
-  private componentService: ComponentService;
-  private infrastructureService: InfrastructureService;
+  private readonly RESOURCE = "/api/cloud-service-providers";
+  private readonly componentService: ComponentService;
+  private readonly infrastructureService: InfrastructureService;
 
   constructor(fetcher: $Fetch) {
     super(fetcher);
