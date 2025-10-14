@@ -20,7 +20,7 @@ import type { CarbonFootprintEstimateComponent } from "~/type/CarbonFootprintEst
 import type { RegionCarbonFootprint } from "~/type/RegionCarbonFootprint";
 
 class IrocalcCarbonService extends HttpFactory {
-  private RESOURCE = "/api/v2/infrastructures";
+  private readonly RESOURCE = "/api/v2/infrastructures";
 
   async estimateCarbonFootPrint(infrastructureId: string) {
     const url = `${this.RESOURCE}/${infrastructureId}/carbon-footprint`;

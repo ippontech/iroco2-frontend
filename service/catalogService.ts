@@ -21,7 +21,7 @@ import type { ServiceCatalog } from "~/type/ServiceCatalog";
 import type { ServiceDescription } from "~/type/ServiceDescription";
 
 class CatalogService extends HttpFactory {
-  private RESOURCE = "/api/public/v2/catalog";
+  private readonly RESOURCE = "/api/public/v2/catalog";
 
   async getAllServices(): Promise<ServiceCatalog[]> {
     const tab = Object.values(Availability);

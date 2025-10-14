@@ -20,7 +20,7 @@ import type { CloudServiceProvider } from "~/type/infrastructure/CloudServicePro
 import type { CloudServiceProviderService } from "~/type/infrastructure/CloudServiceProviderService";
 
 class CloudServiceProviderSvc extends HttpFactory {
-  private RESOURCE = "/api/cloud-service-providers";
+  private readonly RESOURCE = "/api/cloud-service-providers";
 
   async getCloudServiceProviders(): Promise<CloudServiceProvider[]> {
     return await this.getCall<CloudServiceProvider[]>(this.RESOURCE);
