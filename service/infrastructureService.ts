@@ -20,7 +20,7 @@ import HttpFactory from "./factory/httpFactory";
 import type { Infrastructure } from "~/type/infrastructure/Infrastructure";
 
 class InfrastructureService extends HttpFactory {
-  private RESOURCE = "/api/v2/infrastructures";
+  private readonly RESOURCE = "/api/v2/infrastructures";
 
   async createNewInfra(
     infrastructure: InfrastructureRequest,

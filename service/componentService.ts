@@ -21,7 +21,7 @@ import type { SaveComponentRequest } from "~/type/infrastructure/SaveComponentRe
 import type { UpdateComponentRequest } from "~/type/infrastructure/UpdateComponentRequest";
 
 class ComponentService extends HttpFactory {
-  private RESOURCE = "/api/v2/components";
+  private readonly RESOURCE = "/api/v2/components";
 
   async getComponentsByInfrastructureId(id: string): Promise<Component[]> {
     const url = this.RESOURCE;
