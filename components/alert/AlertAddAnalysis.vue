@@ -67,7 +67,9 @@ function closeModal() {
   addAnalysisModalOpened.value = false;
 }
 
-const emits = defineEmits(["update:analyses"]);
+const emit = defineEmits<{
+  "update:analyses": [];
+}>();
 
 const addFile = (event: Event) => {
   const inputElement = event.target as HTMLInputElement;
@@ -80,7 +82,7 @@ const uploadFile = async () => {
   loading.value = true;
   await $api.curService.uploadFile(file.value);
   loading.value = false;
-  emits("update:analyses");
+  emit("update:analyses");
   closeModal();
 };
 </script>

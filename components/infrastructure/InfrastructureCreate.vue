@@ -87,7 +87,6 @@ import {
 } from "~/components/ui/dialog";
 import type { Button } from "~/components/ui/button";
 import { RegionSchema } from "~/type/Region";
-import type { Region } from "~/type/Region";
 import { Input } from "~/components/ui/input";
 import { toTypedSchema } from "@vee-validate/zod";
 import * as z from "zod";
@@ -96,7 +95,9 @@ import type { InfrastructureRequest } from "~/type/infrastructure/Infrastructure
 
 const { $api } = useNuxtApp();
 const infrastructuresStore = useInfrastructuresStore();
-const emit = defineEmits(["infraCreated"]);
+const emit = defineEmits<{
+  infraCreated: [];
+}>();
 const isDialogOpen = ref(false);
 
 const formSchema = toTypedSchema(

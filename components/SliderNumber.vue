@@ -47,7 +47,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref, onMounted } from "vue";
+import { onMounted, ref } from "vue";
 import { Input } from "@/components/ui/input";
 
 interface Props {
@@ -60,7 +60,9 @@ interface Props {
 }
 
 const props = defineProps<Props>();
-const emits = defineEmits(["update:selectedValue"]);
+const emit = defineEmits<{
+  "update:selectedValue": [value: number];
+}>();
 
 const internalEffectiveValue = ref<number>(props.defaultValue);
 const internalSliderValue = ref<number>(0);
@@ -69,7 +71,7 @@ const inputValue = ref();
 
 const handleSliderChange = () => {
   internalEffectiveValue.value = props.stepValues[sliderIndex.value.value];
-  emits("update:selectedValue", internalEffectiveValue.value);
+  emit("update:selectedValue", internalEffectiveValue.value);
 };
 
 const handleInputChange = () => {
@@ -77,7 +79,7 @@ const handleInputChange = () => {
   if (newIndex >= 0) {
     internalSliderValue.value = newIndex;
   }
-  emits("update:selectedValue", internalEffectiveValue.value);
+  emit("update:selectedValue", internalEffectiveValue.value);
 };
 
 onMounted(() => {
