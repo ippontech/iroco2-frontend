@@ -36,17 +36,16 @@
   </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import { onMounted, ref, watch } from "vue";
 
 const inputField = ref(null);
 
-const props = defineProps({
-  title: {
-    type: String,
-    required: true,
-  },
-});
+interface Props {
+  title: string;
+}
+
+const props = defineProps<Props>();
 
 const emit = defineEmits(["update:title"]);
 
