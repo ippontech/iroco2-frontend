@@ -27,7 +27,7 @@
     <DropdownMenuContent>
       <DropdownMenuItem
         class="text-red-500 flex gap-2"
-        @click="$emit('deleteInfrastructure', infrastructure)"
+        @click="emit('deleteInfrastructure', infrastructure)"
       >
         <UIcon name="i-heroicons-trash-16-solid" />
         Supprimer cette infrastructure
@@ -52,5 +52,7 @@ export interface Props {
 
 defineProps<Props>();
 
-defineEmits(["deleteInfrastructure"]);
+const emit = defineEmits<{
+  deleteInfrastructure: [infrastructure: Infrastructure];
+}>();
 </script>

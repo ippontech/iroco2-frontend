@@ -60,7 +60,9 @@ interface Props {
 }
 
 const props = defineProps<Props>();
-const emits = defineEmits(["update:selectedValue"]);
+const emits = defineEmits<{
+  "update:selectedValue": [payload: number];
+}>();
 
 const internalEffectiveValue = ref<number>(props.defaultValue);
 const internalSliderValue = ref<number>(0);

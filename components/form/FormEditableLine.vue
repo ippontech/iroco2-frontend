@@ -47,7 +47,9 @@ interface Props {
 
 const props = defineProps<Props>();
 
-const emit = defineEmits(["update:title"]);
+const emit = defineEmits<{
+  "update:title": [title: string];
+}>();
 
 const isEditing = ref(false);
 const editedTitle = ref(props.title);
