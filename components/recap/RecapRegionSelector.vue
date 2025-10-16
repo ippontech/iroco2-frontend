@@ -56,10 +56,12 @@ if (props.defaultSelectedRegion) {
     selectedRegion.value = props.defaultSelectedRegion;
   }
 }
-const emits = defineEmits(["update:region"]);
+const emit = defineEmits<{
+  "update:region": [region: Region | undefined];
+}>();
 
 const handleSelect = (regionName: string) => {
   selectedRegion.value = findRegionByName(regionName);
-  emits("update:region", selectedRegion.value);
+  emit("update:region", selectedRegion.value);
 };
 </script>

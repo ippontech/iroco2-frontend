@@ -18,14 +18,16 @@ Iroco2's components must be created using the Composition API with the `<script 
 </template>
 
 <script setup lang="ts">
-  const emits = defineEmits(["update:value"]);
+  const emit = defineEmits<{
+    "update:value": [value: string]
+  }>();
 
   const props = defineProps<{
     possibleValues: string[];
   }>();
 
   const handleSelect = (value: string) => {
-    emits("update:value", value);
+    emit("update:value", value);
   };
 </script>
 ```

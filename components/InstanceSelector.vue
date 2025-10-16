@@ -27,7 +27,9 @@
 </template>
 
 <script setup lang="ts">
-const emits = defineEmits(["update:instance"]);
+const emit = defineEmits<{
+  "update:instance": [instance: string];
+}>();
 
 const props = defineProps<{
   instanceTypes: string[];
@@ -39,6 +41,6 @@ const selectedInstance = defineModel<string | undefined>({
 
 const handleSelect = (instance: string) => {
   selectedInstance.value = instance;
-  emits("update:instance", instance);
+  emit("update:instance", instance);
 };
 </script>
