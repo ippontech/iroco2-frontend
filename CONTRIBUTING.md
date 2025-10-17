@@ -7,6 +7,8 @@
 ### Composition API
 Iroco2's components must be created using the Composition API with the `<script setup>` syntax as described in the official documentation (https://vuejs.org/api/sfc-script-setup.html)
 
+See `components/ui/Button.vue` for an example.
+
 ```vue
 <template>
   <select @change="handleSelect($event.target.value)">
@@ -34,6 +36,8 @@ Iroco2's components must be created using the Composition API with the `<script 
 
 ### Testing
 Iroco2's frontend aims to have an 80% test coverage. Components must be tested using Vue Test-utils (https://test-utils.vuejs.org/) along with Vitest.
+
+See `test/components/ui/Button.vue` for an example.
 
 
 ```ts
