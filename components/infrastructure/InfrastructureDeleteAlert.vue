@@ -32,7 +32,7 @@
         <AlertDialogCancel>Annuler</AlertDialogCancel>
         <AlertDialogAction
           :class="buttonVariants({ variant: 'destructive' })"
-          @click="$emit('confirmInfrastructureDeletion', infrastructure)"
+          @click="emit('confirmInfrastructureDeletion', infrastructure)"
         >
           Supprimer l'infrastructure
         </AlertDialogAction>
@@ -58,7 +58,9 @@ const open = defineModel<boolean>("open");
 
 const infrastructure = defineModel<Infrastructure>("infrastructure");
 
-defineEmits(["confirmInfrastructureDeletion"]);
+const emit = defineEmits<{
+  confirmInfrastructureDeletion: [infrastructure: Infrastructure | undefined];
+}>();
 
 function close() {
   open.value = false;

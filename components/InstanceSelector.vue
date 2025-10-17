@@ -27,7 +27,9 @@
 </template>
 
 <script setup lang="ts">
-const emits = defineEmits(["update:instance"]);
+const emits = defineEmits<{
+  "update:instance": [payload: string];
+}>();
 
 const props = defineProps<{
   instanceTypes: string[];

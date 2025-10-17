@@ -46,11 +46,13 @@ const props = defineProps<Props>();
 
 const selectedValue = ref(props.defaultSelectedValue);
 
-const emits = defineEmits(["update:value"]);
+const emit = defineEmits<{
+  "update:value": [value: string];
+}>();
 const handleSelect = (instance: string) => {
   selectedValue.value = instance;
   open.value = false;
-  emits("update:value", instance);
+  emit("update:value", instance);
 };
 </script>
 
