@@ -2,4 +2,25 @@
   "app": {
     "tagline": "par Ippon"
   },
+  "buttons": {
+    "cancel": "Annuler",
+    "createScanner": "Créer le scanner",
+    "close": "Fermer"
+  },
+  "alerts": {
+    "addAnalysis": {
+      "title": "Importer le fichier CUR (Cost and Usage Report) d'AWS",
+      "add": "Ajouter l'analyse",
+      "uploading": "Envoi..."
+    },
+    "addToken": {
+      "title": "Configuration du scanner",
+      "awsAccountNumber": "Numéro de compte AWS :",
+      "expirationDate": "Date d'expiration :"
+    }
+  },
+  "validation": {
+    "awsAccountIdLength": "Le numéro de compte AWS doit contenir exactement 12 caractères",
+    "expirationDateFuture": "La date d'expiration doit être postérieure à la date d'aujourd'hui"
+  }
 }
