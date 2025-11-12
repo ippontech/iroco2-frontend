@@ -2,4 +2,25 @@
   "app": {
     "tagline": "by Ippon"
   },
+  "buttons": {
+    "cancel": "Cancel",
+    "createScanner": "Create scanner",
+    "close": "Close"
+  },
+  "alerts": {
+    "addAnalysis": {
+      "title": "Import AWS CUR (Cost and Usage Report) file",
+      "add": "Add analysis",
+      "uploading": "Uploading..."
+    },
+    "addToken": {
+      "title": "Scanner configuration",
+      "awsAccountNumber": "AWS account number:",
+      "expirationDate": "Expiration date:"
+    }
+  },
+  "validation": {
+    "awsAccountIdLength": "AWS account number must contain exactly 12 characters",
+    "expirationDateFuture": "Expiration date must be later than today's date"
+  }
 }

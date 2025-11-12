@@ -16,22 +16,13 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { defineVitestConfig } from "@nuxt/test-utils/config";
+import { config } from "@vue/test-utils";
 
-import AutoImport from "unplugin-auto-import/vite";
-
-export default defineVitestConfig({
-  test: {
-    environment: "nuxt",
-    setupFiles: ["./test/setup.ts"],
-    coverage: {
-      reporter: ["text", "lcov"],
-    },
-  },
-  plugins: [
-    AutoImport({
-      imports: ["vitest"],
-      dts: true,
-    }),
-  ],
-});
+// Mock i18n globally for all tests - returns keys instead of translations
+config.global.mocks = {
+  $t: (key: string) => key,
+  $tc: (key: string) => key,
+  $te: () => true,
+  $d: (date: Date) => date.toLocaleDateString(),
+  $n: (number: number) => number.toString(),
+};
