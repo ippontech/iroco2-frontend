@@ -18,5 +18,10 @@
       "awsAccountNumber": "Numéro de compte AWS :",
       "expirationDate": "Date d'expiration :"
     }
+  },
+  "chart": {
+    "impactCO2Label": "Impact CO2",
+    "co2EmissionsLabel": "Émissions de CO2 (g)",
+    "othersLabel": "Autres"
   }
 }
