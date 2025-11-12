@@ -26,11 +26,10 @@
       :class="variant === 'black' ? 'invert' : ''"
     />
     <div class="grid">
-      <div class="flex items-center">
-        <span class="text-2xl font-bold">IroCO</span>
-        <span class="text-xl font-bold align-sub pt-2">2&nbsp;</span>
-      </div>
-      <span class="mt-[-0.5rem] font-extralight text-sm">by Ippon</span>
+      <span class="text-2xl font-bold">IroCO<sub>2</sub></span>
+      <span class="mt-[-0.5rem] font-extralight text-sm">{{
+        $t("app.tagline")
+      }}</span>
     </div>
   </nuxt-link>
 </template>
