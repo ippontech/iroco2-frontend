@@ -19,16 +19,17 @@
 
 <script setup lang="ts">
 import { Bar } from "vue-chartjs";
+import type { ChartData, ChartOptions } from "chart.js";
 import {
-  Chart as ChartJS,
   BarElement,
   CategoryScale,
+  Chart as ChartJS,
   Legend,
   LinearScale,
   Title,
   Tooltip,
 } from "chart.js";
-import type { ChartOptions, ChartData } from "chart.js";
+
 ChartJS.register(
   CategoryScale,
   LinearScale,
@@ -46,6 +47,9 @@ export interface Props {
 }
 
 const props = defineProps<Props>();
+
+const { t } = useI18n();
+
 const labels = computed(() =>
   props.reports.map((report) => isoToHumanDayOnly(report.dayISODate)),
 );
@@ -55,7 +59,7 @@ const data: Ref<ChartData<"bar">> = computed(() => {
     labels: labels.value,
     datasets: [
       {
-        label: "Impact CO2",
+        label: t("chart.impactCO2Label"),
         backgroundColor: "#181D27",
         data: dataChart.value,
       },
@@ -73,7 +77,7 @@ const options: ChartOptions<"bar"> = {
     y: {
       title: {
         display: true,
-        text: "Émissions de CO2 (g)",
+        text: t("chart.co2EmissionsLabel"),
         font: {
           size: 14,
           weight: "bold",
