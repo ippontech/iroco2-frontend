@@ -27,10 +27,13 @@
 
 <script setup lang="ts">
 import { Doughnut } from "vue-chartjs";
-import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
-import type { ChartOptions, ChartData } from "chart.js";
+import type { ChartData, ChartOptions } from "chart.js";
+import { ArcElement, Chart as ChartJS, Legend, Tooltip } from "chart.js";
 
 ChartJS.register(ArcElement, Tooltip, Legend);
+
+const { t } = useI18n();
+
 const colorsPalette = [
   "#FF6384",
   "#36A2EB",
@@ -59,7 +62,7 @@ const restCarbon = lowerThan.reduce((acc, car) => acc + car.co2Gr, 0);
 if (restCarbon > 0) {
   greaterThan.push({
     percentage: 0,
-    label: "Autres",
+    label: t("chart.othersLabel"),
     co2Gr: restCarbon,
   });
 }
