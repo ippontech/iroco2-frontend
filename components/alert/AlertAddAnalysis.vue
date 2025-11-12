@@ -21,9 +21,9 @@
   <AlertDialog v-model:open="addAnalysisModalOpened">
     <AlertDialogContent>
       <AlertDialogHeader>
-        <AlertDialogTitle
-          >Importer le fichier CUR (Cost and Usage Report) d'AWS
-        </AlertDialogTitle>
+        <AlertDialogTitle>{{
+          $t("alerts.addAnalysis.title")
+        }}</AlertDialogTitle>
       </AlertDialogHeader>
       <AlertDialogDescription
         class="pt-6 text-sm grid gap-6 text-muted-foreground"
@@ -35,14 +35,18 @@
           data-tid="cancel-analysis-button"
           variant="outline"
           @click="closeModal"
-          >Annuler</Button
+          >{{ $t("buttons.cancel") }}</Button
         >
         <Button
           data-tid="add-analysis-button"
           :disabled="loading || !file"
           variant="lime500"
           @click="uploadFile"
-          >{{ loading ? "Envoi..." : "Ajouter l'analyse" }}</Button
+          >{{
+            loading
+              ? $t("alerts.addAnalysis.uploading")
+              : $t("alerts.addAnalysis.add")
+          }}</Button
         >
       </AlertDialogFooter>
     </AlertDialogContent>
@@ -57,6 +61,7 @@ import {
   AlertDialogHeader,
   AlertDialogTitle,
 } from "~/components/ui/alert-dialog";
+
 const { $api } = useNuxtApp();
 
 const addAnalysisModalOpened = defineModel<boolean>();
