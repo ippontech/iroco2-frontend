@@ -52,6 +52,7 @@ export default defineNuxtConfig({
     "@nuxt/eslint",
     "@nuxtjs/tailwindcss",
     "@nuxt/fonts",
+    "@nuxtjs/i18n",
   ],
 
   ssr: false,
@@ -69,4 +70,25 @@ export default defineNuxtConfig({
   },
 
   compatibilityDate: "2024-08-01",
+
+  i18n: {
+    strategy: "no_prefix",
+    defaultLocale: "en",
+    locales: [
+      {
+        code: "en",
+        name: "English",
+        file: "en.json",
+      },
+      {
+        code: "fr",
+        name: "Français",
+        file: "fr.json",
+      },
+    ],
+    langDir: "locales",
+    compilation: {
+      strictMessage: false,
+    },
+  },
 });
