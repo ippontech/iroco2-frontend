@@ -22,5 +22,10 @@
   "validation": {
     "awsAccountIdLength": "Le numéro de compte AWS doit contenir exactement 12 caractères",
     "expirationDateFuture": "La date d'expiration doit être postérieure à la date d'aujourd'hui"
+  },
+  "chart": {
+    "impactCO2Label": "Impact CO2",
+    "co2EmissionsLabel": "Émissions de CO2 (g)",
+    "othersLabel": "Autres"
   }
 }
