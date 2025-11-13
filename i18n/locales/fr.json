@@ -27,5 +27,8 @@
     "impactCO2Label": "Impact CO2",
     "co2EmissionsLabel": "Émissions de CO2 (g)",
     "othersLabel": "Autres"
+  },
+  "comparative": {
+    "trendNotAvailable": "Tendance non disponible pour la région sélectionnée.<br/>(C'est le seul data center de la région)"
   }
 }
