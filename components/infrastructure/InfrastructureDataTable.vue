@@ -20,6 +20,7 @@
 <script setup lang="ts" generic="TData, TValue">
 import type { ExpandedState, Updater } from "@tanstack/vue-table";
 import {
+  createColumnHelper,
   FlexRender,
   getCoreRowModel,
   getExpandedRowModel,
@@ -33,10 +34,10 @@ import {
   TableHead,
   TableRow,
 } from "@/components/ui/table";
-import { ref } from "vue";
 import type { Ref } from "vue";
-import { columns } from "./columns";
+import { ref } from "vue";
 import type { Infrastructure } from "~/type/infrastructure/Infrastructure";
+import type { CloudServiceProvider } from "~/type/infrastructure/CloudServiceProvider";
 
 const expanded = ref<ExpandedState>({});
 
@@ -52,6 +53,27 @@ const { $api } = useNuxtApp();
 const infrastructuresStore = useInfrastructuresStore();
 
 const { infrastructures } = storeToRefs(infrastructuresStore);
+
+const columnHelper = createColumnHelper<Infrastructure>();
+
+const { t } = useI18n();
+
+const columns = [
+  columnHelper.accessor("name", {
+    header: t("infrastructure.columns.name"),
+    cell: ({ row }) => h("p", { class: "font-bold" }, row.getValue("name")),
+  }),
+
+  columnHelper.accessor("cloudServiceProvider", {
+    header: t("infrastructure.columns.type"),
+    cell: ({ row }) => {
+      const cloudServiceProvider: CloudServiceProvider = row.getValue(
+        "cloudServiceProvider",
+      );
+      return h("p", cloudServiceProvider.name);
+    },
+  }),
+];
 
 const table = useVueTable({
   data: infrastructures,
@@ -133,7 +155,7 @@ const navigateToInfra = (infra: Infrastructure) => {
         <template v-else>
           <TableRow>
             <TableCell :colspan="columns.length + 1" class="h-24 text-center">
-              Aucune infrastructure.
+              {{ $t("infrastructure.noInfrastructure") }}
             </TableCell>
           </TableRow>
         </template>

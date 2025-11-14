@@ -21,20 +21,20 @@
   <AlertDialog :open="open" @update:open="(e) => close(e)">
     <AlertDialogContent>
       <AlertDialogHeader>
-        <AlertDialogTitle
-          >Supprimer l'infrastructure {{ infrastructure?.name }}?
+        <AlertDialogTitle>
+          {{ $t("infrastructure.deleteTitle", { name: infrastructure?.name }) }}
         </AlertDialogTitle>
         <AlertDialogDescription>
-          Cette action va supprimer de façon permanente l'infrastructure.
+          {{ $t("infrastructure.deleteDescription") }}
         </AlertDialogDescription>
       </AlertDialogHeader>
       <AlertDialogFooter>
-        <AlertDialogCancel>Annuler</AlertDialogCancel>
+        <AlertDialogCancel>{{ $t("buttons.cancel") }}</AlertDialogCancel>
         <AlertDialogAction
           :class="buttonVariants({ variant: 'destructive' })"
           @click="emit('confirmInfrastructureDeletion', infrastructure)"
         >
-          Supprimer l'infrastructure
+          {{ $t("infrastructure.alertDeleteAction") }}
         </AlertDialogAction>
       </AlertDialogFooter>
     </AlertDialogContent>
