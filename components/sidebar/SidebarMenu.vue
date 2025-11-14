@@ -26,15 +26,23 @@
     <nav class="mt-12 flex flex-col w-full h-full">
       <span
         class="uppercase font-bold font-title text-sm text-iroco-greenish-white brightness-50 pb-2"
-        >Dashboard</span
+        >{{ $t("sidebar.title") }}</span
       >
       <SidebarItem
         to="/calculatrice"
         icon="ph:calculator"
-        text="Calculatrice"
+        :text="$t('sidebar.calculator')"
       />
-      <SidebarItem to="/cur" icon="ph:chart-pie-slice" text="Analyse CUR" />
-      <SidebarItem to="/scanner" icon="ph:chart-bar" text="Scanner" />
+      <SidebarItem
+        to="/cur"
+        icon="ph:chart-pie-slice"
+        :text="$t('sidebar.curAnalysis')"
+      />
+      <SidebarItem
+        to="/scanner"
+        icon="ph:chart-bar"
+        :text="$t('sidebar.scanner')"
+      />
       <Separator class="my-4" />
 
       <Transition
@@ -52,7 +60,7 @@
         <SidebarItem
           to="/token"
           icon="ph:circles-four-duotone"
-          text="Intégration Cloud"
+          :text="$t('sidebar.cloudIntegration')"
         />
       </div>
     </nav>

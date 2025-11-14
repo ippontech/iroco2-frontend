@@ -82,5 +82,12 @@
     "selectPlaceholder": "Sélectionner une {placeholder}...",
     "searchPlaceholder": "Rechercher une {placeholder}...",
     "noResultFound": "Aucune {placeholder} trouvée."
+  },
+  "sidebar": {
+    "calculator": "Calculatrice",
+    "cloudIntegration": "Intégration Cloud",
+    "curAnalysis": "Analyse CUR",
+    "scanner": "Scanner",
+    "title": "Tableau de bord"
   }
 }
