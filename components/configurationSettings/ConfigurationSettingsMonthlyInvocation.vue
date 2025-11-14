@@ -25,7 +25,7 @@ const model = defineModel<string>({ required: true });
 
 <template>
   <div class="flex flex-col gap-2">
-    <span>Nombre d'exécutions par mois :</span>
+    <span>{{ $t("configuration.monthlyInvocation") }}</span>
     <Input v-model="model" />
   </div>
 </template>
