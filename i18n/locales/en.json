@@ -89,5 +89,21 @@
     "curAnalysis": "CUR Analysis",
     "scanner": "Scanner",
     "cloudIntegration": "Cloud Integration"
+  },
+  "nav": {
+    "resources": "Resources",
+    "dashboard": "Dashboard",
+    "dashboardDemo": "Dashboard Preview",
+    "demo": "Demo",
+    "documentation": "Documentation",
+    "catalog": "Catalog"
+  },
+  "auth": {
+    "signIn": "Sign In",
+    "signOut": "Sign Out",
+    "logout": "Logout"
+  },
+  "help": {
+    "documentation": "Docs"
   }
 }
