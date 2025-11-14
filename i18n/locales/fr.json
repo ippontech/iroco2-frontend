@@ -61,5 +61,19 @@
   },
   "validation": {
     "minLengthName": "Vous devez renseigner un nom d'au moins {min} caractères"
+  },
+  "equivalents": {
+    "equivalentTo": "Equivalent à",
+    "kmCarThermal": "kms parcourus en voiture thermique",
+    "kmPlaneShortHaul": "kms parcourus en avion sur un vol court courrier",
+    "kmPlaneMediumHaul": "kms parcourus en avion sur un vol moyen courrier",
+    "kmPlaneLongHaul": "kms parcourus en avion sur un vol long courrier",
+    "kmElectricBike": "kms parcourus en vélo (ou trottinette) à assistance électrique",
+    "m2HeatedOil": "m² chauffés au fioul pendant une année"
+  },
+  "selector": {
+    "selectPlaceholder": "Sélectionner une {placeholder} ...",
+    "searchPlaceholder": "Search {placeholder} ...",
+    "noResultFound": "Aucune {placeholder} trouvée."
   }
 }
