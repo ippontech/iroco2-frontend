@@ -44,5 +44,11 @@
   },
   "comparative": {
     "trendNotAvailable": "Trend not available for selected region.<br/>(This is the only data center in the region)"
+  },
+  "estimate": {
+    "ademeSimulator": "ADEME Simulator",
+    "equivalentDisclaimer": "* equivalents obtained from data provided by",
+    "monthlyImpactLabel": "The <strong>monthly</strong> carbon impact of your infrastructure is:",
+    "orEquivalent": "Or equivalent to:"
   }
 }
