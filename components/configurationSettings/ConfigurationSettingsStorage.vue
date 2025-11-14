@@ -34,7 +34,7 @@ const handleValueChange = () => {
 
 <template>
   <div class="flex flex-col gap-2">
-    <span>Stockage :</span>
+    <span>{{ $t("configuration.storage") }}</span>
     <Input
       v-model="storage"
       unit="Go"

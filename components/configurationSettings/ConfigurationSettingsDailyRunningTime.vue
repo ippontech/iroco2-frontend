@@ -34,7 +34,7 @@ const handleValueChange = (newValue: number) => {
 <template>
   <div class="w-full">
     <SliderNumber
-      label="Temps de fonctionnement journalier"
+      :label="$t('configuration.dailyRunningTime')"
       :default-value="Number(hours)"
       :step="1"
       unit="heures"

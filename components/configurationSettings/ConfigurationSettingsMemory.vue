@@ -25,7 +25,7 @@ const model = defineModel<string>({ required: true });
 
 <template>
   <div class="flex flex-col gap-2">
-    <span>Mémoire allouée :</span>
+    <span>{{ $t("configuration.allocatedMemory") }}</span>
     <Input v-model="model" unit="Mo" />
   </div>
 </template>

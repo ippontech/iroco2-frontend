@@ -29,7 +29,7 @@ const model = defineModel<string>();
 
 <template>
   <div class="flex flex-col gap-2">
-    <div class="">Architecture processeur :</div>
+    <div class="">{{ $t("configuration.cpuArchitecture") }}</div>
     <Select v-model="model">
       <SelectTrigger>
         <SelectValue :placeholder="model" />

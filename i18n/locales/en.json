@@ -28,6 +28,20 @@
     "co2EmissionsLabel": "CO2 Emissions (g)",
     "othersLabel": "Others"
   },
+  "configuration": {
+    "allocatedMemory": "Allocated memory:",
+    "averageExecTime": "Average execution time:",
+    "dailyRunningTime": "Daily running time",
+    "dailyUsage": "Number of uses per day:",
+    "daysPerMonth": "Number of days per month:",
+    "instanceNumber": "Number of instances:",
+    "instanceType": "Instance type:",
+    "monthlyInvocation": "Number of executions per month:",
+    "pleaseSelectInstance": "Please select an instance",
+    "cpuArchitecture": "CPU architecture:",
+    "storage": "Storage:",
+    "volumeNumber": "Number of volumes:"
+  },
   "comparative": {
     "trendNotAvailable": "Trend not available for selected region.<br/>(This is the only data center in the region)"
   }
