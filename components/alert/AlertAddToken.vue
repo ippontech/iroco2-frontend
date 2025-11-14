@@ -22,12 +22,14 @@
     <AlertDialogContent>
       <form @submit.prevent="handleSubmit">
         <AlertDialogHeader>
-          <AlertDialogTitle>Configuration du scanner </AlertDialogTitle>
+          <AlertDialogTitle>{{ $t("alerts.addToken.title") }}</AlertDialogTitle>
         </AlertDialogHeader>
         <AlertDialogDescription class="flex flex-col gap-3 mt-5">
           <FormField v-slot="{ componentField }" name="awsID">
             <FormItem>
-              <FormLabel>Numéro de compte AWS :</FormLabel>
+              <FormLabel>{{
+                $t("alerts.addToken.awsAccountNumber")
+              }}</FormLabel>
               <FormControl>
                 <Input v-bind="componentField" />
               </FormControl>
@@ -36,7 +38,7 @@
           </FormField>
           <FormField v-slot="{ componentField }" name="expirationDate">
             <FormItem>
-              <FormLabel>Date d'expiration :</FormLabel>
+              <FormLabel>{{ $t("alerts.addToken.expirationDate") }}</FormLabel>
               <FormControl>
                 <Input type="date" v-bind="componentField" />
               </FormControl>
@@ -46,10 +48,12 @@
           <FormTokenInput class="mt-5" :token="generatedToken" />
         </AlertDialogDescription>
         <AlertDialogFooter class="mt-5">
-          <Button variant="outline" type="button" @click="closeModal"
-            >Fermer</Button
-          >
-          <Button variant="black" type="submit">Créer le scanner</Button>
+          <Button variant="outline" type="button" @click="closeModal">{{
+            $t("buttons.close")
+          }}</Button>
+          <Button variant="black" type="submit">{{
+            $t("buttons.createScanner")
+          }}</Button>
         </AlertDialogFooter>
       </form>
     </AlertDialogContent>
@@ -70,14 +74,11 @@ import * as z from "zod";
 
 const addTokenModalOpened = defineModel<boolean>();
 
+const { t } = useI18n();
+
 const formSchema = toTypedSchema(
   z.object({
-    awsID: z
-      .string()
-      .length(
-        12,
-        "Le numéro de compte AWS doit contenir exactement 12 caractères",
-      ),
+    awsID: z.string().length(12, t("validation.awsAccountIdLength")),
     expirationDate: z.string().refine(
       (val) => {
         const selectedDate = new Date(val);
@@ -85,8 +86,7 @@ const formSchema = toTypedSchema(
         return selectedDate > today;
       },
       {
-        message:
-          "La date d'expiration doit être supérieure à la date d'aujourd'hui",
+        message: t("validation.expirationDateFuture"),
       },
     ),
   }),

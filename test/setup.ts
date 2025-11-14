@@ -1,4 +1,3 @@
-<!-- prettier-ignore -->
 /*
  * Copyright 2025 Ippon Technologies
  *
@@ -17,15 +16,13 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-<script setup lang="ts">
-import { Input } from "~/components/ui/input";
+import { config } from "@vue/test-utils";
 
-const model = defineModel<string>({ required: true });
-</script>
-
-<template>
-  <div class="flex flex-col gap-2">
-    <span>{{ $t("configuration.volumeNumber") }}</span>
-    <Input v-model="model" />
-  </div>
-</template>
+// Mock i18n globally for all tests - returns keys instead of translations
+config.global.mocks = {
+  $t: (key: string) => key,
+  $tc: (key: string) => key,
+  $te: () => true,
+  $d: (date: Date) => date.toLocaleDateString(),
+  $n: (number: number) => number.toString(),
+};

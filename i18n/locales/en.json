@@ -1,0 +1,102 @@
+{
+  "app": {
+    "tagline": "by Ippon"
+  },
+  "buttons": {
+    "cancel": "Cancel",
+    "create": "Create",
+    "createScanner": "Create scanner",
+    "close": "Close"
+  },
+  "alerts": {
+    "addAnalysis": {
+      "title": "Import AWS CUR (Cost and Usage Report) file",
+      "add": "Add analysis",
+      "uploading": "Uploading..."
+    },
+    "addToken": {
+      "title": "Add token",
+      "awsAccountNumber": "AWS account number:",
+      "expirationDate": "Expiration date:"
+    }
+  },
+  "chart": {
+    "impactCO2Label": "CO2 Impact",
+    "co2EmissionsLabel": "CO2 Emissions (g)",
+    "othersLabel": "Others"
+  },
+  "configuration": {
+    "allocatedMemory": "Allocated memory:",
+    "averageExecTime": "Average execution time:",
+    "dailyRunningTime": "Daily running time",
+    "dailyUsage": "Number of uses per day:",
+    "daysPerMonth": "Number of days per month",
+    "instanceNumber": "Number of instances:",
+    "instanceType": "Instance type:",
+    "monthlyInvocation": "Number of executions per month:",
+    "pleaseSelectInstance": "Please select an instance",
+    "processorArchitecture": "CPU architecture:",
+    "storage": "Storage:",
+    "volumeNumber": "Number of volumes:"
+  },
+  "comparative": {
+    "trendNotAvailable": "Trend not available for selected region.<br/>(This is the only data center in the region)"
+  },
+  "estimate": {
+    "ademeSimulator": "ADEME Simulator",
+    "equivalentDisclaimer": "* equivalents obtained from data provided by",
+    "monthlyImpactLabel": "The <strong>monthly</strong> carbon impact of your infrastructure is:",
+    "orEquivalent": "Or equivalent to:"
+  },
+  "infrastructure": {
+    "alertDeleteAction": "Delete infrastructure",
+    "cloudServiceProvider": "Cloud Service Provider",
+    "createTitle": "Create an infrastructure",
+    "defaultRegion": "Default infrastructure region",
+    "deleteAction": "Delete this infrastructure",
+    "deleteDescription": "This will permanently delete the infrastructure.",
+    "deleteTitle": "Delete infrastructure {name}?",
+    "infrastructureName": "Infrastructure name",
+    "newInfrastructure": "New infrastructure"
+  },
+  "validation": {
+    "minLength": "You must provide a name with at least {min} characters"
+  },
+  "equivalents": {
+    "equivalentTo": "Equivalent to",
+    "kmCarThermal": "kms driven by thermal car",
+    "kmPlaneShortHaul": "kms traveled by plane on a short-haul flight",
+    "kmPlaneMediumHaul": "kms traveled by plane on a medium-haul flight",
+    "kmPlaneLongHaul": "kms traveled by plane on a long-haul flight",
+    "kmElectricBike": "kms traveled by electric bike (or e-scooter)",
+    "m2HeatedOil": "m² heated with oil for one year"
+  },
+  "selector": {
+    "selectPlaceholder": "Select a {placeholder}...",
+    "searchPlaceholder": "Search {placeholder}...",
+    "noResultFound": "No {placeholder} found."
+  },
+  "sidebar": {
+    "title": "Dashboard",
+    "calculator": "Calculator",
+    "curAnalysis": "CUR Analysis",
+    "scanner": "Scanner",
+    "cloudIntegration": "Cloud Integration"
+  },
+  "nav": {
+    "resources": "Resources",
+    "dashboard": "Dashboard",
+    "dashboardDemo": "Dashboard Preview",
+    "demo": "Demo",
+    "documentation": "Documentation",
+    "catalog": "Catalog"
+  },
+  "auth": {
+    "signIn": "Sign In",
+    "signOut": "Sign Out",
+    "logout": "Logout"
+  },
+  "help": {
+    "documentation": "Docs"
+  }
+}

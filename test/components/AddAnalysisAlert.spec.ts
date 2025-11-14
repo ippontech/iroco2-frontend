@@ -64,9 +64,7 @@ describe("AddAnalysisAlert component", () => {
     expect(dialog.exists()).toBe(true);
 
     const title = dialog.find("h2");
-    expect(title.text()).toContain(
-      "Importer le fichier CUR (Cost and Usage Report) d'AWS",
-    );
+    expect(title.text()).toContain("alerts.addAnalysis.title");
   });
 
   it("disables the Add button initially", async () => {

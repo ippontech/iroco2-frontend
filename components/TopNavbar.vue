@@ -25,10 +25,12 @@
         class="flex gap-2 items-center text-black/70 hover:bg-slate-200/50 px-2 py-2 rounded"
       >
         <Icon name="ph:article" />
-        Docs
+        {{ $t("help.documentation") }}
       </NuxtLink>
 
-      <div v-if="useRuntimeConfig().public.authActivate == 'false'">Demo</div>
+      <div v-if="useRuntimeConfig().public.authActivate == 'false'">
+        {{ $t("nav.demo") }}
+      </div>
       <DropdownMenu v-else>
         <DropdownMenuTrigger class="flex items-center gap-2 group">
           <span class="font-medium group-hover:underline underline-offset-4">
@@ -43,7 +45,7 @@
         <DropdownMenuContent align="end">
           <DropdownMenuItem class="gap-2 cursor-pointer" @click="logout">
             <Icon name="ph:sign-out-bold" />
-            Déconnexion
+            {{ $t("auth.logout") }}
           </DropdownMenuItem>
         </DropdownMenuContent>
       </DropdownMenu>

@@ -1,0 +1,102 @@
+{
+  "app": {
+    "tagline": "par Ippon"
+  },
+  "buttons": {
+    "cancel": "Annuler",
+    "create": "Créer",
+    "createScanner": "Créer le scanner",
+    "close": "Fermer"
+  },
+  "alerts": {
+    "addAnalysis": {
+      "title": "Importer le fichier CUR (Cost and Usage Report) d'AWS",
+      "add": "Ajouter l'analyse",
+      "uploading": "Envoi..."
+    },
+    "addToken": {
+      "title": "Ajouter un token",
+      "awsAccountNumber": "Numéro de compte AWS :",
+      "expirationDate": "Date d'expiration :"
+    }
+  },
+  "chart": {
+    "impactCO2Label": "Impact CO2",
+    "co2EmissionsLabel": "Émissions de CO2 (g)",
+    "othersLabel": "Autres"
+  },
+  "configuration": {
+    "allocatedMemory": "Mémoire allouée :",
+    "averageExecTime": "Durée moyenne d'une exécution :",
+    "dailyRunningTime": "Temps de fonctionnement journalier",
+    "dailyUsage": "Nombre d'utilisations par jour :",
+    "daysPerMonth": "Nombre de jours par mois",
+    "instanceNumber": "Nombre d'instances :",
+    "instanceType": "Type d'instance :",
+    "monthlyInvocation": "Nombre d'exécutions par mois :",
+    "pleaseSelectInstance": "Veuillez sélectionner une instance",
+    "cpuArchitecture": "Architecture processeur :",
+    "storage": "Stockage :",
+    "volumeNumber": "Nombre de volumes :"
+  },
+  "comparative": {
+    "trendNotAvailable": "Tendance non disponible pour la région sélectionnée.<br/>(C'est le seul data center de la région)"
+  },
+  "estimate": {
+    "ademeSimulator": "Simulateur de l'ADEME",
+    "equivalentDisclaimer": "* équivalents obtenus grâce aux données du",
+    "monthlyImpactLabel": "L'impact carbone <strong>mensuel</strong> de votre infrastructure est :",
+    "orEquivalent": "Ou encore :"
+  },
+  "infrastructure": {
+    "alertDeleteAction": "Supprimer l'infrastructure",
+    "cloudServiceProvider": "Cloud Service Provider",
+    "createTitle": "Créer une infrastructure",
+    "defaultRegion": "Région par défaut de l'infrastructure",
+    "deleteAction": "Supprimer cette infrastructure",
+    "deleteDescription": "Cette action supprimera définitivement l'infrastructure.",
+    "deleteTitle": "Supprimer l'infrastructure {name} ?",
+    "infrastructureName": "Nom de l'infrastructure",
+    "newInfrastructure": "Nouvelle infrastructure"
+  },
+  "validation": {
+    "minLengthName": "Vous devez renseigner un nom d'au moins {min} caractères"
+  },
+  "equivalents": {
+    "equivalentTo": "Equivalent à",
+    "kmCarThermal": "kms parcourus en voiture thermique",
+    "kmPlaneShortHaul": "kms parcourus en avion sur un vol court courrier",
+    "kmPlaneMediumHaul": "kms parcourus en avion sur un vol moyen courrier",
+    "kmPlaneLongHaul": "kms parcourus en avion sur un vol long courrier",
+    "kmElectricBike": "kms parcourus en vélo (ou trottinette) à assistance électrique",
+    "m2HeatedOil": "m² chauffés au fioul pendant une année"
+  },
+  "selector": {
+    "selectPlaceholder": "Sélectionner une {placeholder} ...",
+    "searchPlaceholder": "Search {placeholder} ...",
+    "noResultFound": "Aucune {placeholder} trouvée."
+  },
+  "sidebar": {
+    "calculator": "Calculatrice",
+    "cloudIntegration": "Intégration Cloud",
+    "curAnalysis": "Analyse CUR",
+    "scanner": "Scanner",
+    "title": "Dashboard"
+  },
+  "nav": {
+    "catalog": "Catalogue",
+    "dashboard": "Dashboard",
+    "dashboardDemo": "Aperçu du dashboard",
+    "demo": "Démo",
+    "documentation": "Documentation",
+    "resources": "Ressources"
+  },
+  "auth": {
+    "signIn": "Se connecter",
+    "signOut": "Se déconnecter",
+    "logout": "Déconnexion"
+  },
+  "help": {
+    "documentation": "Docs"
+  }
+}

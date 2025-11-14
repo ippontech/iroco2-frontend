@@ -39,8 +39,7 @@
       </Carousel>
     </div>
     <div v-if="!isCompararisonPresent" class="text-center my-2 px-1">
-      Tendance non disponible pour la région sélectionnée <br />
-      (C'est le seul data center de la région)
+      {{ $t("comparative.trendNotAvailable") }}
     </div>
   </div>
 </template>
@@ -54,6 +53,7 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "~/components/ui/carousel";
+
 const { $api } = useNuxtApp();
 
 interface Props {
