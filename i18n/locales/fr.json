@@ -89,5 +89,21 @@
     "curAnalysis": "Analyse CUR",
     "scanner": "Scanner",
     "title": "Tableau de bord"
+  },
+  "nav": {
+    "catalog": "Catalogue",
+    "dashboard": "Tableau de bord",
+    "dashboardDemo": "Aperçu du tableau de bord",
+    "demo": "Démo",
+    "documentation": "Documentation",
+    "resources": "Ressources"
+  },
+  "auth": {
+    "signIn": "Se connecter",
+    "signOut": "Se déconnecter",
+    "logout": "Déconnexion"
+  },
+  "help": {
+    "documentation": "Docs"
   }
 }
