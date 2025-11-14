@@ -4,6 +4,7 @@
   },
   "buttons": {
     "cancel": "Cancel",
+    "create": "Create",
     "createScanner": "Create scanner",
     "close": "Close"
   },
@@ -46,5 +47,19 @@
     "equivalentDisclaimer": "* equivalents obtained from data provided by",
     "monthlyImpactLabel": "The <strong>monthly</strong> carbon impact of your infrastructure is:",
     "orEquivalent": "Or equivalent to:"
+  },
+  "infrastructure": {
+    "alertDeleteAction": "Delete infrastructure",
+    "cloudServiceProvider": "Cloud Service Provider",
+    "createTitle": "Create an infrastructure",
+    "defaultRegion": "Default infrastructure region",
+    "deleteAction": "Delete this infrastructure",
+    "deleteDescription": "This will permanently delete the infrastructure.",
+    "deleteTitle": "Delete infrastructure {name}?",
+    "infrastructureName": "Infrastructure name",
+    "newInfrastructure": "New infrastructure"
+  },
+  "validation": {
+    "minLength": "You must provide a name with at least {min} characters"
   }
 }

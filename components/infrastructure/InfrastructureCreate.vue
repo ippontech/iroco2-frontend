@@ -22,18 +22,18 @@
     <DialogTrigger as-child>
       <Button variant="black" class="flex gap-2">
         <Icon name="ph:plus-bold" />
-        <span>Nouvelle infrastructure</span>
+        <span>{{ $t("infrastructure.newInfrastructure") }}</span>
       </Button>
     </DialogTrigger>
     <DialogContent class="">
       <DialogHeader>
-        <DialogTitle>Créer une infrastructure</DialogTitle>
+        <DialogTitle>{{ $t("infrastructure.createTitle") }}</DialogTitle>
       </DialogHeader>
 
       <form class="flex flex-col gap-8 pt-4" @submit="handleSubmit">
         <FormField v-slot="{ componentField }" name="infraName">
           <FormItem>
-            <FormLabel>Nom de l'infrastructure</FormLabel>
+            <FormLabel>{{ $t("infrastructure.infrastructureName") }}</FormLabel>
             <FormControl>
               <Input v-bind="componentField" />
             </FormControl>
@@ -42,7 +42,9 @@
         </FormField>
 
         <div class="space-y-2">
-          <Label for="cloudProvider">Cloud Service Provider</Label>
+          <Label for="cloudProvider">{{
+            $t("infrastructure.cloudServiceProvider")
+          }}</Label>
           <div class="flex gap-2 max-w-full">
             <div
               id="cloudProvider"
@@ -55,7 +57,7 @@
 
         <FormField v-slot="{ setValue }" name="region">
           <FormItem>
-            <FormLabel>Région par défaut de l'infrastructure</FormLabel>
+            <FormLabel>{{ $t("infrastructure.defaultRegion") }}</FormLabel>
             <FormControl>
               <RecapRegionSelector
                 @update:region="(newRegion: Region) => setValue(newRegion)"
@@ -70,7 +72,7 @@
           type="submit"
           class="bg-iroco-dark-green text-white px-4 py-2 rounded-xl hover:bg-iroco-light-green focus:outline-none focus:shadow-outline-blue"
         >
-          Créer
+          {{ $t("buttons.create") }}
         </button>
       </form>
     </DialogContent>
@@ -100,11 +102,11 @@ const emit = defineEmits<{
 }>();
 const isDialogOpen = ref(false);
 
+const { t } = useI18n();
+
 const formSchema = toTypedSchema(
   z.object({
-    infraName: z
-      .string()
-      .min(2, "Vous devez renseigner un nom d'au moins 2 charactères"),
+    infraName: z.string().min(2, t("validation.minLengthName", { min: 2 })),
     region: RegionSchema,
   }),
 );
