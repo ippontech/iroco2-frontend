@@ -4,6 +4,7 @@
   },
   "buttons": {
     "cancel": "Cancel",
+    "create": "Create",
     "createScanner": "Create scanner",
     "close": "Close"
   },
@@ -21,7 +22,8 @@
   },
   "validation": {
     "awsAccountIdLength": "AWS account number must contain exactly 12 characters",
-    "expirationDateFuture": "Expiration date must be later than today's date"
+    "expirationDateFuture": "Expiration date must be later than today's date",
+    "minLengthName": "You must provide a name with at least {min} characters"
   },
   "chart": {
     "impactCO2Label": "CO2 Impact",
@@ -50,5 +52,21 @@
     "equivalentDisclaimer": "* equivalents obtained from data provided by",
     "monthlyImpactLabel": "The <strong>monthly</strong> carbon impact of your infrastructure is:",
     "orEquivalent": "Or equivalent to:"
+  },
+  "infrastructure": {
+    "alertDeleteAction": "Delete infrastructure",
+    "cloudServiceProvider": "Cloud Service Provider",
+    "columns": {
+      "name": "Name",
+      "type": "Type"
+    },
+    "createTitle": "Create an infrastructure",
+    "defaultRegion": "Default infrastructure region",
+    "deleteAction": "Delete this infrastructure",
+    "deleteDescription": "This will permanently delete the infrastructure.",
+    "deleteTitle": "Delete infrastructure {name}?",
+    "infrastructureName": "Infrastructure name",
+    "newInfrastructure": "New infrastructure",
+    "noInfrastructure": "No infrastructure."
   }
 }
