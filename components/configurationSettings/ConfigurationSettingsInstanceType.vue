@@ -18,8 +18,8 @@
  */
 
 <script setup lang="ts">
-import { ref } from "vue";
 import type { Ref } from "vue";
+import { ref } from "vue";
 
 const { $api } = useNuxtApp();
 
@@ -35,10 +35,10 @@ const model = defineModel<string>({ required: true });
 
 <template>
   <div class="flex flex-col gap-2">
-    <div class="">Type d'instance :</div>
-    <span v-if="isInstanceEmpty" class="text-red-500 text-sm font-bold"
-      >Veuillez sélectionner une instance</span
-    >
+    <div class="">{{ $t("configuration.instanceType") }}</div>
+    <span v-if="isInstanceEmpty" class="text-red-500 text-sm font-bold">{{
+      $t("configuration.pleaseSelectInstance")
+    }}</span>
     <InstanceSelector
       v-model="model"
       :instance-types="instanceTypes"
