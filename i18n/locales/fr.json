@@ -68,5 +68,19 @@
     "infrastructureName": "Nom de l'infrastructure",
     "newInfrastructure": "Nouvelle infrastructure",
     "noInfrastructure": "Aucune infrastructure."
+  },
+  "equivalents": {
+    "equivalentTo": "Équivalent à",
+    "kmCarThermal": "kilomètres parcourus en voiture thermique",
+    "kmPlaneShortHaul": "kilomètres parcourus en avion sur un vol court-courrier",
+    "kmPlaneMediumHaul": "kilomètres parcourus en avion sur un vol moyen-courrier",
+    "kmPlaneLongHaul": "kilomètres parcourus en avion sur un vol long-courrier",
+    "kmElectricBike": "kilomètres parcourus à vélo (ou à trottinette) à assistance électrique",
+    "m2HeatedOil": "m² chauffés au fioul pendant une année"
+  },
+  "selector": {
+    "selectPlaceholder": "Sélectionner une {placeholder}...",
+    "searchPlaceholder": "Rechercher une {placeholder}...",
+    "noResultFound": "Aucune {placeholder} trouvée."
   }
 }

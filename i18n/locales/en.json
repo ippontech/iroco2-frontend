@@ -68,5 +68,19 @@
     "infrastructureName": "Infrastructure name",
     "newInfrastructure": "New infrastructure",
     "noInfrastructure": "No infrastructure."
+  },
+  "equivalents": {
+    "equivalentTo": "Equivalent to",
+    "kmCarThermal": "kilometers driven by thermal car",
+    "kmPlaneShortHaul": "kilometers traveled by plane on a short-haul flight",
+    "kmPlaneMediumHaul": "kilometers traveled by plane on a medium-haul flight",
+    "kmPlaneLongHaul": "kilometers traveled by plane on a long-haul flight",
+    "kmElectricBike": "kilometers traveled by electric bike (or e-scooter)",
+    "m2HeatedOil": "m² heated with oil for one year"
+  },
+  "selector": {
+    "selectPlaceholder": "Select a {placeholder}...",
+    "searchPlaceholder": "Search {placeholder}...",
+    "noResultFound": "No {placeholder} found."
   }
 }
