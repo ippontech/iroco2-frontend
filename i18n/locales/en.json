@@ -39,14 +39,84 @@
     "storage": "Storage:",
     "volumeNumber": "Number of volumes:"
   },
+  "actions": {
+    "learnMore": "Learn more"
+  },
+  "admin": {
+    "regionsCacheCleared": "The regions cache has been cleared.",
+    "scheduledDeletion": "Scheduled deletion:"
+  },
+  "auth": {
+    "signIn": "Sign In",
+    "signOut": "Sign Out",
+    "logout": "Logout"
+  },
+  "catalog": {
+    "availabilityCatalog": "Availability Catalog",
+    "requestIntegration": "Request integration"
+  },
   "comparative": {
     "trendNotAvailable": "Trend not available for selected region.<br/>(This is the only data center in the region)"
+  },
+  "component": {
+    "addComponent": "Add a component",
+    "lastModified": "Last modified",
+    "editComponent": "Edit this component",
+    "deleteComponent": "Delete this component"
+  },
+  "contact": {
+    "title": "Any questions?",
+    "subtitle": "Contact us",
+    "description": "Feel free to contact us for any questions or information requests. Whether you want to learn more about our services, get help, or share your suggestions, our team is here to respond quickly. We look forward to supporting you!",
+    "yourRequest": "Your request",
+    "requestTypes": {
+      "requestDemo": "Request a demo",
+      "reportIssue": "Report an issue",
+      "suggestion": "Suggestion",
+      "other": "Other"
+    }
+  },
+  "cur": {
+    "refreshList": "Refresh list",
+    "analysisDate": "Analysis date",
+    "deleteAnalysis": "Delete this analysis"
+  },
+  "error": {
+    "returnToIroco": "Return to Iroco",
+    "networkError": "Network error while fetching data"
   },
   "estimate": {
     "ademeSimulator": "ADEME Simulator",
     "equivalentDisclaimer": "* equivalents obtained from data provided by",
     "monthlyImpactLabel": "The <strong>monthly</strong> carbon impact of your infrastructure is:",
     "orEquivalent": "Or equivalent to:"
+  },
+  "estimation": {
+    "improvementAxes": "Some areas for improvement:"
+  },
+  "form": {
+    "companyName": "Company name",
+    "contactEmail": "Contact email",
+    "nameMinLength": "Company name must be more than 3 characters",
+    "nameMaxLength": "Company name must be less than 100 characters",
+    "messageMinLength": "Message must be more than 10 characters",
+    "messageMaxLength": "Message must be less than 500 characters",
+    "emailSent": "Email sent. We will do our best to respond as quickly as possible."
+  },
+  "help": {
+    "documentation": "Docs"
+  },
+  "homepage": {
+    "heroTitle": "Master your cloud infrastructure's CO2 emissions",
+    "heroSubtitle": "Get started in minutes",
+    "requestDemo": "Request a demo",
+    "description": "IroCO2 supports you in implementing your End-to-End GreenOps approach. Measure and estimate the carbon footprint of your Cloud infrastructures. Keep an eye on your infrastructures to understand your emissions. Benefit from advice to define a strategy to control emission trends.",
+    "measureTitle": "Measure",
+    "measureDescription": "Your emissions, start from facts to improve",
+    "understandTitle": "Understand",
+    "understandDescription": "The nature of your emissions and action levers",
+    "actTitle": "Act",
+    "actDescription": "By defining and applying a GreenOps strategy"
   },
   "infrastructure": {
     "alertDeleteAction": "Delete infrastructure",
@@ -59,8 +129,20 @@
     "infrastructureName": "Infrastructure name",
     "newInfrastructure": "New infrastructure"
   },
-  "validation": {
-    "minLength": "You must provide a name with at least {min} characters"
+  "nav": {
+    "resources": "Resources",
+    "dashboard": "Dashboard",
+    "dashboardDemo": "Dashboard Preview",
+    "demo": "Demo",
+    "documentation": "Documentation",
+    "catalog": "Catalog"
+  },
+  "recap": {
+    "leastEcologicalServices": "Least ecological services:"
+  },
+  "scanner": {
+    "refreshList": "Refresh list",
+    "scanDate": "Scan date"
   },
   "equivalents": {
     "equivalentTo": "Equivalent to",
@@ -83,20 +165,13 @@
     "scanner": "Scanner",
     "cloudIntegration": "Cloud Integration"
   },
-  "nav": {
-    "resources": "Resources",
-    "dashboard": "Dashboard",
-    "dashboardDemo": "Dashboard Preview",
-    "demo": "Demo",
-    "documentation": "Documentation",
-    "catalog": "Catalog"
+  "token": {
+    "connectedAccounts": "Your connected accounts:",
+    "createKey": "+ Create a key"
   },
-  "auth": {
-    "signIn": "Sign In",
-    "signOut": "Sign Out",
-    "logout": "Logout"
-  },
-  "help": {
-    "documentation": "Docs"
+  "validation": {
+    "minLength": "You must provide a name with at least {min} characters",
+    "awsAccountIdLength": "AWS account number must contain exactly 12 characters",
+    "expirationDateFuture": "Expiration date must be later than today's date"
   }
 }

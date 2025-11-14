@@ -69,12 +69,12 @@ const service: Ref<ServiceDescription> = ref(
           </li>
         </ul>
         <p v-else class="text-gray-500 text-center">
-          Pas de leviers d'actions pour le moment.
+          {{ $t("catalog.noLever") }}
         </p>
       </div>
       <div class="border-2 rounded-2xl p-8">
         <h2 class="font-bold text-xl mb-8 text-center">
-          Limitations d'estimation carbone
+          {{ $t("catalog.carbonEstimateLimit") }}
         </h2>
         <ul v-if="service.limitations.length > 0" class="list-disc list-inside">
           <li
@@ -86,7 +86,7 @@ const service: Ref<ServiceDescription> = ref(
           </li>
         </ul>
         <p v-else class="text-gray-500 text-center">
-          Pas de limitations pour le moment.
+          {{ $t("catalog.noCarbonEstimateLimit") }}
         </p>
       </div>
     </div>
