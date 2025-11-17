@@ -130,5 +130,17 @@
       "title": "Cache des régions",
       "ttl": "<strong>TTL : </strong>6 heures"
     }
+  },
+  "catalog": {
+    "availabilityCatalog": "Catalogue de disponibilité",
+    "available": "Disponible",
+    "carbonEstimateLimit": "Limitations d'estimation carbone",
+    "learnMore": "En savoir plus",
+    "levers": "Leviers d'actions de réduction d'impact",
+    "noCarbonEstimateLimit": "Pas de limitations pour le moment.",
+    "noLever": "Pas de leviers d'actions pour le moment.",
+    "requestIntegration": "Demander une intégration",
+    "serviceLogo": "Logo de {name}",
+    "comingSoon": "Prochainement"
   }
 }
