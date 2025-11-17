@@ -51,7 +51,7 @@ const service: Ref<ServiceDescription> = ref(
       <img
         class="h-16"
         :src="getIcon(service.name)"
-        :alt="`Logo de ${service.name}`"
+        :alt="$t('catalog.serviceLogo', { name: service.name })"
       />
       <h1 class="py-2 font-extrabold text-center text-2xl">
         {{ service.name }}
@@ -61,7 +61,7 @@ const service: Ref<ServiceDescription> = ref(
     <div class="grid grid-cols-1 md:grid-cols-2 gap-10 justify-center w-full">
       <div class="border-2 rounded-2xl p-8">
         <h2 class="font-bold text-xl mb-8 text-center">
-          Leviers d'actions de réduction d'impact
+          {{ $t("catalog.levers") }}
         </h2>
         <ul v-if="service.levers.length > 0" class="list-disc list-inside">
           <li v-for="lever in service.levers" :key="lever" class="mb-2">
@@ -69,12 +69,12 @@ const service: Ref<ServiceDescription> = ref(
           </li>
         </ul>
         <p v-else class="text-gray-500 text-center">
-          Pas de leviers d'actions pour le moment.
+          {{ $t("catalog.noLever") }}
         </p>
       </div>
       <div class="border-2 rounded-2xl p-8">
         <h2 class="font-bold text-xl mb-8 text-center">
-          Limitations d'estimation carbone
+          {{ $t("catalog.carbonEstimateLimit") }}
         </h2>
         <ul v-if="service.limitations.length > 0" class="list-disc list-inside">
           <li
@@ -86,7 +86,7 @@ const service: Ref<ServiceDescription> = ref(
           </li>
         </ul>
         <p v-else class="text-gray-500 text-center">
-          Pas de limitations pour le moment.
+          {{ $t("catalog.noCarbonEstimateLimit") }}
         </p>
       </div>
     </div>

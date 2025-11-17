@@ -124,5 +124,29 @@
       "title": "Understand",
       "description": "The nature of your emissions and your action levers"
     }
+  },
+  "admin": {
+    "applicativeSupervision": "Application supervision",
+    "description": "This page provides administrators with everything needed to manage the application (cache management, maintenance, messages to users, etc.).",
+    "regionCache": {
+      "actionEmpty": "Clear cache",
+      "description": "This cache stores the list of CSP regions in memory.",
+      "notifyCleared": "The regions cache has been cleared.",
+      "scheduledDeletion": "<strong>Scheduled deletion:</strong> None",
+      "title": "Regions cache",
+      "ttl": "<strong>TTL:</strong> 6 hours"
+    }
+  },
+  "catalog": {
+    "availabilityCatalog": "Availability catalog",
+    "available": "Available",
+    "carbonEstimateLimit": "Carbon estimation limitations",
+    "learnMore": "Learn more",
+    "levers": "Reduction levers",
+    "noCarbonEstimateLimit": "No limitations for carbon estimation at the moment.",
+    "noLever": "No reduction levers at the moment.",
+    "requestIntegration": "Request an integration",
+    "serviceLogo": "Logo of {name}",
+    "comingSoon": "Coming soon"
   }
 }
