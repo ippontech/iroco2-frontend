@@ -124,5 +124,29 @@
       "title": "Comprendre",
       "description": "La nature de ses émissions et les leviers d'action"
     }
+  },
+  "admin": {
+    "applicativeSupervision": "Supervision applicative",
+    "description": "Cette page offre aux administrateurs tout le nécéssaire pour gérer l'application (gestion du cache, maintenance, messages aux utilisateurs, etc.).",
+    "regionCache": {
+      "actionEmpty": "Vider le cache",
+      "description": "Ce cache permet d'avoir la liste des régions des CSP en mémoire.",
+      "notifyCleared": "Le cache des régions a été vidé.",
+      "scheduledDeletion": "<strong>Suppression programmée :</strong> Aucune",
+      "title": "Cache des régions",
+      "ttl": "<strong>TTL : </strong>6 heures"
+    }
+  },
+  "catalog": {
+    "availabilityCatalog": "Catalogue de disponibilité",
+    "available": "Disponible",
+    "carbonEstimateLimit": "Limitations d'estimation carbone",
+    "learnMore": "En savoir plus",
+    "levers": "Leviers d'actions de réduction d'impact",
+    "noCarbonEstimateLimit": "Pas de limitations pour le moment.",
+    "noLever": "Pas de leviers d'actions pour le moment.",
+    "requestIntegration": "Demander une intégration",
+    "serviceLogo": "Logo de {name}",
+    "comingSoon": "Prochainement"
   }
 }

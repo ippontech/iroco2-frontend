@@ -30,7 +30,7 @@ const { $api } = useNuxtApp();
 const clearCache = async () => {
   await $api.adminService.evictRegionCache().then(() =>
     notificationHandler.add({
-      title: "Le cache des régions a été vidé.",
+      title: $t("admin.regionCache.notifyCleared"),
       color: NuxtColors.success,
     }),
   );
@@ -43,12 +43,10 @@ const clearCache = async () => {
     <div class="background-svg" />
     <div class="main-content">
       <p class="text-3xl font-semibold text-center my-8">
-        Supervision applicative
+        {{ $t("admin.applicativeSupervision") }}
       </p>
       <p class="text-xl text-center text-balance px-8 my-8">
-        Cette page offre aux administrateurs tout le nécéssaire pour gérer
-        l'application (gestion du cache, maintenance, messages aux utilisateurs,
-        ...).
+        {{ $t("admin.description") }}
       </p>
       <div
         class="container flex flex-col gap-12 mx-auto max-sm:w-full max-md:w-2/3"
@@ -63,14 +61,14 @@ const clearCache = async () => {
             <h5
               class="mb-2 text-2xl font-semibold tracking-tight text-gray-900 dark:text-white"
             >
-              Cache des régions
+              {{ $t("admin.regionCache.title") }}
             </h5>
             <p class="mb-3 font-normal text-gray-500 dark:text-gray-400">
-              Ce cache permet d'avoir la liste des régions des CSP en mémoire.
+              {{ $t("admin.regionCache.description") }}
             </p>
             <ul>
-              <li><b>TTL : </b>6 heures</li>
-              <li><b>Suppression programmée : </b>Aucune</li>
+              <li>{{ $t("admin.regionCache.ttl") }}</li>
+              <li>{{ $t("admin.regionCache.scheduledDeletion") }}</li>
             </ul>
 
             <div class="inline-flex rounded-md shadow-sm mt-6" role="group">
@@ -90,7 +88,7 @@ const clearCache = async () => {
                     d="M10 0a10 10 0 1 0 10 10A10.011 10.011 0 0 0 10 0Zm0 5a3 3 0 1 1 0 6 3 3 0 0 1 0-6Zm0 13a8.949 8.949 0 0 1-4.951-1.488A3.987 3.987 0 0 1 9 13h2a3.987 3.987 0 0 1 3.951 3.512A8.949 8.949 0 0 1 10 18Z"
                   />
                 </svg>
-                Vider le cache
+                {{ $t("admin.regionCache.actionEmpty") }}
               </button>
             </div>
           </div>

@@ -44,7 +44,9 @@ const getIcon = (service: string) => {
 
 <template>
   <PackManBackground class="flex items-center justify-center">
-    <h1 class="text-center text-5xl font-bold">Catalogue de disponibilité</h1>
+    <h1 class="text-center text-5xl font-bold">
+      {{ $t("catalog.availabilityCatalog") }}
+    </h1>
   </PackManBackground>
   <div
     class="container py-8 m-auto grid md:grid-cols-2 lg:grid-cols-3 grid-cols gap-4"
@@ -78,11 +80,11 @@ const getIcon = (service: string) => {
             class="text-white"
             variant="black"
             @click="toDescription(service.id)"
-            >En savoir plus</Button
+            >{{ $t("catalog.learnMore") }}</Button
           >
-          <Badge class="text-black border-[#15803D] h-fit" variant="outline"
-            >Disponible</Badge
-          >
+          <Badge class="text-black border-[#15803D] h-fit" variant="outline">{{
+            $t("catalog.available")
+          }}</Badge>
         </div>
 
         <div
@@ -93,17 +95,17 @@ const getIcon = (service: string) => {
             class="text-white"
             variant="black"
             @click="toDescription(service.id)"
-            >En savoir plus</Button
+            >{{ $t("catalog.learnMore") }}</Button
           >
-          <Badge class="text-black border-[#EEA02D] h-fit" variant="outline"
-            >Prochainement</Badge
-          >
+          <Badge class="text-black border-[#EEA02D] h-fit" variant="outline">{{
+            $t("catalog.comingSoon")
+          }}</Badge>
         </div>
 
         <Button
           v-else
           class="mx-auto h-fit py-1 bg-[#15803D] text-white hover:bg-[#15803D]/90"
-          >Demander une intégration</Button
+          >{{ $t("catalog.requestIntegration") }}</Button
         >
       </CardFooter>
     </Card>
