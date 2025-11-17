@@ -32,21 +32,23 @@
       <h1
         class="mt-8 px-12 text-xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl w-screen md:w-3/4 xl:w-2/3 text-center bg-gradient-to-b bg-clip-text text-transparent from-iroco-dark-green to-green-700 font-bold"
       >
-        Maîtrisez les émissions CO2 de votre infrastructure cloud
+        {{ $t("homepage.title") }}
       </h1>
 
       <div class="flex gap-4">
         <button
           class="flex items-center justify-between bg-green-700 text-white px-4 py-1 md:px-8 md:py-4 rounded-full font-bold text-xs md:text-lg"
         >
-          <NuxtLink to="/calculatrice">Démarrez en quelques minutes </NuxtLink>
+          <NuxtLink to="/calculatrice">{{
+            $t("homepage.calculatorLink")
+          }}</NuxtLink>
           <Icon name="ph:caret-right" class="w-6 h-6" />
         </button>
 
         <button
           class="flex items-center justify-between bg-iroco-light-green text-white px-4 py-2 md:px-8 md:py-4 rounded-full font-bold text-xs md:text-lg"
         >
-          <NuxtLink to="/contact">Demander une démo</NuxtLink>
+          <NuxtLink to="/contact">{{ $t("homepage.requestDemo") }}</NuxtLink>
           <Icon name="ph:caret-right" class="w-6 h-6" />
         </button>
       </div>
@@ -57,18 +59,14 @@
     class="bg-gradient-to-b from-iroco-greenish-white/50 to-muted mb-32 z-20 p-16"
   >
     <div class="flex flex-col mx-auto w-2/3 items-center gap-8 text-center">
-      <h1 class="font-black font-title text-5xl">
-        <span class="text-green-700">GreenOps</span> as a Service
-      </h1>
-
-      <p class="text-balance font-light leading-loose">
-        IroCO2 vous <b>accompagne</b> dans la mise en place de votre
-        <b>démarche GreenOps</b> End-to-End. <b>Mesurez</b> et
-        <b>estimez</b> l'empreinte carbone de vos infrastructures Cloud. Gardez
-        un œil sur vos infrastructures pour <b>comprendre</b> vos emissions.
-        Profitez de <b>conseils</b> pour définir une <b>stratégie</b> de
-        <b>maîtrise</b> de la tendance d'émission.
-      </p>
+      <h1
+        class="font-black font-title text-5xl"
+        v-html="$t('homepage.subTitle', { colorClass: 'text-green-700' })"
+      ></h1>
+      <p
+        class="text-balance leading-loose"
+        v-html="$t('homepage.description')"
+      ></p>
     </div>
   </section>
 
@@ -81,9 +79,11 @@
           <Icon name="ph:chart-bar" size="6rem" class="text-white" />
         </div>
 
-        <h3 class="font-title text-2xl font-black">Mesurer</h3>
+        <h3 class="font-title text-2xl font-black">
+          {{ $t("homepage.measure.title") }}
+        </h3>
         <p class="max-w-48 text-center text-balance font-light text-sm">
-          Ses émissions, partir d’un constat pour s’améliorer
+          {{ $t("homepage.measure.description") }}
         </p>
       </div>
 
@@ -94,9 +94,11 @@
           <Icon name="ph:lightbulb" size="6rem" class="text-white" />
         </div>
 
-        <h3 class="font-title text-2xl font-black">Comprendre</h3>
+        <h3 class="font-title text-2xl font-black">
+          {{ $t("homepage.understand.title") }}
+        </h3>
         <p class="max-w-48 text-center text-balance font-light text-sm">
-          La nature de ses émissions et les leviers d’action
+          {{ $t("homepage.understand.description") }}
         </p>
       </div>
 
@@ -106,9 +108,11 @@
         >
           <Icon name="ph:target" size="6rem" class="text-white" />
         </div>
-        <h3 class="font-title text-2xl font-black">Agir</h3>
+        <h3 class="font-title text-2xl font-black">
+          {{ $t("homepage.act.title") }}
+        </h3>
         <p class="max-w-48 text-center text-balance font-light text-sm">
-          En définissant et appliquant une stratégie GreenOps
+          {{ $t("homepage.act.description") }}
         </p>
       </div>
     </div>
