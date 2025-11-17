@@ -105,5 +105,24 @@
   },
   "help": {
     "documentation": "Docs"
+  },
+  "homepage": {
+    "subTitle": "<span class=\"{colorClass}\">GreenOps</span> as a Service",
+    "calculatorLink": "Démarrez en quelques minutes",
+    "description": "IroCO2 vous <strong>accompagne</strong> dans la mise en place de votre <strong>démarche GreenOps</strong> End-to-End. <strong>Mesurez</strong> et <strong>estimez</strong> l'empreinte carbone de vos infrastructures Cloud. Gardez un œil sur vos infrastructures pour <strong>comprendre</strong> vos emissions. Profitez de <strong>conseils</strong> pour définir une <strong>stratégie</strong> de <strong>maîtrise</strong> de la tendance d'émission.",
+    "requestDemo": "Demander une démo",
+    "title": "Maîtrisez les émissions CO2 de votre infrastructure cloud",
+    "act": {
+      "title": "Agir",
+      "description": "En définissant et appliquant une stratégie GreenOps"
+    },
+    "measure": {
+      "title": "Mesurer",
+      "description": "Ses émissions, partir d'un constat pour s'améliorer"
+    },
+    "understand": {
+      "title": "Comprendre",
+      "description": "La nature de ses émissions et les leviers d'action"
+    }
   }
 }
