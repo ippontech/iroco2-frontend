@@ -118,5 +118,17 @@
     "title": "Maîtrisez les émissions CO2 de votre infrastructure cloud",
     "understandDescription": "La nature de ses émissions et les leviers d'action",
     "understandTitle": "Comprendre"
+  },
+  "admin": {
+    "applicativeSupervision": "Supervision applicative",
+    "description": "Cette page offre aux administrateurs tout le nécéssaire pour gérer l'application (gestion du cache, maintenance, messages aux utilisateurs, ...).",
+    "regionCache": {
+      "actionEmpty": "Vider le cache",
+      "description": "Ce cache permet d'avoir la liste des régions des CSP en mémoire.",
+      "notifyCleared": "Le cache des régions a été vidé.",
+      "scheduledDeletion": "<strong>Suppression programmée :</strong> Aucune",
+      "title": "Cache des régions",
+      "ttl": "<strong>TTL : </strong>6 heures"
+    }
   }
 }
