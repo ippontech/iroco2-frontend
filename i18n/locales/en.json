@@ -148,5 +148,32 @@
     "requestIntegration": "Request an integration",
     "serviceLogo": "Logo of {name}",
     "comingSoon": "Coming soon"
+  },
+  "contact": {
+    "title": "Have a question?",
+    "subtitle": "Contact us",
+    "description": "Feel free to contact us with any questions or requests for information. Whether you want to learn more about our services, get help, or share feedback, our team is here to respond quickly. We look forward to assisting you!",
+    "askDemo": "Request a demo",
+    "form": {
+      "company": "Company name",
+      "mail": "Contact email",
+      "subject": {
+        "title": "Subject",
+        "signalProblem": "Report a problem",
+        "suggestion": "Suggestion",
+        "other": "Other"
+      },
+      "yourDemand": "Your request",
+      "send": "Send",
+      "errors": {
+        "mandatoryField": "Required field",
+        "companyNameMinLength": "Company name must be longer than 2 characters",
+        "companyNameMaxLength": "Company name must be shorter than 255 characters",
+        "invalidEmail": "Invalid email address",
+        "messageMinLength": "Message must be longer than 10 characters",
+        "messageMaxLength": "Message must be shorter than 500 characters"
+      },
+      "sentNotification": "Email sent. We will do our best to reply as soon as possible."
+    }
   }
 }

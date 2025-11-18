@@ -22,17 +22,12 @@
     class="flex flex-col lg:grid lg:grid-cols-2 gap-16 sm:p-8 lg:p-28 xl:p-40"
   >
     <div class="grid gap-8">
-      <h1 class="text-4xl font-bold font-title">Une question ?</h1>
-      <h2 class="text-xl text-green-500">Contactez-nous</h2>
-      <p class="text-justify">
-        N'hésitez pas à nous contacter pour toute question ou demande
-        d'information. Que ce soit pour en savoir plus sur nos services, obtenir
-        de l'aide ou partager vos suggestions, notre équipe est là pour vous
-        répondre rapidement. Nous sommes impatients de vous accompagner !
-      </p>
+      <h1 class="text-4xl font-bold font-title">{{ $t("contact.title") }}</h1>
+      <h2 class="text-xl text-green-500">{{ $t("contact.subtitle") }}</h2>
+      <p class="text-justify">{{ $t("contact.description") }}</p>
       <img
         src="~/assets/static/ask-demo.svg"
-        alt="Demander une démo"
+        v-bind:alt="t('contact.askDemo')"
         class="w-1/2 mx-auto"
       />
     </div>
@@ -41,7 +36,7 @@
       <form class="w-full space-y-6" @submit="onSubmit">
         <FormField v-slot="{ componentField }" name="companyName">
           <FormItem>
-            <FormLabel>Nom de l'entreprise</FormLabel>
+            <FormLabel>{{ $t("contact.form.company") }}</FormLabel>
             <FormControl>
               <Input type="text" v-bind="componentField" />
             </FormControl>
@@ -50,7 +45,7 @@
         </FormField>
         <FormField v-slot="{ componentField }" name="mail">
           <FormItem>
-            <FormLabel>Mail de contact</FormLabel>
+            <FormLabel>{{ $t("contact.form.mail") }}</FormLabel>
             <FormControl>
               <Input type="text" v-bind="componentField" />
             </FormControl>
@@ -59,7 +54,7 @@
         </FormField>
         <FormField v-slot="{ componentField }" name="subject">
           <FormItem>
-            <FormLabel>Sujet</FormLabel>
+            <FormLabel>{{ $t("contact.form.subject.title") }}</FormLabel>
 
             <Select v-bind="componentField">
               <FormControl>
@@ -69,14 +64,18 @@
               </FormControl>
               <SelectContent>
                 <SelectGroup>
-                  <SelectItem value="Demander une démo"
-                    >Demander une démo</SelectItem
-                  >
-                  <SelectItem value="Signaler un problème"
-                    >Signaler un problème</SelectItem
-                  >
-                  <SelectItem value="Suggestion">Suggestion</SelectItem>
-                  <SelectItem value="Autres">Autres</SelectItem>
+                  <SelectItem value="Demander une démo">{{
+                    $t("contact.askDemo")
+                  }}</SelectItem>
+                  <SelectItem value="Signaler un problème">{{
+                    $t("contact.form.subject.signalProblem")
+                  }}</SelectItem>
+                  <SelectItem value="Suggestion">{{
+                    $t("contact.form.subject.suggestion")
+                  }}</SelectItem>
+                  <SelectItem value="Autres">{{
+                    $t("contact.form.subject.other")
+                  }}</SelectItem>
                 </SelectGroup>
               </SelectContent>
             </Select>
@@ -86,7 +85,7 @@
 
         <FormField v-slot="{ componentField }" name="message">
           <FormItem>
-            <FormLabel>Votre demande</FormLabel>
+            <FormLabel>{{ $t("contact.form.yourDemand") }}</FormLabel>
             <FormControl>
               <Textarea rows="10" v-bind="componentField" class="resize-none" />
             </FormControl>
@@ -94,7 +93,9 @@
           </FormItem>
         </FormField>
 
-        <Button type="submit" variant="black"> Envoyer </Button>
+        <Button type="submit" variant="black">
+          {{ $t("contact.form.send") }}
+        </Button>
       </form>
     </div>
   </section>
@@ -130,25 +131,27 @@ definePageMeta({
 });
 
 const notificationHandler = useToast();
-
+const { t } = useI18n();
 const formSchema = toTypedSchema(
   z.object({
     companyName: z
-      .string({ required_error: "Champ obligatoire" })
+      .string({ required_error: t("contact.form.errors.mandatoryField") })
       .min(2, {
-        message: "Le nom de l'entreprise doit faire plus de 2 caractères",
+        message: t("contact.form.errors.companyNameMinLength"),
       })
       .max(255, {
-        message: "Le nom de l'entreprise doit faire moins de 255 caractères",
+        message: t("contact.form.errors.companyNameMaxLength"),
       }),
     mail: z
-      .string({ required_error: "Champ obligatoire" })
-      .email({ message: "Adresse mail invalide" }),
-    subject: z.string({ required_error: "Champ obligatoire" }),
+      .string({ required_error: t("contact.form.errors.mandatoryField") })
+      .email({ message: t("contact.form.errors.invalidEmail") }),
+    subject: z.string({
+      required_error: t("contact.form.errors.mandatoryField"),
+    }),
     message: z
-      .string({ required_error: "Champ obligatoire" })
-      .min(10, { message: "Le message doit faire plus de 10 caractères" })
-      .max(500, { message: "Le message doit faire moins de 500 caractères" }),
+      .string({ required_error: t("contact.form.errors.mandatoryField") })
+      .min(10, { message: t("contact.form.errors.messageMinLength") })
+      .max(500, { message: t("contact.form.errors.messageMaxLength") }),
   }),
 );
 
@@ -166,8 +169,7 @@ const onSubmit = form.handleSubmit(async (values) => {
 
   await contactService.requestDemoEmail(body).then(() => {
     notificationHandler.add({
-      title:
-        "Courriel envoyé. Nous faisons notre possible pour vous répondre au plus vite.",
+      title: t("contact.form.sentNotification"),
       color: NuxtColors.success,
     });
     form.resetForm();
