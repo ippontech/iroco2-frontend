@@ -148,5 +148,32 @@
     "requestIntegration": "Demander une intégration",
     "serviceLogo": "Logo de {name}",
     "comingSoon": "Prochainement"
+  },
+  "contact": {
+    "title": "Une question ?",
+    "subtitle": "Contactez-nous",
+    "description": "N'hésitez pas à nous contacter pour toute question ou demande d'information. Que ce soit pour en savoir plus sur nos services, obtenir de l'aide ou partager vos suggestions, notre équipe est là pour vous répondre rapidement. Nous sommes impatients de vous accompagner !",
+    "askDemo": "Demander une démo",
+    "form": {
+      "company": "Nom de l'entreprise",
+      "mail": "Mail de contact",
+      "subject": {
+        "title": "Sujet",
+        "signalProblem": "Signaler un problème",
+        "suggestion": "Suggestion",
+        "other": "Autres"
+      },
+      "yourDemand": "Votre demande",
+      "send": "Envoyer",
+      "errors": {
+        "mandatoryField": "Champ obligatoire",
+        "companyNameMinLength": "Le nom de l'entreprise doit faire plus de 2 caractères",
+        "companyNameMaxLength": "Le nom de l'entreprise doit faire moins de 255 caractères",
+        "invalidEmail": "Adresse mail invalide",
+        "messageMinLength": "Le message doit faire plus de 10 caractères",
+        "messageMaxLength": "Le message doit faire moins de 500 caractères"
+      },
+      "sentNotification": "Courriel envoyé. Nous faisons notre possible pour vous répondre au plus vite."
+    }
   }
 }
