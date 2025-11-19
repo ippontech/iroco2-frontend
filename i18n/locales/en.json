@@ -175,5 +175,26 @@
       },
       "sentNotification": "Email sent. We will do our best to reply as soon as possible."
     }
+  },
+  "cur": {
+    "yourAnalyses": "Your analyses:",
+    "refreshList": "Refresh list",
+    "newAnalysis": "New analysis",
+    "table": {
+      "id": "Id",
+      "status": "Status",
+      "analysisDate": "Analysis date",
+      "carbonImpact": "Carbon impact"
+    },
+    "deleteAnalysis": "Delete this analysis",
+    "deleteModal": {
+      "title": "Delete analysis",
+      "description": "This action will permanently delete the analysis.",
+      "cancel": "Cancel",
+      "confirmDelete": "Delete analysis"
+    },
+    "detail": {
+      "cur": "Cur {curId}"
+    }
   }
 }
