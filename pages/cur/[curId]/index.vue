@@ -19,7 +19,7 @@
 
 <template>
   <div class="h-full container flex flex-col gap-8 mx-auto">
-    <div class="container">Cur {{ curId }}</div>
+    <div class="container">{{ $t("cur.detail.cur", { curId }) }}</div>
     <EstimateTotal :total="analysis.totalCO2Converted" />
     <EstimateDetails
       :relative-carbon-footprint-list="analysis.relativeCarbonFootprintList"

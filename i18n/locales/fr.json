@@ -175,5 +175,26 @@
       },
       "sentNotification": "Courriel envoyé. Nous faisons notre possible pour vous répondre au plus vite."
     }
+  },
+  "cur": {
+    "yourAnalyses": "Vos analyses :",
+    "refreshList": "Rafraîchir la liste",
+    "newAnalysis": "Nouvelle analyse",
+    "table": {
+      "id": "Id",
+      "status": "Statut",
+      "analysisDate": "Date de l'analyse",
+      "carbonImpact": "Impact carbone"
+    },
+    "deleteAnalysis": "Supprimer cette analyse",
+    "deleteModal": {
+      "title": "Supprimer l'analyse",
+      "description": "Cette action va supprimer l'analyse de façon permanente.",
+      "cancel": "Annuler",
+      "confirmDelete": "Supprimer l'analyse"
+    },
+    "detail": {
+      "cur": "Cur {curId}"
+    }
   }
 }
