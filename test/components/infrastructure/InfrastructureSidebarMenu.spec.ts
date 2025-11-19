@@ -71,7 +71,7 @@ describe("InfrastructureSidebarMenu Component", () => {
 
     // then
     expect(title.exists()).toBe(true);
-    expect(title.text()).toBe("Infrastructure");
+    expect(title.text()).toBe("infrastructureSidebar.title");
   });
 
   it("should render sidebar item when component is displayed", () => {
