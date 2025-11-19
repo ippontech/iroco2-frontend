@@ -9,74 +9,65 @@ This is the frontend of the IroCO2 application, developed using [Nuxt 3](https:/
 ### Prerequisites
 
 - Node.js >= 20.0.0 < 21.0.0
-- npm >= 9.0.0 < 11.0.0 (or [Yarn](https://yarnpkg.com/) / [pnpm](https://pnpm.io/) / [Bun](https://bun.sh/))
+- npm >= 9.0.0 < 11.0.0, or [Yarn](https://yarnpkg.com/) / [pnpm](https://pnpm.io/) / [Bun](https://bun.sh/). All npm commands described below can be executed with `yarn`, `pnpm` or `bun`)
 
 ### Installation
 
 Clone the repository and install dependencies:
 
 ```bash
-# with npm
 npm install
-
-# with yarn
-yarn install
-
-# with pnpm
-pnpm install
-
-# with bun
-bun install
 ```
 
+### Lint project
+
+```bash
+# to check linting problems on the whole project
+npm run lint-all
+
+# to check linting problems on a specific folder or file
+npm run lint ./path/to/folder/
+npm run lint ./path/to/NameOfTheFile.vue
+```
+
+Replace `lint` with `lint:fix` to automatically fix the problems found on the whole project or the specific folder / file. 
+
+### Launch tests
+
+To launch tests on the project, use following commands :
+
+```bash
+# to launch all the tests
+npm run test
+
+#to launch only the tests written in NameOfTheComponent.spec.ts file
+npm run test NameOfTheComponent
+
+#to launch only the test declared at line 10 of NameOfTheComponent.spec.ts file
+npm run test ./path/to/NameOfTheComponent.spec.ts:10
+```
+
+
 ### Run in development
+
+To launch the server, a `.env` file is required at the front-end project root folder (ask an IroCO2 referent on how to document it).
 
 Start the development server at `http://localhost:3000`:
 
 ```bash
-# with npm
 npm run dev
-
-# with yarn
-yarn dev
-
-# with pnpm
-pnpm run dev
-
-# with bun
-bun run dev
 ```
 
 ### Build for production
 
 ```bash
-# with npm
 npm run build
-
-# with yarn
-yarn build
-
-# with pnpm
-pnpm run build
-
-# with bun
-bun run build
 ```
 
 Preview the production build locally:
 
 ```bash
-# with npm
 npm run preview
-
-# with yarn
-yarn preview
-
-# with pnpm
-pnpm run preview
-
-# with bun
-bun run preview
 ```
 
 ## 📦 Project Structure
