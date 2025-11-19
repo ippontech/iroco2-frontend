@@ -20,8 +20,12 @@
 <template>
   <div class="container">
     <div class="flex justify-between">
-      <h1 class="font-title font-bold text-3xl">Vos comptes connectés :</h1>
-      <Button variant="black" @click="openModal">+ Créer une clé </Button>
+      <h1 class="font-title font-bold text-3xl">
+        {{ $t("token.yourConnectedAccounts") }}
+      </h1>
+      <Button variant="black" @click="openModal"
+        >+ {{ $t("token.createKey") }}</Button
+      >
     </div>
     <AlertAddToken v-model="addTokenModelOpened" />
   </div>
