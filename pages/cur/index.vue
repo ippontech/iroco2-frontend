@@ -24,27 +24,27 @@
     </CardCustom>
     <CardCustom>
       <div class="flex justify-between pb-8">
-        <h1 class="text-2xl font-bold">Vos analyses :</h1>
+        <h1 class="text-2xl font-bold">{{ $t("cur.yourAnalyses") }}</h1>
         <div class="flex gap-4">
           <Button
             variant="outline"
-            title="Rafraîchir la liste"
+            :title="$t('cur.refreshList')"
             @click="refresh()"
           >
             <UIcon name="i-heroicons-arrow-path-16-solid" />
           </Button>
           <Button variant="black" @click="openModal">
-            + Nouvelle analyse
+            + {{ $t("cur.newAnalysis") }}
           </Button>
         </div>
       </div>
       <Table>
         <TableHeader>
           <TableRow>
-            <TableHead> Id </TableHead>
-            <TableHead> Status </TableHead>
-            <TableHead> Date de l'analyse </TableHead>
-            <TableHead> Impact carbone </TableHead>
+            <TableHead> {{ $t("cur.table.id") }} </TableHead>
+            <TableHead> {{ $t("cur.table.status") }} </TableHead>
+            <TableHead> {{ $t("cur.table.analysisDate") }} </TableHead>
+            <TableHead> {{ $t("cur.table.carbonImpact") }} </TableHead>
             <TableHead> </TableHead>
           </TableRow>
         </TableHeader>
@@ -63,7 +63,7 @@
               <Button
                 variant="outline"
                 class="text-red-500"
-                title="Supprimer cette anayse"
+                :title="$t('cur.deleteAnalysis')"
                 @click="openDeletionModalForAnalysis(row.id)"
               >
                 <UIcon name="i-heroicons-trash-16-solid" />
@@ -81,23 +81,25 @@
       <AlertDialogContent>
         <AlertDialogHeader>
           <AlertDialogTitle>
-            Supprimer l'analyse
+            {{ $t("cur.deleteModal.title") }}
             {{
               analyses.find((analysis) => analysis.id === analysisToDelete)
                 ?.id ?? ""
             }}?
           </AlertDialogTitle>
           <AlertDialogDescription>
-            Cette action va supprimer de façon permanente l'analyse.
+            {{ $t("cur.deleteModal.description") }}
           </AlertDialogDescription>
         </AlertDialogHeader>
         <AlertDialogFooter>
-          <AlertDialogCancel>Annuler</AlertDialogCancel>
+          <AlertDialogCancel>{{
+            $t("cur.deleteModal.cancel")
+          }}</AlertDialogCancel>
           <AlertDialogAction
             :class="buttonVariants({ variant: 'destructive' })"
             @click="deleteAnalysis"
           >
-            Supprimer l'analyse
+            {{ $t("cur.deleteModal.confirmDelete") }}
           </AlertDialogAction>
         </AlertDialogFooter>
       </AlertDialogContent>
