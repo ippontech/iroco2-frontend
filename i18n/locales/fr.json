@@ -211,5 +211,9 @@
   "token": {
     "yourConnectedAccounts": "Vos comptes connectés :",
     "createKey": "Créer une clé"
+  },
+  "error": {
+    "oops": "Ooops !",
+    "returnToIroco": "Retourner sur Iroco"
   }
 }
