@@ -209,5 +209,9 @@
     "detail": {
       "scan": "Scan"
     }
+  },
+  "token": {
+    "yourConnectedAccounts": "Your connected accounts:",
+    "createKey": "Create a key"
   }
 }
