@@ -196,5 +196,18 @@
     "detail": {
       "cur": "Cur {curId}"
     }
+  },
+  "scanner": {
+    "yourScans": "Vos scans :",
+    "refreshList": "Rafraîchir la liste",
+    "table": {
+      "id": "Id",
+      "status": "Statut",
+      "scanDate": "Date du scan",
+      "carbonImpact": "Impact carbone"
+    },
+    "detail": {
+      "scan": "Scan"
+    }
   }
 }
