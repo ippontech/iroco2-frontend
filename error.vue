@@ -36,7 +36,9 @@ definePageMeta({
   <div class="flex items-center justify-center min-h-screen">
     <div class="w-full max-w-full h-auto sm:w-1/2 lg:w-1/4 text-center">
       <img src="~/assets/static/error-logo-1.png" alt="Logo" />
-      <p class="mt-4 text-3xl sm:text-4xl md:text-5xl font-bold">Ooops !</p>
+      <p class="mt-4 text-3xl sm:text-4xl md:text-5xl font-bold">
+        {{ $t("error.oops") }}
+      </p>
       <p class="mt-4 text-xs sm:text-sm md:text-base">
         <span v-if="!error?.data" class="font-bold">{{
           error?.statusCode
@@ -45,7 +47,7 @@ definePageMeta({
         {{ error?.message }}
       </p>
       <Button variant="black" class="mt-12" @click="redirectToRoot()"
-        >Retourner sur Iroco<sub class="text-xs">2</sub></Button
+        >{{ $t("error.returnToIroco") }}<sub class="text-xs">2</sub></Button
       >
     </div>
   </div>
