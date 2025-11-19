@@ -217,5 +217,9 @@
   "token": {
     "yourConnectedAccounts": "Your connected accounts:",
     "createKey": "Create a key"
+  },
+  "error": {
+    "oops": "Ooops!",
+    "returnToIroco": "Return to Iroco"
   }
 }
