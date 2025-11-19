@@ -69,6 +69,10 @@
     "newInfrastructure": "Nouvelle infrastructure",
     "noInfrastructure": "Aucune infrastructure."
   },
+  "infrastructureSidebar": {
+    "title": "Infrastructure",
+    "overview": "Vue d'ensemble"
+  },
   "equivalents": {
     "equivalentTo": "Équivalent à",
     "kmCarThermal": "kilomètres parcourus en voiture thermique",

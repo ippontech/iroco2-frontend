@@ -22,12 +22,12 @@
     <span
       class="uppercase font-bold font-title text-sm text-iroco-greenish-white brightness-50 pb-2"
     >
-      Infrastructure
+      {{ $t("infrastructureSidebar.title") }}
     </span>
     <SidebarItem
       :to="`/calculatrice/infrastructure/${infraId}`"
       icon="ph:article-bold"
-      text="Vue d'ensemble"
+      :text="$t('infrastructureSidebar.overview')"
     />
   </div>
 </template>
