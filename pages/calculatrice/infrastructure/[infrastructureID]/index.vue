@@ -22,14 +22,14 @@
     <div class="flex justify-end gap-10">
       <Button variant="black" class="flex gap-2" @click="addComponent">
         <Icon name="ph:plus-bold" />
-        <span>Ajouter un composant</span>
+        <span>{{ $t("infrastructurePage.addComponent") }}</span>
       </Button>
       <Button
         variant="lime500"
         class="flex gap-2"
         @click="navigateToEstimation"
       >
-        <span>Estimer l'empreinte</span>
+        <span>{{ $t("infrastructurePage.estimateFootprint") }}</span>
         <Icon name="ph:arrow-right" />
       </Button>
     </div>
@@ -38,8 +38,10 @@
         <Table>
           <TableHeader>
             <TableRow>
-              <TableHead> Nom</TableHead>
-              <TableHead> Dernière modification</TableHead>
+              <TableHead>{{ $t("infrastructurePage.table.name") }}</TableHead>
+              <TableHead>{{
+                $t("infrastructurePage.table.lastModification")
+              }}</TableHead>
             </TableRow>
           </TableHeader>
           <TableBody>
@@ -51,7 +53,7 @@
               <TableCell class="flex flex-nowrap w-1/12 space-x-4">
                 <Button
                   variant="outline"
-                  title="Modifier ce composant"
+                  :title="$t('infrastructure.editComponent')"
                   @click="navigateToEdit(component)"
                 >
                   <UIcon name="i-heroicons-pencil-16-solid" />
@@ -59,7 +61,7 @@
                 <Button
                   variant="outline"
                   class="text-red-500"
-                  title="Supprimer ce composant"
+                  :title="$t('infrastructure.deleteComponent')"
                   @click="openDeletionModalForComponent(component.id)"
                 >
                   <UIcon name="i-heroicons-trash-16-solid" />
@@ -74,23 +76,24 @@
       <AlertDialogContent>
         <AlertDialogHeader>
           <AlertDialogTitle
-            >Supprimer le composant
+            >{{ $t("infrastructurePage.dialog.title") }}
             {{
               components.find((c) => c.id === componentToDelete)?.name ?? ""
             }}?
           </AlertDialogTitle>
           <AlertDialogDescription>
-            Cette action va supprimer de façon permanente le composant de cette
-            infrastructure.
+            {{ $t("infrastructurePage.dialog.description") }}
           </AlertDialogDescription>
         </AlertDialogHeader>
         <AlertDialogFooter>
-          <AlertDialogCancel>Annuler</AlertDialogCancel>
+          <AlertDialogCancel>
+            {{ $t("infrastructurePage.dialog.cancel") }}</AlertDialogCancel
+          >
           <AlertDialogAction
             :class="buttonVariants({ variant: 'destructive' })"
             @click="deleteComponent"
           >
-            Supprimer le composant
+            {{ $t("infrastructurePage.dialog.action") }}
           </AlertDialogAction>
         </AlertDialogFooter>
       </AlertDialogContent>
