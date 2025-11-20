@@ -69,6 +69,22 @@
     "newInfrastructure": "Nouvelle infrastructure",
     "noInfrastructure": "Aucune infrastructure."
   },
+  "infrastructurePage": {
+    "addComponent": "Ajouter un composant",
+    "estimateFootprint": "Estimer l'empreinte",
+    "table": {
+      "name": "Nom",
+      "lastModification": "Dernière modification"
+    },
+    "dialog": {
+      "title": "Supprimer le composant",
+      "description": "Cette action va supprimer de façon permanente le composant de cette infrastructure.",
+      "cancel": "Annuler",
+      "action": "Supprimer le composant"
+    },
+    "editComponent": "Modifier ce composant",
+    "deleteComponent": "Supprimer ce composant"
+  },
   "infrastructureSidebar": {
     "title": "Infrastructure",
     "overview": "Vue d'ensemble"

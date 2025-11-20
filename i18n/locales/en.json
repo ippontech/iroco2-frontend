@@ -69,6 +69,22 @@
     "newInfrastructure": "New infrastructure",
     "noInfrastructure": "No infrastructure."
   },
+  "infrastructurePage": {
+    "addComponent": "Add component",
+    "estimateFootprint": "Estimate footprint",
+    "table": {
+      "name": "Name",
+      "lastModification": "Last modification"
+    },
+    "dialog": {
+      "title": "Delete component",
+      "description": "This action will permanently delete the component from this infrastructure.",
+      "cancel": "Cancel",
+      "action": "Delete component"
+    },
+    "editComponent": "Edit this component",
+    "deleteComponent": "Delete this component"
+  },
   "infrastructureSidebar": {
     "title": "Infrastructure",
     "overview": "Overview"
