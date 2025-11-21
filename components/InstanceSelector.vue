@@ -19,7 +19,7 @@
 
 <template>
   <RecapSelector
-    placeholder="instance"
+    :placeholder="$t('selector.instance')"
     :values="props.instanceTypes"
     :default-selected-value="selectedInstance"
     @update:value="handleSelect"

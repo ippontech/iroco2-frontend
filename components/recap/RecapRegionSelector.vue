@@ -19,7 +19,7 @@
 
 <template>
   <RecapSelector
-    placeholder="region"
+    :placeholder="$t('selector.region')"
     :values="regions.map((region) => region.name)"
     :default-selected-value="(selectedRegion as Region)?.name"
     @update:value="handleSelect"
@@ -27,8 +27,8 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from "vue";
 import type { Ref } from "vue";
+import { ref } from "vue";
 import type { Region } from "~/type/Region";
 
 const { $api } = useNuxtApp();
