@@ -101,7 +101,9 @@
   "selector": {
     "selectPlaceholder": "Sélectionner une {placeholder}...",
     "searchPlaceholder": "Rechercher une {placeholder}...",
-    "noResultFound": "Aucune {placeholder} trouvée."
+    "noResultFound": "Aucune {placeholder} trouvée.",
+    "instance": "instance",
+    "region": "région"
   },
   "sidebar": {
     "calculator": "Calculatrice",
