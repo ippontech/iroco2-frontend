@@ -101,7 +101,9 @@
   "selector": {
     "selectPlaceholder": "Select a {placeholder}...",
     "searchPlaceholder": "Search {placeholder}...",
-    "noResultFound": "No {placeholder} found."
+    "noResultFound": "No {placeholder} found.",
+    "instance": "instance",
+    "region": "region"
   },
   "sidebar": {
     "title": "Dashboard",
