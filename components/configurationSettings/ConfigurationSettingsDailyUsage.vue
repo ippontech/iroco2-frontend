@@ -25,7 +25,7 @@ const model = defineModel<string>({ required: true });
 
 <template>
   <div class="flex flex-col gap-2">
-    <span>Nombre d'utilisations par jour :</span>
+    <span>{{ $t("configuration.dailyUsage") }}</span>
     <Input v-model="model" />
   </div>
 </template>

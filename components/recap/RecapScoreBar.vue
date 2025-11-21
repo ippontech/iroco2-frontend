@@ -34,44 +34,45 @@ interface EquivalentItem {
   min: number;
   max: number;
 }
+const { t } = useI18n();
 const equivalents: EquivalentItem[] = [
   {
-    means: "km parcouru en voiture thermique",
+    means: "equivalents.kmCarThermal",
     icon: "openmoji:exhaust-gases-car",
     kgPerWork: 0.218,
     min: 0,
     max: Number.MAX_SAFE_INTEGER,
   },
   {
-    means: "km parcouru en avion sur un vol court courrier",
+    means: "equivalents.kmPlaneShortHaul",
     icon: "twemoji:airplane",
     kgPerWork: 0.259,
     min: 200,
     max: 1500,
   },
   {
-    means: "km parcouru en avion sur un vol moyen courrier",
+    means: "equivalents.kmPlaneMediumHaul",
     icon: "emojione-v1:up-pointing-airplane",
     kgPerWork: 0.188,
     min: 1500,
     max: 3500,
   },
   {
-    means: "km parcouru en avion sur un vol long courrier",
+    means: "equivalents.kmPlaneLongHaul",
     icon: "emojione:airplane",
     kgPerWork: 0.152,
     min: 3500,
     max: Number.MAX_SAFE_INTEGER,
   },
   {
-    means: "km parcouru en vélo (ou trottinette) à assistance électrique",
+    means: "equivalents.kmElectricBike",
     icon: "noto-v1:kick-scooter",
     kgPerWork: 0.011,
     min: 0,
     max: 50,
   },
   {
-    means: "m² chauffé au fioul pendant une année",
+    means: "equivalents.m2HeatedOil",
     icon: "noto:oil-drum",
     kgPerWork: 57.17,
     min: 5,
@@ -87,8 +88,8 @@ const computeEquivalent = (
   return {
     label: "",
     icon: icon,
-    content: "Equivalent à",
-    means: means,
+    content: t("equivalents.equivalentTo"),
+    means: t(means),
     work: work,
   };
 };

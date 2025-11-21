@@ -27,7 +27,7 @@ const updateValue = (newValue: number) => {
 
 <template>
   <SliderNumber
-    label="Nombre de jours par mois"
+    :label="$t('configuration.daysPerMonth')"
     class="w-full"
     :default-value="Number(model)"
     :step="1"

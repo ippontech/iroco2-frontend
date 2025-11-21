@@ -23,6 +23,7 @@ import AutoImport from "unplugin-auto-import/vite";
 export default defineVitestConfig({
   test: {
     environment: "nuxt",
+    setupFiles: ["./test/setup.ts"],
     coverage: {
       reporter: ["text", "lcov"],
     },
