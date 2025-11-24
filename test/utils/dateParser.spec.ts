@@ -20,6 +20,7 @@ import { DateTime, Settings } from "luxon";
 describe("isoToHuman", () => {
   beforeAll(() => {
     Settings.defaultZone = "Europe/Paris";
+    Settings.defaultLocale = "fr";
   });
 
   afterAll(() => {
