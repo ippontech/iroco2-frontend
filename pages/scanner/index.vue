@@ -24,10 +24,10 @@
     </CardCustom>
     <CardCustom>
       <div class="flex justify-between pb-8">
-        <h1 class="text-2xl font-bold">Vos scans :</h1>
+        <h1 class="text-2xl font-bold">{{ $t("scanner.yourScans") }}</h1>
         <Button
           variant="outline"
-          title="Rafraîchir la liste"
+          :title="$t('scanner.refreshList')"
           @click="refresh()"
         >
           <UIcon name="i-heroicons-arrow-path-16-solid" />
@@ -36,10 +36,10 @@
       <Table>
         <TableHeader>
           <TableRow>
-            <TableHead> Id </TableHead>
-            <TableHead> Status </TableHead>
-            <TableHead> Date du scan </TableHead>
-            <TableHead> Impact carbone </TableHead>
+            <TableHead> {{ $t("scanner.table.id") }} </TableHead>
+            <TableHead> {{ $t("scanner.table.status") }} </TableHead>
+            <TableHead> {{ $t("scanner.table.scanDate") }} </TableHead>
+            <TableHead> {{ $t("scanner.table.carbonImpact") }} </TableHead>
           </TableRow>
         </TableHeader>
         <TableBody>

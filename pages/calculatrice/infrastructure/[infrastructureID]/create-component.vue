@@ -53,8 +53,7 @@
                 <input id="checkbox" v-model="isOtherRegion" type="checkbox" />
                 <label for="checkbox">
                   <div>
-                    Région alternative
-                    <span class="text-xs">(optionnelle)</span>
+                    {{ $t("calculator.alternativeRegion") }}
                   </div>
                 </label>
               </div>
@@ -70,13 +69,13 @@
                 class="bg-black text-white p-2 rounded-md hover:bg-iroco-light-green focus:outline-none focus:shadow-outline-blue active:bg-blue-800"
                 @click="handleBackClick"
               >
-                Retour
+                {{ $t("calculator.back") }}
               </button>
               <button
                 type="submit"
                 class="bg-black text-white p-2 rounded-md hover:bg-iroco-light-green focus:outline-none focus:shadow-outline-blue active:bg-blue-800"
               >
-                Enregistrer
+                {{ $t("calculator.save") }}
               </button>
             </div>
           </div>

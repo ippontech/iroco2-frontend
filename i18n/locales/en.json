@@ -1,0 +1,251 @@
+{
+  "app": {
+    "tagline": "by Ippon"
+  },
+  "buttons": {
+    "cancel": "Cancel",
+    "create": "Create",
+    "createScanner": "Create scanner",
+    "close": "Close"
+  },
+  "alerts": {
+    "addAnalysis": {
+      "title": "Import AWS CUR (Cost and Usage Report) file",
+      "add": "Add analysis",
+      "uploading": "Uploading..."
+    },
+    "addToken": {
+      "title": "Add token",
+      "awsAccountNumber": "AWS account number:",
+      "expirationDate": "Expiration date:"
+    }
+  },
+  "validation": {
+    "awsAccountIdLength": "AWS account number must contain exactly 12 characters",
+    "expirationDateFuture": "Expiration date must be later than today's date",
+    "minLengthName": "You must provide a name with at least {min} characters"
+  },
+  "chart": {
+    "impactCO2Label": "CO2 Impact",
+    "co2EmissionsLabel": "CO2 Emissions (g)",
+    "othersLabel": "Others"
+  },
+  "configuration": {
+    "allocatedMemory": "Allocated memory:",
+    "averageExecTime": "Average execution time:",
+    "dailyRunningTime": "Daily running time",
+    "dailyUsage": "Number of uses per day:",
+    "daysPerMonth": "Number of days per month",
+    "instanceNumber": "Number of instances:",
+    "instanceType": "Instance type:",
+    "monthlyInvocation": "Number of executions per month:",
+    "pleaseSelectInstance": "Please select an instance",
+    "cpuArchitecture": "CPU architecture:",
+    "storage": "Storage:",
+    "volumeNumber": "Number of volumes:"
+  },
+  "comparative": {
+    "trendNotAvailable": "Trend not available for selected region.<br/>(This is the only data center in the region)"
+  },
+  "estimate": {
+    "ademeSimulator": "ADEME Simulator",
+    "equivalentDisclaimer": "* equivalents obtained from data provided by",
+    "monthlyImpactLabel": "The <strong>monthly</strong> carbon impact of your infrastructure is:",
+    "orEquivalent": "Or equivalent to:"
+  },
+  "infrastructure": {
+    "alertDeleteAction": "Delete infrastructure",
+    "cloudServiceProvider": "Cloud Service Provider",
+    "columns": {
+      "name": "Name",
+      "type": "Type"
+    },
+    "createTitle": "Create an infrastructure",
+    "defaultRegion": "Default infrastructure region",
+    "deleteAction": "Delete this infrastructure",
+    "deleteDescription": "This will permanently delete the infrastructure.",
+    "deleteTitle": "Delete infrastructure {name}?",
+    "infrastructureName": "Infrastructure name",
+    "newInfrastructure": "New infrastructure",
+    "noInfrastructure": "No infrastructure."
+  },
+  "infrastructurePage": {
+    "addComponent": "Add component",
+    "estimateFootprint": "Estimate footprint",
+    "table": {
+      "name": "Name",
+      "lastModification": "Last modification"
+    },
+    "dialog": {
+      "title": "Delete component",
+      "description": "This action will permanently delete the component from this infrastructure.",
+      "cancel": "Cancel",
+      "action": "Delete component"
+    },
+    "editComponent": "Edit this component",
+    "deleteComponent": "Delete this component"
+  },
+  "infrastructureSidebar": {
+    "title": "Infrastructure",
+    "overview": "Overview"
+  },
+  "equivalents": {
+    "equivalentTo": "Equivalent to",
+    "kmCarThermal": "kms driven by thermal car",
+    "kmPlaneShortHaul": "kms traveled by plane on a short-haul flight",
+    "kmPlaneMediumHaul": "kms traveled by plane on a medium-haul flight",
+    "kmPlaneLongHaul": "kms traveled by plane on a long-haul flight",
+    "kmElectricBike": "kms traveled by electric bike (or e-scooter)",
+    "m2HeatedOil": "m² heated with oil for one year"
+  },
+  "selector": {
+    "selectPlaceholder": "Select a {placeholder}...",
+    "searchPlaceholder": "Search {placeholder}...",
+    "noResultFound": "No {placeholder} found.",
+    "instance": "instance",
+    "region": "region"
+  },
+  "sidebar": {
+    "title": "Dashboard",
+    "calculator": "Calculator",
+    "curAnalysis": "CUR Analysis",
+    "scanner": "Scanner",
+    "cloudIntegration": "Cloud Integration"
+  },
+  "nav": {
+    "resources": "Resources",
+    "dashboard": "Dashboard",
+    "dashboardDemo": "Dashboard Preview",
+    "demo": "Demo",
+    "documentation": "Documentation",
+    "catalog": "Catalog"
+  },
+  "auth": {
+    "signIn": "Sign In",
+    "signOut": "Sign Out",
+    "logout": "Logout"
+  },
+  "help": {
+    "documentation": "Docs"
+  },
+  "homepage": {
+    "actDescription": "By defining and applying a GreenOps strategy",
+    "actTitle": "Act",
+    "subTitle": "<span class=\"text-green-700\">GreenOps</span> as a Service",
+    "calculatorLink": "Get started in minutes",
+    "description": "IroCO2 <strong>supports</strong> you in implementing your End-to-End <strong>GreenOps approach</strong>. <strong>Measure</strong> and <strong>estimate</strong> the carbon footprint of your Cloud infrastructures. Keep an eye on your infrastructures to <strong>understand</strong> your emissions. Benefit from <strong>advice</strong> to define a <strong>strategy</strong> to <strong>control</strong> emission trends.",
+    "measureDescription": "Your emissions, start from facts to improve",
+    "measureTitle": "Measure",
+    "requestDemo": "Request a demo",
+    "title": "Master your cloud infrastructure's CO2 emissions",
+    "understandDescription": "The nature of your emissions and action levers",
+    "understandTitle": "Understand"
+  },
+  "admin": {
+    "applicativeSupervision": "Application supervision",
+    "description": "This page provides administrators with everything needed to manage the application (cache management, maintenance, messages to users, ...).",
+    "regionCache": {
+      "actionEmpty": "Clear cache",
+      "description": "This cache stores the list of CSP regions in memory.",
+      "notifyCleared": "The regions cache has been cleared.",
+      "scheduledDeletion": "<strong>Scheduled deletion:</strong> None",
+      "title": "Regions cache",
+      "ttl": "<strong>TTL:</strong> 6 hours"
+    }
+  },
+  "catalog": {
+    "availabilityCatalog": "Availability catalog",
+    "available": "Available",
+    "carbonEstimateLimit": "Carbon estimation limitations",
+    "learnMore": "Learn more",
+    "levers": "Reduction levers",
+    "noCarbonEstimateLimit": "No limitations for carbon estimation at the moment.",
+    "noLever": "No reduction levers at the moment.",
+    "requestIntegration": "Request an integration",
+    "serviceLogo": "Logo of {name}",
+    "comingSoon": "Coming soon"
+  },
+  "contact": {
+    "title": "Have a question?",
+    "subtitle": "Contact us",
+    "description": "Feel free to contact us with any questions or requests for information. Whether you want to learn more about our services, get help, or share feedback, our team is here to respond quickly. We look forward to assisting you!",
+    "askDemo": "Request a demo",
+    "form": {
+      "company": "Company name",
+      "mail": "Contact email",
+      "subject": {
+        "title": "Subject",
+        "signalProblem": "Report a problem",
+        "suggestion": "Suggestion",
+        "other": "Other"
+      },
+      "yourDemand": "Your request",
+      "send": "Send",
+      "errors": {
+        "mandatoryField": "Required field",
+        "companyNameMinLength": "Company name must be longer than 2 characters",
+        "companyNameMaxLength": "Company name must be shorter than 255 characters",
+        "invalidEmail": "Invalid email address",
+        "messageMinLength": "Message must be longer than 10 characters",
+        "messageMaxLength": "Message must be shorter than 500 characters"
+      },
+      "sentNotification": "Email sent. We will do our best to reply as soon as possible."
+    }
+  },
+  "cur": {
+    "yourAnalyses": "Your analyses:",
+    "refreshList": "Refresh list",
+    "newAnalysis": "New analysis",
+    "table": {
+      "id": "Id",
+      "status": "Status",
+      "analysisDate": "Analysis date",
+      "carbonImpact": "Carbon impact"
+    },
+    "deleteAnalysis": "Delete this analysis",
+    "deleteModal": {
+      "title": "Delete analysis",
+      "description": "This action will permanently delete the analysis.",
+      "cancel": "Cancel",
+      "confirmDelete": "Delete analysis"
+    },
+    "detail": {
+      "cur": "Cur {curId}"
+    }
+  },
+  "scanner": {
+    "yourScans": "Your scans:",
+    "refreshList": "Refresh list",
+    "table": {
+      "id": "Id",
+      "status": "Status",
+      "scanDate": "Scan date",
+      "carbonImpact": "Carbon impact"
+    },
+    "detail": {
+      "scan": "Scan"
+    }
+  },
+  "token": {
+    "yourConnectedAccounts": "Your connected accounts:",
+    "createKey": "Create a key"
+  },
+  "error": {
+    "oops": "Ooops!",
+    "returnToIroco": "Return to Iroco"
+  },
+  "units": {
+    "hours": "hours",
+    "days": "days"
+  },
+  "estimation": {
+    "possibleImprovements": "Possible improvements:"
+  },
+  "calculator": {
+    "seeOnCatalog": "See on catalog",
+    "alternativeRegion": "Alternative region <span class=\"text-xs\">(optional)</span>",
+    "back": "Back",
+    "save": "Save",
+    "myInfrastructures": "My infrastructures:"
+  }
+}

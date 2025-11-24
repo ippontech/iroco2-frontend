@@ -1,4 +1,3 @@
-<!-- prettier-ignore -->
 /*
  * Copyright 2025 Ippon Technologies
  *
@@ -17,28 +16,13 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-<template>
-  <div class="container">
-    <div class="flex justify-between">
-      <h1 class="font-title font-bold text-3xl">
-        {{ $t("token.yourConnectedAccounts") }}
-      </h1>
-      <Button variant="black" @click="openModal"
-        >+ {{ $t("token.createKey") }}</Button
-      >
-    </div>
-    <AlertAddToken v-model="addTokenModelOpened" />
-  </div>
-</template>
+import { config } from "@vue/test-utils";
 
-<script setup lang="ts">
-definePageMeta({
-  middleware: ["auth"],
-});
-
-const addTokenModelOpened = ref(false);
-
-const openModal = () => {
-  addTokenModelOpened.value = true;
+// Mock i18n globally for all tests - returns keys instead of translations
+config.global.mocks = {
+  $t: (key: string) => key,
+  $tc: (key: string) => key,
+  $te: () => true,
+  $d: (date: Date) => date.toLocaleDateString(),
+  $n: (number: number) => number.toString(),
 };
-</script>
