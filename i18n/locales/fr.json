@@ -233,5 +233,9 @@
   "error": {
     "oops": "Ooops !",
     "returnToIroco": "Retourner sur Iroco"
+  },
+  "units": {
+    "hours": "heures",
+    "days": "jours"
   }
 }

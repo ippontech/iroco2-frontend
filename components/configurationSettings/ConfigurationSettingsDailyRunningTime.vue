@@ -37,7 +37,7 @@ const handleValueChange = (newValue: number) => {
       :label="$t('configuration.dailyRunningTime')"
       :default-value="Number(hours)"
       :step="1"
-      unit="heures"
+      unit="hours"
       :min="0"
       :step-values="Array.from({ length: 25 }, (_, i) => i)"
       @update:selected-value="handleValueChange"
