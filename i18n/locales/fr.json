@@ -246,5 +246,12 @@
   },
   "estimation": {
     "possibleImprovements": "Quelques axes d'amélioration :"
+  },
+  "calculator": {
+    "seeOnCatalog": "Voir sur le catalogue",
+    "alternativeRegion": "Région alternative <span class=\"text-xs\">(optionnelle)</span>",
+    "back": "Retour",
+    "save": "Enregistrer",
+    "myInfrastructures": "Mes infrastructures :"
   }
 }

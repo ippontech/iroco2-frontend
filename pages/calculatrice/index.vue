@@ -22,7 +22,9 @@
     <div class="grid gap-8">
       <section class="grid gap-4">
         <div class="flex items-center justify-between">
-          <h2 class="font-title font-bold text-3xl">Mes infrastructures :</h2>
+          <h2 class="font-title font-bold text-3xl">
+            {{ $t("calculator.myInfrastructures") }}
+          </h2>
           <InfrastructureCreate
             class="ml-auto"
             @infra-created="handleInfraCreated"
