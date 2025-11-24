@@ -56,7 +56,7 @@ const modelValue = useVModel(props, "modelValue", emits, {
     <span
       v-if="unit"
       class="bg-muted min-w-12 h-10 inline-flex items-center justify-center border-l"
-      >{{ unit }}</span
+      >{{ $t("units." + unit) }}</span
     >
   </div>
 </template>

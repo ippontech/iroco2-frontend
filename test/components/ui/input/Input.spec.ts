@@ -120,7 +120,7 @@ describe("Input Component", () => {
 
     // then
     expect(unitSpan.exists()).toBe(true);
-    expect(unitSpan.text()).toBe("kg");
+    expect(unitSpan.text()).toBe("units.kg");
   });
 
   it("should not render 'unit' span when the 'unit' prop is not provided", () => {
