@@ -237,5 +237,8 @@
   "units": {
     "hours": "hours",
     "days": "days"
+  },
+  "estimation": {
+    "possibleImprovements": "Possible improvements:"
   }
 }

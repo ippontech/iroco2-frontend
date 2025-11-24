@@ -28,7 +28,9 @@
     />
 
     <CardCustom>
-      <div class="font-bold mt-5 ml-5">Quelques axes d'amélioration :</div>
+      <div class="font-bold mt-5 ml-5">
+        {{ $t("estimation.possibleImprovements") }}
+      </div>
       <ComparativeByRegion
         ref="comparativeComponentRef"
         :infrastructure-id="infrastructureId"
@@ -40,6 +42,7 @@
 
 <script setup lang="ts">
 import type { Infrastructure } from "~/type/infrastructure/Infrastructure";
+
 const { $api } = useNuxtApp();
 const route = useRoute();
 const infrastructure: Ref<Infrastructure | undefined> = ref();
