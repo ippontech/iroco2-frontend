@@ -240,5 +240,12 @@
   },
   "estimation": {
     "possibleImprovements": "Possible improvements:"
+  },
+  "calculator": {
+    "seeOnCatalog": "See on catalog",
+    "alternativeRegion": "Alternative region <span class=\"text-xs\">(optional)</span>",
+    "back": "Back",
+    "save": "Save",
+    "myInfrastructures": "My infrastructures:"
   }
 }

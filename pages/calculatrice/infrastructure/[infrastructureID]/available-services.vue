@@ -44,7 +44,7 @@
             Configurer
           </button>
           <a v-if="false" href="#" class="text-black underline italic">
-            Voir sur le catalogue
+            {{ $t("calculator.seeOnCatalog") }}
           </a>
         </div>
       </div>
