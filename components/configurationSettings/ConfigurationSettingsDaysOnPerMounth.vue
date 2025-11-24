@@ -31,7 +31,7 @@ const updateValue = (newValue: number) => {
     class="w-full"
     :default-value="Number(model)"
     :step="1"
-    unit="jours"
+    unit="days"
     :min="0"
     :step-values="Array.from({ length: 32 }, (_, i) => i)"
     @update:selected-value="updateValue"

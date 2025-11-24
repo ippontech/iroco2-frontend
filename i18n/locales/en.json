@@ -239,5 +239,9 @@
   "error": {
     "oops": "Ooops!",
     "returnToIroco": "Return to Iroco"
+  },
+  "units": {
+    "hours": "hours",
+    "days": "days"
   }
 }
