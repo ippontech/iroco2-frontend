@@ -21,7 +21,6 @@
   <nuxt-link to="/" class="flex items-center">
     <img
       src="../assets/static/no_bg_iroco.png"
-      alt="Logo"
       class="h-12 mr-2 m-0 p-0 gap-0 flex-auto"
       :class="variant === 'black' ? 'invert' : ''"
     />
