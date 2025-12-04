@@ -25,7 +25,7 @@ const model = defineModel<string>({ required: true });
 
 <template>
   <div class="flex flex-col gap-2">
-    <span>Durée moyenne d'une exécution :</span>
+    <span>{{ $t("configuration.averageExecTime") }}</span>
     <Input v-model="model" unit="ms" />
   </div>
 </template>

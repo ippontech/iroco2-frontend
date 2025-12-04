@@ -19,7 +19,7 @@
 
 <template>
   <div class="h-full container flex flex-col gap-8 mx-auto">
-    <div class="container">Scan {{ scanId }}</div>
+    <div class="container">{{ $t("scanner.detail.scan") }} {{ scanId }}</div>
     <EstimateTotal :total="scan.totalCO2Converted" />
     <EstimateDetails
       :relative-carbon-footprint-list="scan.relativeCarbonFootprintList"

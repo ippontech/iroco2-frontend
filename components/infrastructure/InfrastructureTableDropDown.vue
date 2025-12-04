@@ -30,7 +30,7 @@
         @click="emit('deleteInfrastructure', infrastructure)"
       >
         <UIcon name="i-heroicons-trash-16-solid" />
-        Supprimer cette infrastructure
+        {{ $t("infrastructure.deleteAction") }}
       </DropdownMenuItem>
     </DropdownMenuContent>
   </DropdownMenu>

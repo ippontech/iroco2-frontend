@@ -28,7 +28,7 @@
       <div class="flex items-center gap-4 max-md:gap-0">
         <UDropdown :items="ressources" :popper="{ placement: 'bottom-start' }">
           <Button class="max-md:px-1" variant="ghost">
-            <span>Ressources</span>
+            <span>{{ $t("nav.resources") }}</span>
             <UIcon name="i-heroicons-chevron-down-20-solid" />
           </Button>
 
@@ -37,7 +37,7 @@
               class="w-full h-full text-black flex justify-flex"
               :to="item.link"
             >
-              {{ item.label }}
+              {{ $t(item.label) }}
             </nuxt-link>
           </template>
         </UDropdown>
@@ -48,7 +48,9 @@
         class="flex items-center justify-end"
       >
         <NuxtLink to="/calculatrice">
-          <Button variant="link" class="text-white">Dashboard Demo</Button>
+          <Button variant="link" class="text-white">{{
+            $t("nav.dashboardDemo")
+          }}</Button>
         </NuxtLink>
       </div>
       <div v-else>
@@ -58,7 +60,7 @@
               to="/login"
               class="text-white transition-all hover:outline rounded-full px-4 py-2"
             >
-              Connexion
+              {{ $t("auth.signIn") }}
             </NuxtLink>
           </SignInButton>
         </SignedOut>
@@ -66,7 +68,9 @@
         <SignedIn>
           <div class="flex items-center justify-end">
             <NuxtLink to="/calculatrice">
-              <Button variant="link" class="text-white">Dashboard</Button>
+              <Button variant="link" class="text-white">{{
+                $t("nav.dashboard")
+              }}</Button>
             </NuxtLink>
 
             <DropdownMenu>
@@ -80,7 +84,7 @@
               <DropdownMenuContent align="end">
                 <DropdownMenuItem class="gap-2" @click="logout">
                   <Icon name="ph:sign-out-bold" />
-                  Déconnexion
+                  {{ $t("auth.signOut") }}
                 </DropdownMenuItem>
               </DropdownMenuContent>
             </DropdownMenu>
@@ -101,11 +105,11 @@ const isLoginPage = computed(() => route.path === "/login");
 const ressources = [
   [
     {
-      label: "Documentation",
+      label: "nav.documentation",
       link: useRuntimeConfig().public.urlDocs,
     },
     {
-      label: "Catalogue",
+      label: "nav.catalog",
       link: "/catalog",
     },
   ],

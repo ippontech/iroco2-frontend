@@ -66,7 +66,10 @@ const handleSelect = (instance: string) => {
         variant="outline"
         class="w-full justify-between"
       >
-        {{ selectedValue ?? "Sélectionner une " + props.placeholder + " ..." }}
+        {{
+          selectedValue ??
+          $t("selector.selectPlaceholder", { placeholder: props.placeholder })
+        }}
       </Button>
     </PopoverTrigger>
     <PopoverContent
@@ -74,8 +77,14 @@ const handleSelect = (instance: string) => {
       align="start"
     >
       <Command class="w-full">
-        <CommandInput :placeholder="'Search ' + props.placeholder + ' ...'" />
-        <CommandEmpty>Aucune {{ props.placeholder }} trouvée.</CommandEmpty>
+        <CommandInput
+          :placeholder="
+            $t('selector.searchPlaceholder', { placeholder: props.placeholder })
+          "
+        />
+        <CommandEmpty>{{
+          $t("selector.noResultFound", { placeholder: props.placeholder })
+        }}</CommandEmpty>
         <CommandList class="h-96">
           <CommandGroup>
             <CommandItem
