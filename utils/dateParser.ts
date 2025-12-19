@@ -15,9 +15,7 @@
  *
  * SPDX-License-Identifier: Apache-2.0
  */
-import { DateTime, Settings } from "luxon";
-
-Settings.defaultLocale = "fr";
+import { DateTime } from "luxon";
 
 export const isoToHuman = (isoDate: string) => {
   return DateTime.fromISO(isoDate).toLocaleString(DateTime.DATETIME_SHORT);
