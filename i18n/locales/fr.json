@@ -69,6 +69,10 @@
     "newInfrastructure": "Nouvelle infrastructure",
     "noInfrastructure": "Aucune infrastructure."
   },
+  "infrastructureSidebar": {
+    "title": "Infrastructure",
+    "overview": "Vue d'ensemble"
+  },
   "equivalents": {
     "equivalentTo": "Équivalent à",
     "kmCarThermal": "kilomètres parcourus en voiture thermique",
@@ -148,5 +152,74 @@
     "requestIntegration": "Demander une intégration",
     "serviceLogo": "Logo de {name}",
     "comingSoon": "Prochainement"
+  },
+  "contact": {
+    "title": "Une question ?",
+    "subtitle": "Contactez-nous",
+    "description": "N'hésitez pas à nous contacter pour toute question ou demande d'information. Que ce soit pour en savoir plus sur nos services, obtenir de l'aide ou partager vos suggestions, notre équipe est là pour vous répondre rapidement. Nous sommes impatients de vous accompagner !",
+    "askDemo": "Demander une démo",
+    "form": {
+      "company": "Nom de l'entreprise",
+      "mail": "Mail de contact",
+      "subject": {
+        "title": "Sujet",
+        "signalProblem": "Signaler un problème",
+        "suggestion": "Suggestion",
+        "other": "Autres"
+      },
+      "yourDemand": "Votre demande",
+      "send": "Envoyer",
+      "errors": {
+        "mandatoryField": "Champ obligatoire",
+        "companyNameMinLength": "Le nom de l'entreprise doit faire plus de 2 caractères",
+        "companyNameMaxLength": "Le nom de l'entreprise doit faire moins de 255 caractères",
+        "invalidEmail": "Adresse mail invalide",
+        "messageMinLength": "Le message doit faire plus de 10 caractères",
+        "messageMaxLength": "Le message doit faire moins de 500 caractères"
+      },
+      "sentNotification": "Courriel envoyé. Nous faisons notre possible pour vous répondre au plus vite."
+    }
+  },
+  "cur": {
+    "yourAnalyses": "Vos analyses :",
+    "refreshList": "Rafraîchir la liste",
+    "newAnalysis": "Nouvelle analyse",
+    "table": {
+      "id": "Id",
+      "status": "Statut",
+      "analysisDate": "Date de l'analyse",
+      "carbonImpact": "Impact carbone"
+    },
+    "deleteAnalysis": "Supprimer cette analyse",
+    "deleteModal": {
+      "title": "Supprimer l'analyse",
+      "description": "Cette action va supprimer l'analyse de façon permanente.",
+      "cancel": "Annuler",
+      "confirmDelete": "Supprimer l'analyse"
+    },
+    "detail": {
+      "cur": "Cur {curId}"
+    }
+  },
+  "scanner": {
+    "yourScans": "Vos scans :",
+    "refreshList": "Rafraîchir la liste",
+    "table": {
+      "id": "Id",
+      "status": "Statut",
+      "scanDate": "Date du scan",
+      "carbonImpact": "Impact carbone"
+    },
+    "detail": {
+      "scan": "Scan"
+    }
+  },
+  "token": {
+    "yourConnectedAccounts": "Vos comptes connectés :",
+    "createKey": "Créer une clé"
+  },
+  "error": {
+    "oops": "Ooops !",
+    "returnToIroco": "Retourner sur Iroco"
   }
 }
