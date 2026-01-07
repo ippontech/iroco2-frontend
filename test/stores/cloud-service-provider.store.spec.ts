@@ -63,18 +63,6 @@ describe("Cloud service provider store", () => {
     expect(store.cloudServiceProviders).toEqual(cloudServiceProviders);
   });
 
-  it("should get cloud service provider name by id", async () => {
-    // Arrange
-    const store = useCloudServiceProviderStore();
-    store.cloudServiceProviders = cloudServiceProviders;
-
-    // Act
-    const cspName = await store.getCloudServiceProviderName("1");
-
-    // Assert
-    expect(cspName).toEqual("AWS");
-  });
-
   it("should get cloud service provider id by name", async () => {
     // Arrange
     const store = useCloudServiceProviderStore();

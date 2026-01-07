@@ -43,12 +43,6 @@ export const useCloudServiceProviderStore = defineStore(
       return cloudServiceProvider.id;
     };
 
-    const getCloudServiceProviderName = async (
-      cspId: string,
-    ): Promise<string> => {
-      return await getRegionBy(cspId, "id");
-    };
-
     const getCloudServiceProviderID = async (
       cspName: string,
     ): Promise<string> => {
@@ -58,7 +52,6 @@ export const useCloudServiceProviderStore = defineStore(
     return {
       cloudServiceProviders,
       fetchCloudServiceProviders,
-      getCloudServiceProviderName,
       getCloudServiceProviderID,
     };
   },
