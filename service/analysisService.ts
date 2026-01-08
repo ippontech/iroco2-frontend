@@ -36,12 +36,10 @@ class AnalysisService extends HttpFactory {
 
   async getAllAnalyses() {
     const analyses = await this.getCall<Analysis[]>(this.RESOURCE);
-    const analysesWithCO2Converted = analyses.map((analysis) => ({
+    return analyses.map((analysis) => ({
       ...analysis,
       co2Converted: convertEstimateToBestMassUnit(analysis.co2Gr),
     }));
-
-    return analysesWithCO2Converted;
   }
 
   async getAnalysisById(analysisId: string) {
