@@ -29,7 +29,6 @@ import ServiceConfigurationSettingSvc from "~/service/ServiceConfigurationSettin
 import ComponentService from "~/service/componentService";
 import AnalysisService from "~/service/analysisService";
 import CurService from "~/service/curService";
-import TokenService from "~/service/tokenService";
 import ScanService from "~/service/scanService";
 
 /** ApiInstance interface provides us with good typing */
@@ -45,7 +44,6 @@ interface IApiInstance {
   serviceConfigurationSettingSvc: ServiceConfigurationSettingSvc;
   analysisService: AnalysisService;
   curService: CurService;
-  tokenService: TokenService;
   scanService: ScanService;
 }
 
@@ -110,7 +108,6 @@ export default defineNuxtPlugin({
       ),
       analysisService: new AnalysisService(apiFetcher),
       curService: new CurService(apiFetcher),
-      tokenService: new TokenService(apiFetcher),
       scanService: new ScanService(apiFetcher),
     };
 
