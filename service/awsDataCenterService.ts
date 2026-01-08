@@ -43,10 +43,7 @@ class AWSDataCenterService extends HttpFactory {
     const infrastructure =
       await this.infrastructureService.getInfrastructure(infrastructureId);
     const regions = await this.getAllAWSDataCenter();
-    const currentRegion = regions.find(
-      (region) => region.id === infrastructure.defaultRegion,
-    );
-    return currentRegion;
+    return regions.find((region) => region.id === infrastructure.defaultRegion);
   }
 }
 

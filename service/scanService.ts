@@ -22,11 +22,10 @@ class ScanService extends HttpFactory {
   private readonly RESOURCE = "/api/scanner";
   async getAllScans(): Promise<Scan[]> {
     const scans = await this.getCall<Scan[]>(this.RESOURCE);
-    const scansWithCO2Converted = scans.map((scan) => ({
+    return scans.map((scan) => ({
       ...scan,
       co2Converted: convertEstimateToBestMassUnit(scan.co2Gr),
     }));
-    return scansWithCO2Converted;
   }
 
   async getScanById(scanId: string): Promise<EstimatedScan> {
