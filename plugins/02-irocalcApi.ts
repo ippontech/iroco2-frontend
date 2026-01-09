@@ -31,12 +31,14 @@ import AnalysisService from "~/service/analysisService";
 import CurService from "~/service/curService";
 import TokenService from "~/service/tokenService";
 import ScanService from "~/service/scanService";
+import ContactService from "~/service/contactService";
 
 /** ApiInstance interface provides us with good typing */
 interface IApiInstance {
   awsDataCenter: AWSDataCenterService;
   carbon: CarbonService;
   catalogService: CatalogService;
+  contactService: ContactService;
   instanceType: AWSInstanceService;
   adminService: AdminService;
   infrastructureService: InfrastructureService;
@@ -100,6 +102,7 @@ export default defineNuxtPlugin({
       carbon: new CarbonService(apiFetcher),
       awsDataCenter: new AWSDataCenterService(apiFetcher),
       catalogService: new CatalogService(apiFetcher),
+      contactService: new ContactService(apiFetcher),
       instanceType: new AWSInstanceService(apiFetcher),
       adminService: new AdminService(apiFetcher),
       infrastructureService: new InfrastructureService(apiFetcher),

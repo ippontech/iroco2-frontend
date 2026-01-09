@@ -15,10 +15,17 @@
  *
  * SPDX-License-Identifier: Apache-2.0
  */
-import { ofetch } from "ofetch";
+import HttpFactory from "./factory/httpFactory";
 
-export default {
-  async requestDemoEmail(body: string): Promise<void> {
+type ContactRequestBody = {
+  company_name: string;
+  type: string;
+  email: string;
+  message: string;
+};
+
+class ContactService extends HttpFactory {
+  async requestDemoEmail(body: ContactRequestBody): Promise<void> {
     const irocoCustomerRequestEndpoint =
       useRuntimeConfig().public.irocoCustomerRequestEndpoint;
 
@@ -26,12 +33,8 @@ export default {
       throw new TypeError("irocoCustomerRequestEndpoint must be a string");
     }
 
-    await ofetch(irocoCustomerRequestEndpoint, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(body),
-    });
-  },
-};
+    await this.postCall(irocoCustomerRequestEndpoint, body);
+  }
+}
+
+export default ContactService;
