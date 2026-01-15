@@ -114,7 +114,6 @@ import {
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import contactService from "~/service/contactService";
 import NuxtColors from "~/type/NuxtColors";
 import {
   Select,
@@ -128,6 +127,8 @@ import {
 definePageMeta({
   layout: "public",
 });
+
+const { $api } = useNuxtApp();
 
 const notificationHandler = useToast();
 
@@ -164,7 +165,7 @@ const onSubmit = form.handleSubmit(async (values) => {
     message: values.message,
   };
 
-  await contactService.requestDemoEmail(body).then(() => {
+  await $api.contactService.requestDemoEmail(body).then(() => {
     notificationHandler.add({
       title:
         "Courriel envoyé. Nous faisons notre possible pour vous répondre au plus vite.",

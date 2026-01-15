@@ -16,10 +16,10 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 import type { InfrastructureRequest } from "~/type/infrastructure/InfrastructureRequest";
-import HttpFactory from "./factory/httpFactory";
+import ApiClient from "./apiClient";
 import type { Infrastructure } from "~/type/infrastructure/Infrastructure";
 
-class InfrastructureService extends HttpFactory {
+class InfrastructureApiClient extends ApiClient {
   private readonly RESOURCE = "/api/v2/infrastructures";
 
   async createNewInfra(
@@ -43,4 +43,4 @@ class InfrastructureService extends HttpFactory {
   }
 }
 
-export default InfrastructureService;
+export default InfrastructureApiClient;

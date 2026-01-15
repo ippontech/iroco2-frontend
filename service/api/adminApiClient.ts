@@ -15,23 +15,12 @@
  *
  * SPDX-License-Identifier: Apache-2.0
  */
-import { ofetch } from "ofetch";
+import ApiClient from "./apiClient";
 
-export default {
-  async requestDemoEmail(body: string): Promise<void> {
-    const irocoCustomerRequestEndpoint =
-      useRuntimeConfig().public.irocoCustomerRequestEndpoint;
+class AdminApiClient extends ApiClient {
+  async evictRegionCache(): Promise<void> {
+    return this.deleteCall(`/actuator/caches/regions`);
+  }
+}
 
-    if (typeof irocoCustomerRequestEndpoint !== "string") {
-      throw new TypeError("irocoCustomerRequestEndpoint must be a string");
-    }
-
-    await ofetch(irocoCustomerRequestEndpoint, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(body),
-    });
-  },
-};
+export default AdminApiClient;

@@ -15,12 +15,12 @@
  *
  * SPDX-License-Identifier: Apache-2.0
  */
-import HttpFactory from "~/service/factory/httpFactory";
 import { Availability } from "~/type/Availability";
 import type { ServiceCatalog } from "~/type/ServiceCatalog";
 import type { ServiceDescription } from "~/type/ServiceDescription";
+import ApiClient from "~/service/api/apiClient";
 
-class CatalogService extends HttpFactory {
+class CatalogApiClient extends ApiClient {
   private readonly RESOURCE = "/api/public/v2/catalog";
 
   async getAllServices(): Promise<ServiceCatalog[]> {
@@ -39,4 +39,4 @@ class CatalogService extends HttpFactory {
   }
 }
 
-export default CatalogService;
+export default CatalogApiClient;

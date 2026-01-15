@@ -15,12 +15,26 @@
  *
  * SPDX-License-Identifier: Apache-2.0
  */
-import HttpFactory from "./factory/httpFactory";
+import ApiClient from "./apiClient";
 
-class AdminService extends HttpFactory {
-  async evictRegionCache(): Promise<void> {
-    return this.deleteCall(`/actuator/caches/regions`);
+type ContactRequestBody = {
+  company_name: string;
+  type: string;
+  email: string;
+  message: string;
+};
+
+class ContactApiClient extends ApiClient {
+  async requestDemoEmail(body: ContactRequestBody): Promise<void> {
+    const irocoCustomerRequestEndpoint =
+      useRuntimeConfig().public.irocoCustomerRequestEndpoint;
+
+    if (typeof irocoCustomerRequestEndpoint !== "string") {
+      throw new TypeError("irocoCustomerRequestEndpoint must be a string");
+    }
+
+    await this.postCall(irocoCustomerRequestEndpoint, body);
   }
 }
 
-export default AdminService;
+export default ContactApiClient;
