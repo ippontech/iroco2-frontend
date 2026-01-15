@@ -15,18 +15,20 @@
  *
  * SPDX-License-Identifier: Apache-2.0
  */
-import HttpFactory from "~/service/factory/httpFactory";
-import type { CarbonFootprintEstimateComponent } from "~/type/CarbonFootprintEstimateComponent";
-import type { RegionCarbonFootprint } from "~/type/RegionCarbonFootprint";
+import type { IrocalcCarbonApiClient } from "~/service/api/irocalcCarbonApiClient";
 
-class IrocalcCarbonService extends HttpFactory {
-  private readonly RESOURCE = "/api/v2/infrastructures";
+class IrocalcCarbonService {
+  private readonly irocalcCarbonApiClient: IrocalcCarbonApiClient;
+
+  constructor(irocalcCarbonApiClient: IrocalcCarbonApiClient) {
+    this.irocalcCarbonApiClient = irocalcCarbonApiClient;
+  }
 
   async estimateCarbonFootPrint(infrastructureId: string) {
-    const url = `${this.RESOURCE}/${infrastructureId}/carbon-footprint`;
-
     const estimated = (
-      await this.getCall<CarbonFootprintEstimateComponent[]>(url)
+      await this.irocalcCarbonApiClient.getCarbonFootprintEstimateComponents(
+        infrastructureId,
+      )
     ).map((e) => ({
       label: e.componentName,
       co2Gr: e.co2Gr,
@@ -44,10 +46,10 @@ class IrocalcCarbonService extends HttpFactory {
     infrastructureId: string,
     totalCO2Gr: number,
   ) {
-    const url = `${this.RESOURCE}/${infrastructureId}/byregion-carbon-footprint`;
-
     const estimatedCO2ByRegion =
-      await this.getCall<RegionCarbonFootprint[]>(url);
+      await this.irocalcCarbonApiClient.getEstimatedCO2ByRegion(
+        infrastructureId,
+      );
 
     const estimatedCO2WithPercentDiff = estimatedCO2ByRegion.map(
       (estimate) => ({

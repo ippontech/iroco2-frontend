@@ -16,21 +16,16 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 import AWSDataCenterService from "~/service/awsDataCenterService";
-import type { $Fetch } from "ofetch";
 import { mockNuxtImport } from "@nuxt/test-utils/runtime";
 import type { Mock } from "vitest";
+import type { AWSDataCenterApiClient } from "~/service/api/AWSDataCenterApiClient";
+import type InfrastructureApiClient from "~/service/api/infrastructureApiClient";
 
 const AWS_UUID = vi.hoisted(() => "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx");
 
-const { mockGetCloudServiceProviderID, mockGetInfrastructure } = vi.hoisted(
-  () => ({
-    mockGetCloudServiceProviderID: vi.fn().mockResolvedValue(AWS_UUID),
-    mockGetInfrastructure: vi.fn().mockResolvedValue({
-      id: "infra1",
-      defaultRegion: "region2",
-    }),
-  }),
-);
+const { mockGetCloudServiceProviderID } = vi.hoisted(() => ({
+  mockGetCloudServiceProviderID: vi.fn().mockResolvedValue(AWS_UUID),
+}));
 
 mockNuxtImport("useCloudServiceProviderStore", () => {
   return () => ({
@@ -38,20 +33,26 @@ mockNuxtImport("useCloudServiceProviderStore", () => {
   });
 });
 
-vi.mock("~/service/infrastructureService", () => ({
-  default: vi.fn().mockImplementation(() => ({
-    getInfrastructure: mockGetInfrastructure,
-  })),
-}));
-
 describe("AWSDataCenterService", () => {
   let awsDataCenterService: AWSDataCenterService;
-  let mockFetch: Mock;
+  let mockInfrastructureApiClient: InfrastructureApiClient;
+  let mockAWSDataCenterApiClient: AWSDataCenterApiClient;
 
   beforeEach(() => {
-    mockFetch = vi.fn();
+    mockInfrastructureApiClient = {
+      getInfrastructure: vi.fn().mockResolvedValue({
+        id: "infra1",
+        defaultRegion: "region2",
+      }),
+    } as unknown as InfrastructureApiClient;
+
+    mockAWSDataCenterApiClient = {
+      getAllAWSDataCenter: vi.fn(),
+    } as unknown as AWSDataCenterApiClient;
+
     awsDataCenterService = new AWSDataCenterService(
-      mockFetch as unknown as $Fetch,
+      mockInfrastructureApiClient,
+      mockAWSDataCenterApiClient,
     );
   });
 
@@ -66,24 +67,25 @@ describe("AWSDataCenterService", () => {
 
   it("fetches all AWS data centers", async () => {
     // Arrange
-    mockFetch.mockResolvedValue(mockRegions);
+    (mockAWSDataCenterApiClient.getAllAWSDataCenter as Mock).mockResolvedValue(
+      mockRegions,
+    );
 
     // Act
     const regions = await awsDataCenterService.getAllAWSDataCenter();
 
     // Assert
     expect(regions).toEqual(mockRegions);
-    expect(mockFetch).toHaveBeenCalledWith(
-      `/api/cloud-service-providers/${AWS_UUID}/regions`,
-      expect.objectContaining({
-        method: "GET",
-      }),
+    expect(mockAWSDataCenterApiClient.getAllAWSDataCenter).toHaveBeenCalledWith(
+      AWS_UUID,
     );
   });
 
   it("fetches the correct region by infrastructure ID", async () => {
     // Arrange
-    mockFetch.mockResolvedValue(mockRegions);
+    (mockAWSDataCenterApiClient.getAllAWSDataCenter as Mock).mockResolvedValue(
+      mockRegions,
+    );
 
     // Act
     const region =
@@ -91,18 +93,15 @@ describe("AWSDataCenterService", () => {
 
     // Assert
     expect(region).toEqual(mockRegions[1]);
-    expect(mockFetch).toHaveBeenCalledWith(
-      `/api/cloud-service-providers/${AWS_UUID}/regions`,
-      expect.objectContaining({
-        method: "GET",
-      }),
+    expect(mockAWSDataCenterApiClient.getAllAWSDataCenter).toHaveBeenCalled();
+    expect(mockInfrastructureApiClient.getInfrastructure).toHaveBeenCalledWith(
+      "infra1",
     );
-    expect(mockGetInfrastructure).toHaveBeenCalledWith("infra1");
   });
 
   it("returns undefined if no region matches the default region", async () => {
     // Arrange
-    mockFetch.mockResolvedValue([
+    (mockAWSDataCenterApiClient.getAllAWSDataCenter as Mock).mockResolvedValue([
       { id: "region1", name: "Region 1", csp: AWS_UUID },
       { id: "region3", name: "Region 3", csp: AWS_UUID },
     ]);
@@ -113,12 +112,9 @@ describe("AWSDataCenterService", () => {
 
     // Assert
     expect(region).toBeUndefined();
-    expect(mockFetch).toHaveBeenCalledWith(
-      `/api/cloud-service-providers/${AWS_UUID}/regions`,
-      expect.objectContaining({
-        method: "GET",
-      }),
+    expect(mockAWSDataCenterApiClient.getAllAWSDataCenter).toHaveBeenCalled();
+    expect(mockInfrastructureApiClient.getInfrastructure).toHaveBeenCalledWith(
+      "infra1",
     );
-    expect(mockGetInfrastructure).toHaveBeenCalledWith("infra1");
   });
 });

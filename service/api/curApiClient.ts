@@ -15,14 +15,15 @@
  *
  * SPDX-License-Identifier: Apache-2.0
  */
-import HttpFactory from "./factory/httpFactory";
+
+import ApiClient from "~/service/api/apiClient";
 
 type ServerResponse = {
   analysisId: string;
   presignedUrl: string;
 };
 
-export default class CurService extends HttpFactory {
+export default class CurApiClient extends ApiClient {
   private readonly PRESIGNED_URL = "/api/analysis/presigned-url";
 
   async uploadFile(file: File) {

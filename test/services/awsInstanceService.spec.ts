@@ -17,16 +17,18 @@
  */
 import type { $Fetch } from "ofetch";
 import type { Mock } from "vitest";
-import AWSInstanceService from "~/service/awsInstanceService";
+import AWSInstanceApiClient from "~/service/api/AWSInstanceApiClient";
 import type { EC2InstanceType } from "~/type/ec2InstanceType";
 
 describe("AWSInstanceService", () => {
-  let awsInstanceService: AWSInstanceService;
+  let awsInstanceService: AWSInstanceApiClient;
   let mockFetch: Mock;
 
   beforeEach(() => {
     mockFetch = vi.fn();
-    awsInstanceService = new AWSInstanceService(mockFetch as unknown as $Fetch);
+    awsInstanceService = new AWSInstanceApiClient(
+      mockFetch as unknown as $Fetch,
+    );
   });
 
   afterEach(() => {
