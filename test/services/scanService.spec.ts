@@ -19,6 +19,7 @@ import type { Mock } from "vitest";
 import ScanService from "~/service/scanService";
 import type { $Fetch } from "ofetch";
 import type { ReportStatus } from "~/type/ReportStatus";
+import ScanApiClient from "~/service/api/scanApiClient";
 
 describe("scanService", () => {
   let scanService: ScanService;
@@ -26,7 +27,9 @@ describe("scanService", () => {
 
   beforeEach(() => {
     mockFetch = vi.fn();
-    scanService = new ScanService(mockFetch as unknown as $Fetch);
+    scanService = new ScanService(
+      new ScanApiClient(mockFetch as unknown as $Fetch),
+    );
   });
 
   afterEach(() => {

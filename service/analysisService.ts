@@ -16,26 +16,30 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import HttpFactory from "./factory/httpFactory";
 import type { ReportStatus } from "~/type/ReportStatus";
 import type { Payload } from "~/type/Payload";
+import type { AnalysisApiClient } from "~/service/api/analysisApiClient";
 
-type Analysis = {
+export type Analysis = {
   status: ReportStatus;
   id: string;
   dateCreation: string;
   co2Gr: number;
 };
 
-type AnalysisDetails = Analysis & {
+export type AnalysisDetails = Analysis & {
   payloads: Payload[];
 };
 
-class AnalysisService extends HttpFactory {
-  private readonly RESOURCE = "/api/analysis";
+class AnalysisService {
+  private readonly analysisApiClient: AnalysisApiClient;
+
+  constructor(analysisApiClient: AnalysisApiClient) {
+    this.analysisApiClient = analysisApiClient;
+  }
 
   async getAllAnalyses() {
-    const analyses = await this.getCall<Analysis[]>(this.RESOURCE);
+    const analyses = await this.analysisApiClient.getAllAnalyses();
     return analyses.map((analysis) => ({
       ...analysis,
       co2Converted: convertEstimateToBestMassUnit(analysis.co2Gr),
@@ -44,7 +48,7 @@ class AnalysisService extends HttpFactory {
 
   async getAnalysisById(analysisId: string) {
     const estimated = (
-      await this.getCall<AnalysisDetails>(`${this.RESOURCE}/${analysisId}`)
+      await this.analysisApiClient.getAnalysisById(analysisId)
     ).payloads.map((p) => ({
       label: p.name,
       co2Gr: p.carbonGramFootprint,
@@ -59,7 +63,7 @@ class AnalysisService extends HttpFactory {
   }
 
   async deleteAnalysis(analysisId: string): Promise<void> {
-    return await this.deleteCall(`${this.RESOURCE}/${analysisId}`);
+    return await this.analysisApiClient.deleteAnalysis(analysisId);
   }
 }
 

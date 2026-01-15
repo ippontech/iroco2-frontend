@@ -15,7 +15,7 @@
  *
  * SPDX-License-Identifier: Apache-2.0
  */
-import HttpFactory from "./factory/httpFactory";
+import ApiClient from "./apiClient";
 
 type ContactRequestBody = {
   company_name: string;
@@ -24,7 +24,7 @@ type ContactRequestBody = {
   message: string;
 };
 
-class ContactService extends HttpFactory {
+class ContactApiClient extends ApiClient {
   async requestDemoEmail(body: ContactRequestBody): Promise<void> {
     const irocoCustomerRequestEndpoint =
       useRuntimeConfig().public.irocoCustomerRequestEndpoint;
@@ -37,4 +37,4 @@ class ContactService extends HttpFactory {
   }
 }
 
-export default ContactService;
+export default ContactApiClient;

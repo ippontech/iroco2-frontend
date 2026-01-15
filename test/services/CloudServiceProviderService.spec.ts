@@ -18,7 +18,7 @@
 import type { $Fetch } from "ofetch";
 import { mockNuxtImport } from "@nuxt/test-utils/runtime";
 import type { Mock } from "vitest";
-import CloudServiceProviderSvc from "~/service/CloudServiceProviderService";
+import CloudServiceProviderApiClient from "~/service/api/CloudServiceProviderApiClient";
 import type { CloudServiceProvider } from "~/type/infrastructure/CloudServiceProvider";
 import type { CloudServiceProviderService } from "~/type/infrastructure/CloudServiceProviderService";
 
@@ -35,12 +35,12 @@ mockNuxtImport("useCloudServiceProviderStore", () => {
 });
 
 describe("CloudServiceProviderService", () => {
-  let cloudServiceProviderService: CloudServiceProviderSvc;
+  let cloudServiceProviderService: CloudServiceProviderApiClient;
   let mockFetch: Mock;
 
   beforeEach(() => {
     mockFetch = vi.fn();
-    cloudServiceProviderService = new CloudServiceProviderSvc(
+    cloudServiceProviderService = new CloudServiceProviderApiClient(
       mockFetch as unknown as $Fetch,
     );
   });

@@ -15,14 +15,19 @@
  *
  * SPDX-License-Identifier: Apache-2.0
  */
-import type { GetTokenRequest } from "~/type/GetTokenRequest";
-import ApiClient from "~/service/api/apiClient";
+import ApiClient from "./apiClient";
+import type { ServiceConfigurationSetting } from "~/type/infrastructure/ServiceConfigurationSetting";
 
-class TokenService extends ApiClient {
-  private readonly RESOURCE = "/api/v1/token/generate";
-  async getToken(body: GetTokenRequest): Promise<string> {
-    return await this.postCall(this.RESOURCE, body);
+class ServiceConfigurationSettingApiClient extends ApiClient {
+  private readonly RESOURCE = "/api/service-configuration-settings";
+
+  async findAllConfigurationSettingsByServiceId(
+    cloudServiceProviderServiceId: string,
+  ): Promise<ServiceConfigurationSetting[]> {
+    return await this.getCall<ServiceConfigurationSetting[]>(
+      `${this.RESOURCE}/${cloudServiceProviderServiceId}`,
+    );
   }
 }
 
-export default TokenService;
+export default ServiceConfigurationSettingApiClient;
