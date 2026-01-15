@@ -15,17 +15,18 @@
  *
  * SPDX-License-Identifier: Apache-2.0
  */
-import HttpFactory from "./factory/httpFactory";
-import type { EC2InstanceType } from "~/type/ec2InstanceType";
+import ApiClient from "./apiClient";
+import type { Scan, ScanDetails } from "~/type/Scan";
 
-class AWSInstanceService extends HttpFactory {
-  private readonly RESOURCE = "/api/awsInstanceType";
+class ScanApiClient extends ApiClient {
+  private readonly RESOURCE = "/api/scanner";
+  async getAllScans(): Promise<Scan[]> {
+    return await this.getCall<Scan[]>(this.RESOURCE);
+  }
 
-  async getAllInstanceByType(
-    serviceShortName: string,
-  ): Promise<EC2InstanceType[]> {
-    return await this.getCall(`${this.RESOURCE}`, { serviceShortName });
+  async getScanById(scanId: string): Promise<ScanDetails> {
+    return await this.getCall<ScanDetails>(`${this.RESOURCE}/${scanId}`);
   }
 }
 
-export default AWSInstanceService;
+export default ScanApiClient;

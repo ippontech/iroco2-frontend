@@ -15,12 +15,12 @@
  *
  * SPDX-License-Identifier: Apache-2.0
  */
-import HttpFactory from "./factory/httpFactory";
+import ApiClient from "./apiClient";
 
-class AdminService extends HttpFactory {
+class AdminApiClient extends ApiClient {
   async evictRegionCache(): Promise<void> {
     return this.deleteCall(`/actuator/caches/regions`);
   }
 }
 
-export default AdminService;
+export default AdminApiClient;

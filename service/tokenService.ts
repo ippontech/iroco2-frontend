@@ -16,9 +16,9 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 import type { GetTokenRequest } from "~/type/GetTokenRequest";
-import HttpFactory from "./factory/httpFactory";
+import ApiClient from "~/service/api/apiClient";
 
-class TokenService extends HttpFactory {
+class TokenService extends ApiClient {
   private readonly RESOURCE = "/api/v1/token/generate";
   async getToken(body: GetTokenRequest): Promise<string> {
     return await this.postCall(this.RESOURCE, body);

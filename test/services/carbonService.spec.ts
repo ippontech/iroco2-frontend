@@ -18,6 +18,7 @@
 import type { $Fetch } from "ofetch";
 import type { Mock } from "vitest";
 import IrocalcCarbonService from "~/service/carbonService";
+import { IrocalcCarbonApiClient } from "~/service/api/irocalcCarbonApiClient";
 
 describe("CarbonService", () => {
   let carbonService: IrocalcCarbonService;
@@ -26,7 +27,9 @@ describe("CarbonService", () => {
 
   beforeEach(() => {
     mockFetch = vi.fn();
-    carbonService = new IrocalcCarbonService(mockFetch as unknown as $Fetch);
+    carbonService = new IrocalcCarbonService(
+      new IrocalcCarbonApiClient(mockFetch as unknown as $Fetch),
+    );
   });
 
   afterEach(() => {

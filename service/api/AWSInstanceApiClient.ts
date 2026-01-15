@@ -15,19 +15,17 @@
  *
  * SPDX-License-Identifier: Apache-2.0
  */
-import HttpFactory from "./factory/httpFactory";
-import type { ServiceConfigurationSetting } from "~/type/infrastructure/ServiceConfigurationSetting";
+import ApiClient from "./apiClient";
+import type { EC2InstanceType } from "~/type/ec2InstanceType";
 
-class ServiceConfigurationSettingSvc extends HttpFactory {
-  private readonly RESOURCE = "/api/service-configuration-settings";
+class AWSInstanceApiClient extends ApiClient {
+  private readonly RESOURCE = "/api/awsInstanceType";
 
-  async findAllConfigurationSettingsByServiceId(
-    cloudServiceProviderServiceId: string,
-  ): Promise<ServiceConfigurationSetting[]> {
-    return await this.getCall<ServiceConfigurationSetting[]>(
-      `${this.RESOURCE}/${cloudServiceProviderServiceId}`,
-    );
+  async getAllInstanceByType(
+    serviceShortName: string,
+  ): Promise<EC2InstanceType[]> {
+    return await this.getCall(`${this.RESOURCE}`, { serviceShortName });
   }
 }
 
-export default ServiceConfigurationSettingSvc;
+export default AWSInstanceApiClient;

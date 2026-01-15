@@ -18,6 +18,7 @@
 import type { $Fetch } from "ofetch";
 import type { Mock } from "vitest";
 import AnalysisService from "~/service/analysisService";
+import { AnalysisApiClient } from "~/service/api/analysisApiClient";
 
 const ANALYSIS_API_URL = "/api/analysis";
 
@@ -48,7 +49,9 @@ describe("AnalysisService", () => {
 
   beforeEach(() => {
     mockFetch = vi.fn();
-    analysisService = new AnalysisService(mockFetch as unknown as $Fetch);
+    analysisService = new AnalysisService(
+      new AnalysisApiClient(mockFetch as unknown as $Fetch),
+    );
   });
 
   afterEach(() => {
