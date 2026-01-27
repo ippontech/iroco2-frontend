@@ -28,7 +28,7 @@ const notificationHandler = useToast();
 const { $api } = useNuxtApp();
 
 const clearCache = async () => {
-  await $api.adminService.evictRegionCache().then(() =>
+  await $api.adminApiClient.evictRegionCache().then(() =>
     notificationHandler.add({
       title: $t("admin.regionCache.notifyCleared"),
       color: NuxtColors.success,

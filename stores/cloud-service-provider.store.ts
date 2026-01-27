@@ -25,7 +25,7 @@ export const useCloudServiceProviderStore = defineStore(
     const fetchCloudServiceProviders = async () => {
       if (cloudServiceProviders.value.length === 0)
         cloudServiceProviders.value =
-          await useNuxtApp().$api.cloudServiceProviderService.getCloudServiceProviders();
+          await useNuxtApp().$api.cloudServiceProviderApiClient.getCloudServiceProviders();
     };
 
     const getRegionBy = async (param: string, paramType: "id" | "name") => {

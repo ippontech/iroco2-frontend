@@ -85,7 +85,7 @@ const addFile = (event: Event) => {
 const uploadFile = async () => {
   if (!file.value) return;
   loading.value = true;
-  await $api.curService.uploadFile(file.value);
+  await $api.curApiClient.uploadFile(file.value);
   loading.value = false;
   emit("update:analyses");
   closeModal();

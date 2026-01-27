@@ -52,9 +52,9 @@ const infrastructureId: string = Array.isArray(route.params.infrastructureID)
   : route.params.infrastructureID;
 
 const results = ref(
-  await $api.carbon.estimateCarbonFootPrint(infrastructureId),
+  await $api.carbonService.estimateCarbonFootPrint(infrastructureId),
 );
 
 infrastructure.value =
-  await $api.infrastructureService.getInfrastructure(infrastructureId);
+  await $api.infrastructureApiClient.getInfrastructure(infrastructureId);
 </script>
