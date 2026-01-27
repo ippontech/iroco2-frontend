@@ -30,7 +30,7 @@ const { mockUploadFile } = vi.hoisted(() => ({
 mockNuxtImport("useNuxtApp", () => {
   return () => ({
     $api: {
-      curService: {
+      curApiClient: {
         uploadFile: mockUploadFile,
       },
     },
@@ -42,7 +42,7 @@ describe("AddAnalysisAlert component", () => {
     mockNuxtImport("useNuxtApp", () => {
       return () => ({
         $api: {
-          curService: {
+          curApiClient: {
             uploadFile: mockUploadFile,
           },
         },

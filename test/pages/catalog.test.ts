@@ -15,7 +15,7 @@
  *
  * SPDX-License-Identifier: Apache-2.0
  */
-import { describe, it, expect, vi, beforeEach, afterEach } from "vitest";
+import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 import type { VueWrapper } from "@vue/test-utils";
 import { mount } from "@vue/test-utils";
 import Catalog from "~/pages/catalog/index.vue";
@@ -33,7 +33,7 @@ describe("Catalog page", async () => {
     mockNuxtImport("useNuxtApp", () => {
       return () => ({
         $api: {
-          catalogService: {
+          catalogApiClient: {
             getAllServices:
               mockGetAllService.mockResolvedValue(catalogResponse),
           },

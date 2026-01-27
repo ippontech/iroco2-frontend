@@ -91,7 +91,7 @@ describe("ConfigurationSettingsConfigurationSetting component", () => {
     mockNuxtImport("useNuxtApp", () => {
       return () => ({
         $api: {
-          instanceType: {
+          awsInstanceApiClient: {
             getAllInstanceByType: mockGetAllInstanceByType,
           },
         },

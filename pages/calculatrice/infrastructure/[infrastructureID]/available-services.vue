@@ -64,7 +64,7 @@ const route = useRoute();
 
 const services = ref<CloudServiceProviderService[]>([]);
 services.value =
-  await $api.cloudServiceProviderService.getCloudServiceProviderServices();
+  await $api.cloudServiceProviderApiClient.getCloudServiceProviderServices();
 
 const goToComponentConfiguration = (
   cloudServiceProviderService: CloudServiceProviderService,

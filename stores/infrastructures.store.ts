@@ -22,7 +22,7 @@ export const useInfrastructuresStore = defineStore("infrastructures", () => {
 
   const fetchInfrastructures = async () => {
     infrastructures.value =
-      await useNuxtApp().$api.infrastructureService.getInfrastructures();
+      await useNuxtApp().$api.infrastructureApiClient.getInfrastructures();
   };
 
   return {

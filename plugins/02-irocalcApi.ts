@@ -39,16 +39,16 @@ import ScanApiClient from "~/service/api/scanApiClient";
 /** ApiInstance interface provides us with good typing */
 interface IApiInstance {
   awsDataCenter: AWSDataCenterService;
-  carbon: CarbonService;
-  catalogService: CatalogApiClient;
-  instanceType: AWSInstanceApiClient;
-  adminService: AdminApiClient;
-  infrastructureService: InfrastructureApiClient;
-  componentService: ComponentApiClient;
-  cloudServiceProviderService: CloudServiceProviderApiClient;
-  serviceConfigurationSettingSvc: ServiceConfigurationSettingApiClient;
+  carbonService: CarbonService;
+  catalogApiClient: CatalogApiClient;
+  awsInstanceApiClient: AWSInstanceApiClient;
+  adminApiClient: AdminApiClient;
+  infrastructureApiClient: InfrastructureApiClient;
+  componentApiClient: ComponentApiClient;
+  cloudServiceProviderApiClient: CloudServiceProviderApiClient;
+  serviceConfigurationSettingApiClient: ServiceConfigurationSettingApiClient;
   analysisService: AnalysisService;
-  curService: CurApiClient;
+  curApiClient: CurApiClient;
   tokenService: TokenService;
   scanService: ScanService;
 }
@@ -103,24 +103,23 @@ export default defineNuxtPlugin({
 
     /** an object containing all repositories we need to expose */
     const modules: IApiInstance = {
-      carbon: new CarbonService(new IrocalcCarbonApiClient(apiFetcher)),
+      carbonService: new CarbonService(new IrocalcCarbonApiClient(apiFetcher)),
       awsDataCenter: new AWSDataCenterService(
         infrastructureApiClient,
         new AWSDataCenterApiClient(apiFetcher),
       ),
-      catalogService: new CatalogApiClient(apiFetcher),
-      instanceType: new AWSInstanceApiClient(apiFetcher),
-      adminService: new AdminApiClient(apiFetcher),
-      infrastructureService: infrastructureApiClient,
-      componentService: new ComponentApiClient(apiFetcher),
-      cloudServiceProviderService: new CloudServiceProviderApiClient(
+      catalogApiClient: new CatalogApiClient(apiFetcher),
+      awsInstanceApiClient: new AWSInstanceApiClient(apiFetcher),
+      adminApiClient: new AdminApiClient(apiFetcher),
+      infrastructureApiClient: infrastructureApiClient,
+      componentApiClient: new ComponentApiClient(apiFetcher),
+      cloudServiceProviderApiClient: new CloudServiceProviderApiClient(
         apiFetcher,
       ),
-      serviceConfigurationSettingSvc: new ServiceConfigurationSettingApiClient(
-        apiFetcher,
-      ),
+      serviceConfigurationSettingApiClient:
+        new ServiceConfigurationSettingApiClient(apiFetcher),
       analysisService: new AnalysisService(new AnalysisApiClient(apiFetcher)),
-      curService: new CurApiClient(apiFetcher),
+      curApiClient: new CurApiClient(apiFetcher),
       tokenService: new TokenService(apiFetcher),
       scanService: new ScanService(new ScanApiClient(apiFetcher)),
     };

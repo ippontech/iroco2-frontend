@@ -63,7 +63,7 @@ interface Props {
 const props = defineProps<Props>();
 
 const resultsByRegion: Ref<RegionCarbonFootprint[]> = ref(
-  await $api.carbon.compareCarbonFootPrintbByRegion(
+  await $api.carbonService.compareCarbonFootPrintbByRegion(
     props.infrastructureId,
     props.totalCO2Gr,
   ),

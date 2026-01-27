@@ -113,7 +113,9 @@ const { cloudServiceProviderServiceID, componentId, serviceName } =
   route.query as QueryParams;
 
 const components = ref(
-  await $api.componentService.getComponentsByInfrastructureId(infrastructureId),
+  await $api.componentApiClient.getComponentsByInfrastructureId(
+    infrastructureId,
+  ),
 );
 
 const originalComponent = components.value.find(
@@ -133,7 +135,7 @@ const isOtherRegion = ref(
 );
 
 const serviceConfigurationSettings = ref<ServiceConfigurationSetting[]>(
-  await $api.serviceConfigurationSettingSvc.findAllConfigurationSettingsByServiceId(
+  await $api.serviceConfigurationSettingApiClient.findAllConfigurationSettingsByServiceId(
     originalComponent
       ? originalComponent.serviceID
       : cloudServiceProviderServiceID,
@@ -171,12 +173,12 @@ const handleSubmit = async () => {
     serviceID: cloudServiceProviderServiceID,
   };
   if (originalComponent) {
-    await $api.componentService.updateComponent({
+    await $api.componentApiClient.updateComponent({
       ...component,
       id: originalComponent.id,
     });
   } else {
-    await $api.componentService.saveComponent(component);
+    await $api.componentApiClient.saveComponent(component);
   }
   await navigateTo(`/calculatrice/infrastructure/${infrastructureId}`);
 };

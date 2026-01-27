@@ -97,7 +97,7 @@ function deleteInfrastructure(infrastructure: Infrastructure) {
 }
 
 async function confirmInfrastructureDeletion(infrastructure: Infrastructure) {
-  await $api.infrastructureService.deleteInfra(infrastructure.id!);
+  await $api.infrastructureApiClient.deleteInfra(infrastructure.id!);
   await infrastructuresStore.fetchInfrastructures();
 }
 

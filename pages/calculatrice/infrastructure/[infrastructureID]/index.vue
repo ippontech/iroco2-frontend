@@ -116,7 +116,9 @@ const infrastructureId: string = Array.isArray(route.params.infrastructureID)
 
 const { $api } = useNuxtApp();
 const components = ref(
-  await $api.componentService.getComponentsByInfrastructureId(infrastructureId),
+  await $api.componentApiClient.getComponentsByInfrastructureId(
+    infrastructureId,
+  ),
 );
 
 const componentToDelete = ref<string>("");
@@ -134,18 +136,18 @@ const addComponent = () => {
 };
 
 async function deleteComponent() {
-  await useNuxtApp().$api.componentService.deleteComponent(
+  await useNuxtApp().$api.componentApiClient.deleteComponent(
     componentToDelete.value,
   );
   components.value =
-    await $api.componentService.getComponentsByInfrastructureId(
+    await $api.componentApiClient.getComponentsByInfrastructureId(
       infrastructureId,
     );
 }
 const navigateToEdit = async (component: Component) => {
   const { id: componentId, serviceID } = component;
   const serviceName =
-    (await $api.catalogService.getById(serviceID)).shortname ?? "";
+    (await $api.catalogApiClient.getById(serviceID)).shortname ?? "";
   navigateTo({
     path: `/calculatrice/infrastructure/${infrastructureId}/create-component`,
     query: {

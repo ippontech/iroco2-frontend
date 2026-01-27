@@ -120,7 +120,7 @@ const handleSubmit = form.handleSubmit(async (values) => {
     defaultRegion: values.region.id,
     name: values.infraName,
   };
-  await $api.infrastructureService.createNewInfra(infra);
+  await $api.infrastructureApiClient.createNewInfra(infra);
   await infrastructuresStore.fetchInfrastructures();
   isDialogOpen.value = false;
   emit("infraCreated");
