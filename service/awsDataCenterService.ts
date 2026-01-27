@@ -15,38 +15,34 @@
  *
  * SPDX-License-Identifier: Apache-2.0
  */
-import type { $Fetch } from "ofetch";
-import ComponentService from "./componentService";
-import HttpFactory from "./factory/httpFactory";
 import type { Region } from "~/type/Region";
-import InfrastructureService from "~/service/infrastructureService";
+import type InfrastructureApiClient from "~/service/api/infrastructureApiClient";
+import type { AWSDataCenterApiClient } from "~/service/api/AWSDataCenterApiClient";
 
-class AWSDataCenterService extends HttpFactory {
-  private readonly RESOURCE = "/api/cloud-service-providers";
-  private readonly componentService: ComponentService;
-  private readonly infrastructureService: InfrastructureService;
+class AWSDataCenterService {
+  private readonly infrastructureApiClient: InfrastructureApiClient;
+  private readonly awsDataCenterApiClient: AWSDataCenterApiClient;
 
-  constructor(fetcher: $Fetch) {
-    super(fetcher);
-    this.componentService = new ComponentService(fetcher);
-    this.infrastructureService = new InfrastructureService(fetcher);
+  constructor(
+    infrastructureApiClient: InfrastructureApiClient,
+    awsDataCenterApiClient: AWSDataCenterApiClient,
+  ) {
+    this.infrastructureApiClient = infrastructureApiClient;
+    this.awsDataCenterApiClient = awsDataCenterApiClient;
   }
 
   async getAllAWSDataCenter(): Promise<Region[]> {
     const cspId =
       await useCloudServiceProviderStore().getCloudServiceProviderID("AWS");
 
-    return await this.getCall<Region[]>(`${this.RESOURCE}/${cspId}/regions`);
+    return await this.awsDataCenterApiClient.getAllAWSDataCenter(cspId);
   }
 
   async getRegionByInfrastructureId(infrastructureId: string) {
     const infrastructure =
-      await this.infrastructureService.getInfrastructure(infrastructureId);
+      await this.infrastructureApiClient.getInfrastructure(infrastructureId);
     const regions = await this.getAllAWSDataCenter();
-    const currentRegion = regions.find(
-      (region) => region.id === infrastructure.defaultRegion,
-    );
-    return currentRegion;
+    return regions.find((region) => region.id === infrastructure.defaultRegion);
   }
 }
 

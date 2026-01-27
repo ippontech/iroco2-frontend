@@ -39,7 +39,7 @@ const {
 const id: string = Array.isArray(serviceId) ? serviceId[0] : serviceId;
 
 const service: Ref<ServiceDescription> = ref(
-  await $api.catalogService.getById(id),
+  await $api.catalogApiClient.getById(id),
 );
 </script>
 

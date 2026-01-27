@@ -17,18 +17,18 @@
  */
 import type { $Fetch } from "ofetch";
 import type { Mock } from "vitest";
-import CatalogService from "~/service/catalogService";
+import CatalogApiClient from "~/service/api/catalogApiClient";
 import type { ServiceCatalog } from "~/type/ServiceCatalog";
 import { Availability } from "~/type/Availability";
 import type { ServiceDescription } from "~/type/ServiceDescription";
 
 describe("CatalogService", () => {
-  let catalogService: CatalogService;
+  let catalogApiClient: CatalogApiClient;
   let mockFetch: Mock;
 
   beforeEach(() => {
     mockFetch = vi.fn();
-    catalogService = new CatalogService(mockFetch as unknown as $Fetch);
+    catalogApiClient = new CatalogApiClient(mockFetch as unknown as $Fetch);
   });
 
   afterEach(() => {
@@ -74,7 +74,7 @@ describe("CatalogService", () => {
     ];
 
     // Act
-    const services = await catalogService.getAllServices();
+    const services = await catalogApiClient.getAllServices();
 
     // Assert
     expect(services).toEqual(expectedSortedCatalog);
@@ -119,7 +119,7 @@ describe("CatalogService", () => {
     mockFetch.mockResolvedValue(serviceDescription);
 
     // Act
-    const description = await catalogService.getById(serviceId);
+    const description = await catalogApiClient.getById(serviceId);
 
     // Assert
     expect(description).toEqual(serviceDescription);

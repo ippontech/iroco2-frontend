@@ -15,17 +15,18 @@
  *
  * SPDX-License-Identifier: Apache-2.0
  */
-import HttpFactory from "./factory/httpFactory";
+import ApiClient from "./apiClient";
 import type { Component } from "~/type/infrastructure/Component";
 import type { SaveComponentRequest } from "~/type/infrastructure/SaveComponentRequest";
 import type { UpdateComponentRequest } from "~/type/infrastructure/UpdateComponentRequest";
 
-class ComponentService extends HttpFactory {
+class ComponentApiClient extends ApiClient {
   private readonly RESOURCE = "/api/v2/components";
 
   async getComponentsByInfrastructureId(id: string): Promise<Component[]> {
-    const url = this.RESOURCE;
-    return await this.getCall(url, undefined, { infrastructureId: id });
+    return await this.getCall(this.RESOURCE, undefined, {
+      infrastructureId: id,
+    });
   }
   async saveComponent(component: SaveComponentRequest): Promise<void> {
     return await this.postCall(this.RESOURCE, component);
@@ -39,4 +40,4 @@ class ComponentService extends HttpFactory {
   }
 }
 
-export default ComponentService;
+export default ComponentApiClient;

@@ -24,11 +24,9 @@ definePageMeta({
   layout: "public",
 });
 
-// const services: Ref<ServiceCatalog[]> = ref([]);
-
 const { $api, $router } = useNuxtApp();
 
-const services = ref(await $api.catalogService.getAllServices());
+const services = ref(await $api.catalogApiClient.getAllServices());
 
 const toDescription = (id: string) => {
   $router.push(`catalog/${id}`);

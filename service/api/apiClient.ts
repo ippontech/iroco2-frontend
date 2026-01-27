@@ -17,7 +17,7 @@
  */
 import type { ofetch } from "ofetch";
 
-class HttpFactory {
+class ApiClient {
   private readonly $fetch: typeof ofetch;
 
   constructor(fetcher: typeof ofetch) {
@@ -86,4 +86,4 @@ class HttpFactory {
   }
 }
 
-export default HttpFactory;
+export default ApiClient;

@@ -17,7 +17,7 @@
  */
 import type { $Fetch } from "ofetch";
 import type { Mock } from "vitest";
-import CurService from "~/service/curService";
+import CurApiClient from "~/service/api/curApiClient";
 
 const PRESIGNED_URL_ENDPOINT = "/api/analysis/presigned-url";
 const MOCK_PRESIGNED_URL =
@@ -30,7 +30,7 @@ const MOCK_SERVER_RESPONSE = {
 };
 
 describe("CurService", () => {
-  let curService: CurService;
+  let curApiClient: CurApiClient;
   let mockFetch: Mock;
   let mockGlobalFetch: Mock;
 
@@ -38,7 +38,7 @@ describe("CurService", () => {
     mockFetch = vi.fn();
     mockGlobalFetch = vi.fn();
     global.fetch = mockGlobalFetch;
-    curService = new CurService(mockFetch as unknown as $Fetch);
+    curApiClient = new CurApiClient(mockFetch as unknown as $Fetch);
   });
 
   afterEach(() => {
@@ -53,7 +53,7 @@ describe("CurService", () => {
       mockGlobalFetch.mockResolvedValue({ ok: true });
 
       // when
-      await curService.uploadFile(file);
+      await curApiClient.uploadFile(file);
 
       // then
       expect(mockFetch).toHaveBeenCalledWith(
@@ -77,7 +77,7 @@ describe("CurService", () => {
       mockGlobalFetch.mockResolvedValue({ ok: true });
 
       // when
-      await curService.uploadFile(file);
+      await curApiClient.uploadFile(file);
 
       // then
       expect(mockFetch).toHaveBeenCalledWith(
@@ -101,7 +101,7 @@ describe("CurService", () => {
       mockGlobalFetch.mockResolvedValue({ ok: true });
 
       // when
-      await curService.uploadFile(file);
+      await curApiClient.uploadFile(file);
 
       // then
       expect(mockFetch).toHaveBeenCalledWith(
@@ -119,7 +119,7 @@ describe("CurService", () => {
       mockFetch.mockRejectedValue(error);
 
       // when
-      const promise = curService.uploadFile(file);
+      const promise = curApiClient.uploadFile(file);
 
       // then
       await expect(promise).rejects.toThrow("Failed to get presigned URL");
@@ -138,7 +138,7 @@ describe("CurService", () => {
       mockGlobalFetch.mockRejectedValue(error);
 
       // when
-      const promise = curService.uploadFile(file);
+      const promise = curApiClient.uploadFile(file);
 
       // then
       await expect(promise).rejects.toThrow("S3 upload failed");

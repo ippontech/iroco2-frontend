@@ -44,7 +44,7 @@ const { mockGetInfrastructures } = vi.hoisted(() => ({
 mockNuxtImport("useNuxtApp", () => {
   return () => ({
     $api: {
-      infrastructureService: {
+      infrastructureApiClient: {
         getInfrastructures: mockGetInfrastructures,
       },
     },

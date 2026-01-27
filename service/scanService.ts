@@ -15,22 +15,26 @@
  *
  * SPDX-License-Identifier: Apache-2.0
  */
-import HttpFactory from "./factory/httpFactory";
-import type { EstimatedScan, Scan, ScanDetails } from "~/type/Scan";
+import type { EstimatedScan, Scan } from "~/type/Scan";
+import type ScanApiClient from "~/service/api/scanApiClient";
 
-class ScanService extends HttpFactory {
-  private readonly RESOURCE = "/api/scanner";
+class ScanService {
+  private readonly scanApiClient: ScanApiClient;
+
+  constructor(scanApiClient: ScanApiClient) {
+    this.scanApiClient = scanApiClient;
+  }
+
   async getAllScans(): Promise<Scan[]> {
-    const scans = await this.getCall<Scan[]>(this.RESOURCE);
-    const scansWithCO2Converted = scans.map((scan) => ({
+    const scans = await this.scanApiClient.getAllScans();
+    return scans.map((scan) => ({
       ...scan,
       co2Converted: convertEstimateToBestMassUnit(scan.co2Gr),
     }));
-    return scansWithCO2Converted;
   }
 
   async getScanById(scanId: string): Promise<EstimatedScan> {
-    const scans = await this.getCall<ScanDetails>(`${this.RESOURCE}/${scanId}`);
+    const scans = await this.scanApiClient.getScanById(scanId);
 
     const estimated = scans.payloads.map((p) => ({
       label: p.name,

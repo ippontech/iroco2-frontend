@@ -15,11 +15,11 @@
  *
  * SPDX-License-Identifier: Apache-2.0
  */
-import HttpFactory from "./factory/httpFactory";
+import ApiClient from "./apiClient";
 import type { CloudServiceProvider } from "~/type/infrastructure/CloudServiceProvider";
 import type { CloudServiceProviderService } from "~/type/infrastructure/CloudServiceProviderService";
 
-class CloudServiceProviderSvc extends HttpFactory {
+class CloudServiceProviderApiClient extends ApiClient {
   private readonly RESOURCE = "/api/cloud-service-providers";
 
   async getCloudServiceProviders(): Promise<CloudServiceProvider[]> {
@@ -35,4 +35,4 @@ class CloudServiceProviderSvc extends HttpFactory {
   }
 }
 
-export default CloudServiceProviderSvc;
+export default CloudServiceProviderApiClient;

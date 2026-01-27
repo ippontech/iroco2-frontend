@@ -15,18 +15,19 @@
  *
  * SPDX-License-Identifier: Apache-2.0
  */
-import type { Infrastructure } from "~/type/infrastructure/Infrastructure";
+import ApiClient from "./apiClient";
+import type { ServiceConfigurationSetting } from "~/type/infrastructure/ServiceConfigurationSetting";
 
-export const useInfrastructuresStore = defineStore("infrastructures", () => {
-  const infrastructures = ref<Infrastructure[]>([]);
+class ServiceConfigurationSettingApiClient extends ApiClient {
+  private readonly RESOURCE = "/api/service-configuration-settings";
 
-  const fetchInfrastructures = async () => {
-    infrastructures.value =
-      await useNuxtApp().$api.infrastructureApiClient.getInfrastructures();
-  };
+  async findAllConfigurationSettingsByServiceId(
+    cloudServiceProviderServiceId: string,
+  ): Promise<ServiceConfigurationSetting[]> {
+    return await this.getCall<ServiceConfigurationSetting[]>(
+      `${this.RESOURCE}/${cloudServiceProviderServiceId}`,
+    );
+  }
+}
 
-  return {
-    infrastructures,
-    fetchInfrastructures,
-  };
-});
+export default ServiceConfigurationSettingApiClient;

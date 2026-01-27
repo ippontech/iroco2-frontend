@@ -26,7 +26,7 @@ const { $api } = useNuxtApp();
 const instanceTypes: Ref<string[]> = ref([]);
 const isInstanceEmpty = ref(false);
 
-$api.instanceType.getAllInstanceByType("EC2").then((responses) => {
+$api.awsInstanceApiClient.getAllInstanceByType("EC2").then((responses) => {
   instanceTypes.value = responses.map((response) => response.name);
 });
 
