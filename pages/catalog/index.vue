@@ -19,6 +19,7 @@
 
 <script setup lang="ts">
 import { Availability } from "~/type/Availability";
+import CatalogBackground from "~/pages/catalog/CatalogBackground.vue";
 
 definePageMeta({
   layout: "public",
@@ -43,11 +44,11 @@ const getIcon = (service: string) => {
 </script>
 
 <template>
-  <PackManBackground class="flex items-center justify-center">
+  <CatalogBackground class="flex items-center justify-center">
     <h1 class="text-center text-5xl font-bold">
       {{ $t("catalog.availabilityCatalog") }}
     </h1>
-  </PackManBackground>
+  </CatalogBackground>
   <div
     class="container py-8 m-auto grid md:grid-cols-2 lg:grid-cols-3 grid-cols gap-4"
   >
