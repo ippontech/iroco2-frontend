@@ -48,7 +48,7 @@ const props = defineProps<Props>();
   bottom: 0;
   background-size: 30px;
   background-repeat: repeat;
-  background-image: url("@/assets/static/pacman.png");
+  background-image: url("@/assets/static/cross.svg");
   opacity: 0.1;
 }
 </style>
