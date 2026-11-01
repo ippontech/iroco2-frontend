@@ -253,5 +253,11 @@
     "back": "Back",
     "save": "Save",
     "myInfrastructures": "My infrastructures:"
+  },
+  "apiErrors": {
+    "badRequest": "The submitted data is invalid. Check the form and try again.",
+    "forbidden": "You do not have permission to perform this action.",
+    "notFound": "The requested item could not be found.",
+    "unexpected": "An unexpected error occurred. Please try again later."
   }
 }

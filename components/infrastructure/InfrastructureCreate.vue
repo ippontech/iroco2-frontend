@@ -67,6 +67,15 @@
           </FormItem>
         </FormField>
 
+        <UAlert
+          v-if="submitErrorKey"
+          role="alert"
+          color="red"
+          variant="soft"
+          icon="i-heroicons-exclamation-triangle"
+          :title="$t(submitErrorKey)"
+        />
+
         <button
           ref="createButton"
           type="submit"
@@ -114,13 +123,20 @@ const formSchema = toTypedSchema(
 const form = useForm({
   validationSchema: formSchema,
 });
+const submitErrorKey = ref<string>();
 const handleSubmit = form.handleSubmit(async (values) => {
+  submitErrorKey.value = undefined;
   const infra: InfrastructureRequest = {
     cloudServiceProvider: values.region.csp,
     defaultRegion: values.region.id,
     name: values.infraName,
   };
-  await $api.infrastructureApiClient.createNewInfra(infra);
+  try {
+    await $api.infrastructureApiClient.createNewInfra(infra);
+  } catch (error) {
+    submitErrorKey.value = getApiErrorMessageKey(error);
+    return;
+  }
   await infrastructuresStore.fetchInfrastructures();
   isDialogOpen.value = false;
   emit("infraCreated");

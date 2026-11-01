@@ -63,6 +63,15 @@
                 @update:region="handleRegionChange"
               />
             </div>
+            <UAlert
+              v-if="submitErrorKey"
+              role="alert"
+              class="mt-8"
+              color="red"
+              variant="soft"
+              icon="i-heroicons-exclamation-triangle"
+              :title="$t(submitErrorKey)"
+            />
             <div class="flex justify-end w-full mb-32 pt-8 space-x-4">
               <button
                 type="button"
@@ -164,7 +173,9 @@ const handleRegionChange = (newValue: Region) => {
 const handleComponentNameChange = (newValue: string) => {
   componentName.value = newValue;
 };
+const submitErrorKey = ref<string>();
 const handleSubmit = async () => {
+  submitErrorKey.value = undefined;
   const component = {
     configurationValues: configuredValues.value,
     name: componentName.value,
@@ -172,13 +183,18 @@ const handleSubmit = async () => {
     regionID: currentRegion.value!.id,
     serviceID: cloudServiceProviderServiceID,
   };
-  if (originalComponent) {
-    await $api.componentApiClient.updateComponent({
-      ...component,
-      id: originalComponent.id,
-    });
-  } else {
-    await $api.componentApiClient.saveComponent(component);
+  try {
+    if (originalComponent) {
+      await $api.componentApiClient.updateComponent({
+        ...component,
+        id: originalComponent.id,
+      });
+    } else {
+      await $api.componentApiClient.saveComponent(component);
+    }
+  } catch (error) {
+    submitErrorKey.value = getApiErrorMessageKey(error);
+    return;
   }
   await navigateTo(`/calculatrice/infrastructure/${infrastructureId}`);
 };
