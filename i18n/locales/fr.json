@@ -253,5 +253,11 @@
     "back": "Retour",
     "save": "Enregistrer",
     "myInfrastructures": "Mes infrastructures :"
+  },
+  "apiErrors": {
+    "badRequest": "Les données envoyées sont invalides. Vérifiez le formulaire puis réessayez.",
+    "forbidden": "Vous n'avez pas l'autorisation d'effectuer cette action.",
+    "notFound": "L'élément demandé est introuvable.",
+    "unexpected": "Une erreur inattendue s'est produite. Réessayez plus tard."
   }
 }
