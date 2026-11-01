@@ -19,7 +19,7 @@ import type { VueWrapper } from "@vue/test-utils";
 import { flushPromises } from "@vue/test-utils";
 import { mockNuxtImport, mountSuspended } from "@nuxt/test-utils/runtime";
 import { InfrastructureCreate, RecapRegionSelector } from "#components";
-import { DialogContent } from "radix-vue";
+import { DialogContent, DialogRoot } from "radix-vue";
 
 const { REGION, mockApi } = vi.hoisted(() => ({
   REGION: {
@@ -127,4 +127,35 @@ describe("InfrastructureCreate component", () => {
       ).not.toHaveBeenCalled();
     },
   );
+
+  it("should not show the previous error when the dialog is reopened", async () => {
+    // given
+    mockApi.infrastructureApiClient.createNewInfra.mockRejectedValue(
+      createError({
+        statusCode: 400,
+        fatal: true,
+      }),
+    );
+    const wrapper = await mountSuspended(InfrastructureCreate);
+    const dialog = await openDialogAndSubmit(wrapper);
+    expect(dialog.find('[role="alert"]').exists()).toBe(true);
+
+    // when
+    const closeButton = dialog
+      .findAll("button")
+      .find((button) => button.text() === "Close");
+    await closeButton!.trigger("click");
+    await vi.waitFor(() =>
+      expect(wrapper.findComponent(DialogRoot).props("open")).toBe(false),
+    );
+    await wrapper.find("button").trigger("click");
+    await vi.waitFor(() =>
+      expect(wrapper.findComponent(DialogRoot).props("open")).toBe(true),
+    );
+
+    // then
+    expect(
+      wrapper.findComponent(DialogContent).find('[role="alert"]').exists(),
+    ).toBe(false);
+  });
 });

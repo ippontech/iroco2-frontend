@@ -124,6 +124,9 @@ const form = useForm({
   validationSchema: formSchema,
 });
 const submitErrorKey = ref<string>();
+watch(isDialogOpen, () => {
+  submitErrorKey.value = undefined;
+});
 const handleSubmit = form.handleSubmit(async (values) => {
   submitErrorKey.value = undefined;
   const infra: InfrastructureRequest = {
